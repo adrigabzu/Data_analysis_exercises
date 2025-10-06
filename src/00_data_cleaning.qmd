@@ -1,0 +1,173 @@
+---
+title: "Assessing Data Cleaning"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme:
+      light: flatly
+      dark: darkly
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+# Install required packages if missing, then load them
+needed <- c("tidyverse", "skimr", "dataMaid", "lubridate")
+
+to_install <- needed[!suppressWarnings(
+  sapply(needed, requireNamespace, quietly = TRUE)
+)]
+if (length(to_install) > 0) {
+  install.packages(to_install, dependencies = TRUE)
+}
+
+library(tidyverse)
+library(skimr)
+library(dataMaid)
+library(lubridate)
+
+```
+
+# Load data
+
+```{r}
+#| label: load-data
+# This script expects two CSV files in ../data/
+dataset_a <- read_csv("../data/data_a.csv", show_col_types = FALSE,
+                             guess_max = 100000)
+dataset_b <- read_csv("../data/data_b.csv", show_col_types = FALSE,
+                             guess_max = 100000)
+
+# Basic normalization
+dataset_a <- dataset_a %>% mutate(country = stringr::str_squish(country))
+dataset_b <- dataset_b %>% mutate(country = stringr::str_squish(country))
+
+# Try parsing date columns if present
+if ("datettime" %in% names(dataset_a)) {
+  dataset_a <- dataset_a %>%
+    mutate(datettime = suppressWarnings(lubridate::ymd(datettime)))
+}
+if ("datettime" %in% names(dataset_b)) {
+  dataset_b <- dataset_b %>%
+    mutate(datettime = suppressWarnings(lubridate::ymd(datettime)))
+}
+```
+
+# Your first task
+
+- You have two datasets, dataset_a and dataset_b, with overlapping IDs.
+- One dataset is survey-like; the other is registry-like.
+- Explore them and decide which is which.
+
+```{r}
+glimpse(dataset_a)
+glimpse(dataset_b)
+```
+
+# Diagnostic summary statistics
+
+```{r}
+# Skim summaries
+skimr::skim(dataset_a)
+```
+
+```{r}
+# Skim summaries
+skimr::skim(dataset_b)
+```
+
+```{r}
+# Optional: dataMaid reports (writes HTML files; set eval to TRUE to run)
+# Uncomment to run but comment before rendering
+
+# dataMaid::makeDataReport(dataset_a,
+#   file = file.path("../results/dataset_a_report"),
+#   replace = TRUE, openFile = FALSE, quiet = TRUE
+# )
+# dataMaid::makeDataReport(dataset_b,
+#   file = file.path("../results/dataset_b_report"),
+#   replace = TRUE, openFile = FALSE, quiet = TRUE
+# )
+```
+
+# Task 1 — Missing data
+
+Do not answer here; explore and decide:
+- Is there missing data?
+- How much and is it related to other variables (age, country)?
+- Does it look random (MCAR) or not (MAR/MNAR)?
+
+
+```{r}
+# Missingness by country and age bands (if variables exist)
+group_miss <- function(df) {
+  df %>%
+    # Discretize age
+    mutate(
+      age_band = if ("age" %in% names(df)) {
+        cut(df$age,
+            breaks = c(-Inf, 17, 24, 34, 44, 54, 64, Inf),
+            labels = c("<=17", "18-24", "25-34", "35-44",
+                       "45-54", "55-64", "65+"))
+      } else { NA }
+    ) %>%
+    group_by(country, age_band) %>%
+    skim()
+}
+
+summary_a <- group_miss(dataset_a)
+summary_a |> as_tibble() |> arrange(desc(n_missing))
+
+summary_b <- group_miss(dataset_b)
+summary_b |> as_tibble() |> arrange(desc(n_missing))
+```
+
+
+# Task 2 — Outliers
+
+Do not answer here; define and explore:
+- Are there outliers? How do you define them?
+- How would you handle them?
+
+```{r}
+# Look at numeric summaries and outliers
+dataset_b |> 
+  group_by(indicator) |> 
+  skim(age, score)
+
+```
+
+# Task 3 — Impossible values
+
+Do not answer here; define and explore:
+- Are there impossible values?
+- How would you handle them?
+
+```{r}
+# Look at all the unique values in character columns
+char_overview <- function(df) {
+  df %>%
+    select(where(is.character)) %>%
+    summarise(across(everything(),
+      ~ list(sort(unique(na.omit(.x)))),
+      .names = "unique_{col}"
+    )) %>%
+    pivot_longer(everything(),
+      names_to = "variable",
+      values_to = "unique_values"
+    ) |>
+    unnest(cols = c(unique_values))
+}
+
+char_overview(dataset_a)
+char_overview(dataset_b)
+```
+
+# To discuss
+
+- Which dataset is survey-like and which is registry-like?
+- Summarize missingness, outliers, and impossible values you found.

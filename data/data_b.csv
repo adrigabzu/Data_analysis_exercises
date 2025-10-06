@@ -1,0 +1,2251 @@
+ID,age,country,number_of_children,indicator,score,datettime
+1,21,Nigeria,0,depression scale,8,2010-01-01
+1,21,Nigeria,0,loneliness scale,35,2010-01-01
+1,21,Nigeria,0,sleep scale,8,2010-01-01
+1,30,Nigeria,0,depression scale,8,2019-01-01
+1,30,Nigeria,0,loneliness scale,31,2019-01-01
+1,30,Nigeria,0,sleep scale,8,2019-01-01
+1,35,Nigeria,1,depression scale,3,2024-01-01
+1,35,Nigeria,0,loneliness scale,33,2024-01-01
+1,35,Nigeria,1,sleep scale,-3,2024-01-01
+2,31,Egypt ,0,depression scale,2,2010-01-01
+2,31,Egypt,2,loneliness scale,28,2010-01-01
+2,31,Egypt,2,sleep scale,3,2010-01-01
+2,40,Egypt,1,depression scale,8,2019-01-01
+2,40,Egypt,2,loneliness scale,33,2019-01-01
+2,40,Egypt,1,sleep scale,1,2019-01-01
+2,45,Egypt,1,depression scale,6,2024-01-01
+2,45,Egypt,1,loneliness scale,38,2024-01-01
+2,45,Egypt ,0,sleep scale,11,2024-01-01
+3,19,South Africa,0,depression scale,-0,2010-01-01
+3,19,South Africa,0,loneliness scale,33,2010-01-01
+3,19,South Africa,0,sleep scale,9,2010-01-01
+3,28,South Africa,0,depression scale,7,2019-01-01
+3,28,South Africa,0,loneliness scale,20,2019-01-01
+3,28,South Africa,0,sleep scale,NA,2019-01-01
+3,33,South Africa,1,depression scale,6,2024-01-01
+3,33,South Africa,1,loneliness scale,31,2024-01-01
+3,33,South Africa,1,sleep scale,13,2024-01-01
+4,23,China,1,depression scale,4,2010-01-01
+4,23,China,0,loneliness scale,29,2010-01-01
+4,23,China,1,sleep scale,5,2010-01-01
+4,32,China,0,depression scale,9,2019-01-01
+4,32,China,1,loneliness scale,34,2019-01-01
+4,32,China,1,sleep scale,4,2019-01-01
+4,37,China,1,depression scale,NA,2024-01-01
+4,37,China,2,loneliness scale,NA,2024-01-01
+4,37,China,0,sleep scale,8,2024-01-01
+5,25,India,0,depression scale,4,2010-01-01
+5,25,India,0,loneliness scale,45,2010-01-01
+5,25,India,0,sleep scale,6,2010-01-01
+5,34,India,1,depression scale,1,2019-01-01
+5,34,India,0,loneliness scale,35,2019-01-01
+5,34,India,0,sleep scale,13,2019-01-01
+5,39,India,0,depression scale,0,2024-01-01
+5,39,India,0,loneliness scale,NA,2024-01-01
+5,39,India,0,sleep scale,0,2024-01-01
+6,20,Japan,0,depression scale,10,2010-01-01
+6,-5,Japan,0,loneliness scale,56,2010-01-01
+6,20,Japan,0,sleep scale,7,2010-01-01
+6,29,Japan,0,depression scale,4,2019-01-01
+6,29,Japan,0,loneliness scale,39,2019-01-01
+6,29,Japan,0,sleep scale,6,2019-01-01
+6,34,Japan,1,depression scale,8,2024-01-01
+6,34,Japan,0,loneliness scale,NA,2024-01-01
+6,34,Japan,1,sleep scale,11,2024-01-01
+7,100,France,0,depression scale,0,2010-01-01
+7,24,France,0,loneliness scale,36,2010-01-01
+7,24,France,0,sleep scale,13,2010-01-01
+7,33,France,0,depression scale,0,2019-01-01
+7,33,France,1,loneliness scale,52,2019-01-01
+7,33,France,1,sleep scale,15,2019-01-01
+7,38,France,1,depression scale,8,2024-01-01
+7,38,France,1,loneliness scale,33,2024-01-01
+7,38,France,0,sleep scale,6,2024-01-01
+8,23,United Kingdom,0,depression scale,3,2010-01-01
+8,23,United Kingdom,1,loneliness scale,29,2010-01-01
+8,23,United Kingdom,0,sleep scale,0,2010-01-01
+8,32,United Kingdom,1,depression scale,1,2019-01-01
+8,32,United Kingdom,2,loneliness scale,47,2019-01-01
+8,32,United Kingdom,0,sleep scale,15,2019-01-01
+8,37,United Kingdom,0,depression scale,14,2024-01-01
+8,37,United Kingdom,1,loneliness scale,34,2024-01-01
+8,37,United Kingdom,1,sleep scale,6,2024-01-01
+9,23,Germany,1,depression scale,0,2010-01-01
+9,23,Germany,0,loneliness scale,44,2010-01-01
+9,23,Germany,0,sleep scale,9,2010-01-01
+9,32,Germany,0,depression scale,0,2019-01-01
+9,32,Germany,3,loneliness scale,35,2019-01-01
+9,32,Germany,0,sleep scale,2,2019-01-01
+9,37,Germany,0,depression scale,11,2024-01-01
+9,37,Germany,0,loneliness scale,27,2024-01-01
+9,37,Germany,1,sleep scale,10,2024-01-01
+10,25,Cuba,1,depression scale,7,2010-01-01
+10,25,Cuba,0,loneliness scale,48,2010-01-01
+10,25,Cuba,0,sleep scale,8,2010-01-01
+10,34,Cuba,1,depression scale,0,2019-01-01
+10,34,Cuba,1,loneliness scale,31,2019-01-01
+10,34,Cuba,0,sleep scale,9,2019-01-01
+10,39,Cuba,1,depression scale,4,2024-01-01
+10,39,Cuba,0,loneliness scale,50,2024-01-01
+10,39,Cuba,1,sleep scale,9,2024-01-01
+11,18,Mexico,0,depression scale,14,2010-01-01
+11,18,Mexico,0,loneliness scale,43,2010-01-01
+11,18,Mexico,0,sleep scale,10,2010-01-01
+11,27,Mexico,0,depression scale,12,2019-01-01
+11,27,Mexico,1,loneliness scale,48,2019-01-01
+11,27,Mexico,0,sleep scale,NA,2019-01-01
+11,32,Mexico,1,depression scale,10,2024-01-01
+11,32,Mexico,1,loneliness scale,20,2024-01-01
+11,32,Mexico,1,sleep scale,6,2024-01-01
+12,24,Canada,0,depression scale,5,2010-01-01
+12,24,Canada,0,loneliness scale,22,2010-01-01
+12,24,Canada,1,sleep scale,8,2010-01-01
+12,33,Canada,1,depression scale,10,2019-01-01
+12,33,Canada,0,loneliness scale,45,2019-01-01
+12,33,Canada,2,sleep scale,0,2019-01-01
+12,38,Canada,0,depression scale,8,2024-01-01
+12,38,Canada,1,loneliness scale,53,2024-01-01
+12,38,Canada ,0,sleep scale,2,2024-01-01
+13,31,Fiji,1,depression scale,0,2010-01-01
+13,31,Fiji,0,loneliness scale,37,2010-01-01
+13,31,Fiji,2,sleep scale,NA,2010-01-01
+13,40,Fiji ,0,depression scale,9,2019-01-01
+13,40,Fiji,1,loneliness scale,28,2019-01-01
+13,40,Fiji,1,sleep scale,7,2019-01-01
+13,45,Fiji,1,depression scale,6,2024-01-01
+13,45,Fiji,1,loneliness scale,43,2024-01-01
+13,45,Fiji,0,sleep scale,4,2024-01-01
+14,26,Australia,0,depression scale,1,2010-01-01
+14,26,Australia,0,loneliness scale,23,2010-01-01
+14,26,Australia,1,sleep scale,11,2010-01-01
+14,35,Australia,1,depression scale,19,2019-01-01
+14,35,Australia,0,loneliness scale,37,2019-01-01
+14,35,Australia,0,sleep scale,8,2019-01-01
+14,40,Australia,1,depression scale,6,2024-01-01
+14,40,Australia,0,loneliness scale,33,2024-01-01
+14,40,Australia,1,sleep scale,7,2024-01-01
+15,20,Papua New Guinea,0,depression scale,22,2010-01-01
+15,20,Papua New Guinea,0,loneliness scale,23,2010-01-01
+15,20,Papua New Guinea,1,sleep scale,13,2010-01-01
+15,29,Papua New Guinea,0,depression scale,4,2019-01-01
+15,29,Papua New Guinea,0,loneliness scale,42,2019-01-01
+15,29,Papua New Guinea,0,sleep scale,13,2019-01-01
+15,34,Papua New Guinea,1,depression scale,9,2024-01-01
+15,34,Papua New Guinea,1,loneliness scale,36,2024-01-01
+15,34,Papua New Guinea,0,sleep scale,5,2024-01-01
+16,29,Argentina,0,depression scale,4,2010-01-01
+16,29,Argentina,0,loneliness scale,28,2010-01-01
+16,29,Argentina,1,sleep scale,5,2010-01-01
+16,-5,Argentina,0,depression scale,21,2019-01-01
+16,38,Argentina,1,loneliness scale,46,2019-01-01
+16,38,Argentina,0,sleep scale,5,2019-01-01
+16,43,Argentina,0,depression scale,0,2024-01-01
+16,43,Argentina,1,loneliness scale,39,2024-01-01
+16,43,Argentina,0,sleep scale,6,2024-01-01
+17,23,Chile,0,depression scale,14,2010-01-01
+17,23,Chile,0,loneliness scale,25,2010-01-01
+17,23,Chile,0,sleep scale,0,2010-01-01
+17,32,Chile,2,depression scale,6,2019-01-01
+17,32,Chile,2,loneliness scale,22,2019-01-01
+17,32,Chile,2,sleep scale,7,2019-01-01
+17,37,Chile,0,depression scale,7,2024-01-01
+17,37,Chile,0,loneliness scale,39,2024-01-01
+17,37,Chile,1,sleep scale,11,2024-01-01
+18,24,Colombia,0,depression scale,7,2010-01-01
+18,24,Colombia,1,loneliness scale,30,2010-01-01
+18,24,Colombia,1,sleep scale,7,2010-01-01
+18,33,Colombia,1,depression scale,3,2019-01-01
+18,33,Colombia,1,loneliness scale,22,2019-01-01
+18,33,Columbia,1,sleep scale,1,2019-01-01
+18,38,Colombia,0,depression scale,2,2024-01-01
+18,38,Colombia,1,loneliness scale,40,2024-01-01
+18,38,Colombia,1,sleep scale,6,2024-01-01
+19,21,Mexico,0,depression scale,8,2010-01-01
+19,21,Mexico,0,loneliness scale,NA,2010-01-01
+19,21,Mexico,1,sleep scale,5,2010-01-01
+19,30,Mexico,0,depression scale,2,2019-01-01
+19,30,Mexico,1,loneliness scale,NA,2019-01-01
+19,30,Mexico,1,sleep scale,11,2019-01-01
+19,35,Mexico,0,depression scale,3,2024-01-01
+19,35,Mexico,0,loneliness scale,40,2024-01-01
+19,35,Mexico,2,sleep scale,6,2024-01-01
+20,28,South Africa,0,depression scale,10,2010-01-01
+20,28,South Africa,0,loneliness scale,43,2010-01-01
+20,28,South Africa,0,sleep scale,1,2010-01-01
+20,37,South Africa,1,depression scale,9,2019-01-01
+20,37,South Africa,0,loneliness scale,34,2019-01-01
+20,37,South Afrcia,1,sleep scale,7,2019-01-01
+20,42,South Africa,2,depression scale,5,2024-01-01
+20,42,South Africa,0,loneliness scale,27,2024-01-01
+20,42,South Africa,0,sleep scale,4,2024-01-01
+21,100,Germany,0,depression scale,17,2010-01-01
+21,26,Germany,0,loneliness scale,37,2010-01-01
+21,26,Germany,0,sleep scale,3,2010-01-01
+21,35,Germany,1,depression scale,7,2019-01-01
+21,35,Germany,0,loneliness scale,22,2019-01-01
+21,35,Germany,1,sleep scale,NA,2019-01-01
+21,40,Germany,0,depression scale,3,2024-01-01
+21,40,Germany,0,loneliness scale,28,2024-01-01
+21,40,Germany,0,sleep scale,12,2024-01-01
+22,24,Egypt ,0,depression scale,0,2010-01-01
+22,24,Egypt,1,loneliness scale,25,2010-01-01
+22,24,Egypt,0,sleep scale,10,2010-01-01
+22,33,Egypt ,1,depression scale,-0,2019-01-01
+22,33,Egypt,1,loneliness scale,43,2019-01-01
+22,33,Egypt,2,sleep scale,4,2019-01-01
+22,38,Egypt,0,depression scale,4,2024-01-01
+22,100,Egypt,0,loneliness scale,36,2024-01-01
+22,38,Egypt,1,sleep scale,9,2024-01-01
+23,19,China,0,depression scale,8,2010-01-01
+23,19,China,0,loneliness scale,31,2010-01-01
+23,19,China,0,sleep scale,7,2010-01-01
+23,28,China,0,depression scale,7,2019-01-01
+23,28,China,NA,loneliness scale,43,2019-01-01
+23,28,China,0,sleep scale,13,2019-01-01
+23,33,China ,0,depression scale,NA,2024-01-01
+23,33,China,0,loneliness scale,43,2024-01-01
+23,150,China,1,sleep scale,6,2024-01-01
+24,16,United States,0,depression scale,0,2010-01-01
+24,16,United States,0,loneliness scale,52,2010-01-01
+24,16,United States,0,sleep scale,NA,2010-01-01
+24,25,United States,1,depression scale,5,2019-01-01
+24,25,United States,0,loneliness scale,59,2019-01-01
+24,25,United States,0,sleep scale,9,2019-01-01
+24,30,United States,0,depression scale,0,2024-01-01
+24,30,United States,1,loneliness scale,59,2024-01-01
+24,30,United States,0,sleep scale,13,2024-01-01
+25,17,China,1,depression scale,0,2010-01-01
+25,17,China,0,loneliness scale,50,2010-01-01
+25,17,China,1,sleep scale,10,2010-01-01
+25,26,China,0,depression scale,2,2019-01-01
+25,26,China,0,loneliness scale,44,2019-01-01
+25,26,China,0,sleep scale,6,2019-01-01
+25,31,China,1,depression scale,6,2024-01-01
+25,-5,China,0,loneliness scale,37,2024-01-01
+25,31,China,2,sleep scale,0,2024-01-01
+26,16,Chile,0,depression scale,7,2010-01-01
+26,16,Chile,0,loneliness scale,42,2010-01-01
+26,16,Chile,0,sleep scale,12,2010-01-01
+26,25,Chile,0,depression scale,10,2019-01-01
+26,25,Chile,0,loneliness scale,46,2019-01-01
+26,25,Chile,1,sleep scale,13,2019-01-01
+26,30,Chile,1,depression scale,3,2024-01-01
+26,30,Chile,0,loneliness scale,31,2024-01-01
+26,30,Chile,1,sleep scale,6,2024-01-01
+27,28,Kenya,0,depression scale,8,2010-01-01
+27,28,Kenya,0,loneliness scale,20,2010-01-01
+27,28,Kenya,0,sleep scale,10,2010-01-01
+27,37,Kenya,1,depression scale,8,2019-01-01
+27,-5,Kenya,0,loneliness scale,32,2019-01-01
+27,37,Kenya,0,sleep scale,6,2019-01-01
+27,42,Kenya,0,depression scale,0,2024-01-01
+27,42,Kenya,0,loneliness scale,20,2024-01-01
+27,42,Kenya,2,sleep scale,6,2024-01-01
+28,30,Indonesia,0,depression scale,8,2010-01-01
+28,30,Indonesia,1,loneliness scale,37,2010-01-01
+28,30,Indonesia,0,sleep scale,6,2010-01-01
+28,39,Indonesia ,0,depression scale,5,2019-01-01
+28,39,Indonesia,0,loneliness scale,NA,2019-01-01
+28,39,Indonesia,0,sleep scale,8,2019-01-01
+28,44,Indonesia,1,depression scale,NA,2024-01-01
+28,44,Indonesia,0,loneliness scale,42,2024-01-01
+28,44,Indonesia,1,sleep scale,9,2024-01-01
+29,18,South Africa,0,depression scale,5,2010-01-01
+29,18,South Africa,0,loneliness scale,49,2010-01-01
+29,18,South Africa,0,sleep scale,9,2010-01-01
+29,27,South Africa,0,depression scale,-0,2019-01-01
+29,27,South Africa,0,loneliness scale,36,2019-01-01
+29,27,South Africa,0,sleep scale,4,2019-01-01
+29,32,South Africa,2,depression scale,12,2024-01-01
+29,32,South Africa,1,loneliness scale,43,2024-01-01
+29,32,South Africa,0,sleep scale,-6,2024-01-01
+30,20,Nigeria,0,depression scale,6,2010-01-01
+30,20,Nigeria,1,loneliness scale,52,2010-01-01
+30,20,Nigeria,1,sleep scale,9,2010-01-01
+30,29,Nigeria,0,depression scale,6,2019-01-01
+30,29,Nigeria,0,loneliness scale,38,2019-01-01
+30,29,Nigeria,0,sleep scale,12,2019-01-01
+30,34,Nigeria,2,depression scale,13,2024-01-01
+30,34,Nigeria,1,loneliness scale,39,2024-01-01
+30,34,Nigeria,0,sleep scale,13,2024-01-01
+31,25,France,0,depression scale,5,2010-01-01
+31,100,France,0,loneliness scale,38,2010-01-01
+31,25,France,1,sleep scale,8,2010-01-01
+31,34,France,1,depression scale,1,2019-01-01
+31,34,France,1,loneliness scale,59,2019-01-01
+31,34,France,1,sleep scale,4,2019-01-01
+31,39,France,1,depression scale,17,2024-01-01
+31,39,France,0,loneliness scale,43,2024-01-01
+31,39,France,2,sleep scale,12,2024-01-01
+32,15,Papua New Guinea,0,depression scale,6,2010-01-01
+32,15,Papua New Guinea,0,loneliness scale,35,2010-01-01
+32,15,Papua New Guinea,0,sleep scale,7,2010-01-01
+32,24,Papua New Guinea ,0,depression scale,2,2019-01-01
+32,24,Papua New Guinea,0,loneliness scale,46,2019-01-01
+32,24,Papua New Guinea,0,sleep scale,5,2019-01-01
+32,29,Papua New Guinea,1,depression scale,7,2024-01-01
+32,29,Papua New Guinea,0,loneliness scale,47,2024-01-01
+32,29,Papua New Guinea,1,sleep scale,10,2024-01-01
+33,28,Spain,0,depression scale,2,2010-01-01
+33,28,Spain,0,loneliness scale,43,2010-01-01
+33,28,Spain,0,sleep scale,11,2010-01-01
+33,37,Spain,1,depression scale,4,2019-01-01
+33,37,Spain,0,loneliness scale,41,2019-01-01
+33,37,Spain,0,sleep scale,14,2019-01-01
+33,42,Spain,0,depression scale,11,2024-01-01
+33,42,Spain,1,loneliness scale,27,2024-01-01
+33,42,Spain,1,sleep scale,11,2024-01-01
+34,15,Mexico,0,depression scale,8,2010-01-01
+34,15,Mexico,0,loneliness scale,52,2010-01-01
+34,15,Mexico,0,sleep scale,5,2010-01-01
+34,24,Mexico,0,depression scale,8,2019-01-01
+34,24,Mexico,0,loneliness scale,35,2019-01-01
+34,24,Mexico,0,sleep scale,8,2019-01-01
+34,29,Mexico,0,depression scale,1,2024-01-01
+34,29,Mexico,0,loneliness scale,41,2024-01-01
+34,29,Mexico,0,sleep scale,0,2024-01-01
+35,18,New Zeland,0,depression scale,6,2010-01-01
+35,18,New Zealand,0,loneliness scale,39,2010-01-01
+35,18,New Zealand,0,sleep scale,2,2010-01-01
+35,27,New Zealand,0,depression scale,-0,2019-01-01
+35,27,New Zealand,1,loneliness scale,36,2019-01-01
+35,27,New Zealand,0,sleep scale,3,2019-01-01
+35,32,New Zealand,2,depression scale,6,2024-01-01
+35,32,New Zealand,0,loneliness scale,39,2024-01-01
+35,32,New Zealand,0,sleep scale,2,2024-01-01
+36,27,Indonesia,0,depression scale,2,2010-01-01
+36,27,Indonesia,1,loneliness scale,43,2010-01-01
+36,27,Indonesia,0,sleep scale,17,2010-01-01
+36,36,Indonesia,0,depression scale,4,2019-01-01
+36,36,Indonesia,0,loneliness scale,45,2019-01-01
+36,36,Indonesia,2,sleep scale,3,2019-01-01
+36,41,Indonesia,0,depression scale,4,2024-01-01
+36,41,Indonesia,NA,loneliness scale,31,2024-01-01
+36,41,Indonesia,1,sleep scale,10,2024-01-01
+37,20,Egypt,2,depression scale,4,2010-01-01
+37,20,Egypt,0,loneliness scale,47,2010-01-01
+37,20,Egypt,1,sleep scale,8,2010-01-01
+37,29,Egypt,0,depression scale,-0,2019-01-01
+37,29,Egypt,0,loneliness scale,51,2019-01-01
+37,29,Egypt,1,sleep scale,7,2019-01-01
+37,150,Egypt,0,depression scale,3,2024-01-01
+37,34,Egypt,1,loneliness scale,38,2024-01-01
+37,34,Egypt,1,sleep scale,10,2024-01-01
+38,26,Egypt,0,depression scale,7,2010-01-01
+38,26,Egypt,1,loneliness scale,32,2010-01-01
+38,26,Egypt,0,sleep scale,8,2010-01-01
+38,35,Egypt,0,depression scale,14,2019-01-01
+38,35,Egypt,2,loneliness scale,42,2019-01-01
+38,35,Egypt,0,sleep scale,10,2019-01-01
+38,40,Egypt,2,depression scale,3,2024-01-01
+38,40,Egypt,0,loneliness scale,38,2024-01-01
+38,40,Egypt,0,sleep scale,5,2024-01-01
+39,21,New Zealand,0,depression scale,6,2010-01-01
+39,21,New Zealand,0,loneliness scale,62,2010-01-01
+39,21,New Zealand,1,sleep scale,0,2010-01-01
+39,30,New Zealand,0,depression scale,4,2019-01-01
+39,100,New Zealand,1,loneliness scale,55,2019-01-01
+39,30,New Zealand,1,sleep scale,6,2019-01-01
+39,35,New Zealand,0,depression scale,16,2024-01-01
+39,35,New Zealand,2,loneliness scale,49,2024-01-01
+39,35,New Zealand,2,sleep scale,11,2024-01-01
+40,26,Argentina,0,depression scale,11,2010-01-01
+40,26,Argentina,1,loneliness scale,39,2010-01-01
+40,26,Argentina,0,sleep scale,10,2010-01-01
+40,35,Argentina,0,depression scale,3,2019-01-01
+40,35,Argentina,2,loneliness scale,50,2019-01-01
+40,35,Argentina,2,sleep scale,6,2019-01-01
+40,40,Argentina,0,depression scale,13,2024-01-01
+40,150,Argentina,0,loneliness scale,44,2024-01-01
+40,40,Argentina,0,sleep scale,12,2024-01-01
+41,19,United States,0,depression scale,7,2010-01-01
+41,19,United States,0,loneliness scale,36,2010-01-01
+41,19,United States,0,sleep scale,6,2010-01-01
+41,28,United States,0,depression scale,9,2019-01-01
+41,28,United States,0,loneliness scale,36,2019-01-01
+41,28,United States,1,sleep scale,11,2019-01-01
+41,33,United States,1,depression scale,6,2024-01-01
+41,33,United States,0,loneliness scale,64,2024-01-01
+41,33,United States,1,sleep scale,11,2024-01-01
+42,21,China,0,depression scale,2,2010-01-01
+42,21,China ,0,loneliness scale,44,2010-01-01
+42,21,China,0,sleep scale,7,2010-01-01
+42,30,China ,1,depression scale,4,2019-01-01
+42,30,China,0,loneliness scale,33,2019-01-01
+42,30,China,1,sleep scale,6,2019-01-01
+42,35,China,1,depression scale,6,2024-01-01
+42,35,China,1,loneliness scale,48,2024-01-01
+42,35,China,0,sleep scale,10,2024-01-01
+43,27,Egypt,0,depression scale,1,2010-01-01
+43,27,Egypt,0,loneliness scale,NA,2010-01-01
+43,27,Egypt,0,sleep scale,5,2010-01-01
+43,36,Egypt,0,depression scale,0,2019-01-01
+43,36,Egypt,1,loneliness scale,42,2019-01-01
+43,36,Egypt,2,sleep scale,7,2019-01-01
+43,41,Egypt,0,depression scale,7,2024-01-01
+43,41,Egypt,1,loneliness scale,23,2024-01-01
+43,41,Egypt,1,sleep scale,9,2024-01-01
+44,16,Kenya ,0,depression scale,6,2010-01-01
+44,16,Kenya,0,loneliness scale,32,2010-01-01
+44,16,Kenya,0,sleep scale,5,2010-01-01
+44,25,Kenya ,1,depression scale,4,2019-01-01
+44,25,Kenya,0,loneliness scale,35,2019-01-01
+44,25,Kenya,0,sleep scale,5,2019-01-01
+44,30,Kenya,1,depression scale,15,2024-01-01
+44,30,Kenya,1,loneliness scale,54,2024-01-01
+44,30,Kenya ,0,sleep scale,12,2024-01-01
+45,17,Papua New Guinea,0,depression scale,9,2010-01-01
+45,17,Papua New Guinea,0,loneliness scale,41,2010-01-01
+45,17,Papua New Guinea,0,sleep scale,10,2010-01-01
+45,26,Papua New Guinea,1,depression scale,7,2019-01-01
+45,26,Papua New Guinea,0,loneliness scale,50,2019-01-01
+45,26,Papua New Guinea,0,sleep scale,NA,2019-01-01
+45,31,Papua New Guinea,1,depression scale,1,2024-01-01
+45,31,Papua New Guinea,1,loneliness scale,32,2024-01-01
+45,31,Papua New Guinea,1,sleep scale,6,2024-01-01
+46,15,Argentina,0,depression scale,9,2010-01-01
+46,15,Argentin a,0,loneliness scale,45,2010-01-01
+46,15,Argentina,0,sleep scale,2,2010-01-01
+46,24,Argentina,0,depression scale,0,2019-01-01
+46,24,Argentina,1,loneliness scale,29,2019-01-01
+46,24,Argentin a,0,sleep scale,12,2019-01-01
+46,29,Argentina,2,depression scale,2,2024-01-01
+46,29,Argentina,0,loneliness scale,54,2024-01-01
+46,29,Argentina,0,sleep scale,3,2024-01-01
+47,29,South Africa,0,depression scale,4,2010-01-01
+47,29,South Africa,0,loneliness scale,53,2010-01-01
+47,29,South Africa,0,sleep scale,8,2010-01-01
+47,38,South Africa,NA,depression scale,5,2019-01-01
+47,38,South Africa,0,loneliness scale,47,2019-01-01
+47,38,South Africa,0,sleep scale,4,2019-01-01
+47,43,South Africa,3,depression scale,10,2024-01-01
+47,43,South Africa,2,loneliness scale,48,2024-01-01
+47,43,South Africa,0,sleep scale,12,2024-01-01
+48,25,Papua New Guinea,0,depression scale,3,2010-01-01
+48,25,Papua New Guinea,0,loneliness scale,23,2010-01-01
+48,25,Papua New Guinea,1,sleep scale,4,2010-01-01
+48,34,Papua New Guinea,0,depression scale,9,2019-01-01
+48,34,Papua New Guinea,0,loneliness scale,28,2019-01-01
+48,34,Papua New Guinea,0,sleep scale,NA,2019-01-01
+48,39,Papua New Guinea,1,depression scale,7,2024-01-01
+48,39,Papua New Guinea,1,loneliness scale,43,2024-01-01
+48,39,Papua New Guinea,1,sleep scale,13,2024-01-01
+49,23,Fiji,0,depression scale,12,2010-01-01
+49,23,Fiji,0,loneliness scale,33,2010-01-01
+49,23,Fiji,0,sleep scale,6,2010-01-01
+49,32,Fiji,1,depression scale,18,2019-01-01
+49,32,Fiji,0,loneliness scale,NA,2019-01-01
+49,32,Fiji,2,sleep scale,2,2019-01-01
+49,37,Fiji,1,depression scale,16,2024-01-01
+49,100,Fiji,0,loneliness scale,40,2024-01-01
+49,37,Fiji,0,sleep scale,0,2024-01-01
+50,24,Brazil,1,depression scale,7,2010-01-01
+50,24,Brazil,0,loneliness scale,49,2010-01-01
+50,24,Brazil,1,sleep scale,0,2010-01-01
+50,33,Brazi1,1,depression scale,9,2019-01-01
+50,33,Brazil,1,loneliness scale,37,2019-01-01
+50,33,Brazil,0,sleep scale,11,2019-01-01
+50,38,Brazil,0,depression scale,4,2024-01-01
+50,38,Brazil,0,loneliness scale,37,2024-01-01
+50,38,Brazil,2,sleep scale,1,2024-01-01
+51,21,Australia,0,depression scale,3,2010-01-01
+51,21,Australia,1,loneliness scale,48,2010-01-01
+51,21,Australia,0,sleep scale,7,2010-01-01
+51,30,Australia,2,depression scale,0,2019-01-01
+51,30,Australia,1,loneliness scale,42,2019-01-01
+51,30,Australia,0,sleep scale,8,2019-01-01
+51,35,Australia,0,depression scale,9,2024-01-01
+51,35,Australia,1,loneliness scale,42,2024-01-01
+51,35,Australia,0,sleep scale,3,2024-01-01
+52,26,Argentina,0,depression scale,2,2010-01-01
+52,26,Argentina,1,loneliness scale,36,2010-01-01
+52,26,Argentina,0,sleep scale,5,2010-01-01
+52,35,Argentina,0,depression scale,5,2019-01-01
+52,35,Argentina,0,loneliness scale,20,2019-01-01
+52,35,Argentina,0,sleep scale,6,2019-01-01
+52,40,Argentina,1,depression scale,0,2024-01-01
+52,40,Argentina,1,loneliness scale,58,2024-01-01
+52,40,Argentina,0,sleep scale,7,2024-01-01
+53,24,India,0,depression scale,-0,2010-01-01
+53,24,India,0,loneliness scale,41,2010-01-01
+53,24,India,0,sleep scale,5,2010-01-01
+53,33,India,2,depression scale,4,2019-01-01
+53,33,India,1,loneliness scale,NA,2019-01-01
+53,33,India,2,sleep scale,2,2019-01-01
+53,38,India,2,depression scale,5,2024-01-01
+53,38,India,0,loneliness scale,NA,2024-01-01
+53,38,India,0,sleep scale,NA,2024-01-01
+54,23,India,2,depression scale,0,2010-01-01
+54,-5,India,0,loneliness scale,48,2010-01-01
+54,23,India,2,sleep scale,7,2010-01-01
+54,32,India,0,depression scale,7,2019-01-01
+54,32,India,0,loneliness scale,NA,2019-01-01
+54,32,India,0,sleep scale,3,2019-01-01
+54,100,India,0,depression scale,NA,2024-01-01
+54,37,India,1,loneliness scale,37,2024-01-01
+54,37,India,1,sleep scale,8,2024-01-01
+55,29,Kenya,0,depression scale,7,2010-01-01
+55,-1,Kenya,0,loneliness scale,41,2010-01-01
+55,29,Kenya,1,sleep scale,7,2010-01-01
+55,38,Kenya,1,depression scale,3,2019-01-01
+55,38,Kenya,1,loneliness scale,20,2019-01-01
+55,38,Kenya,1,sleep scale,3,2019-01-01
+55,43,Kenya ,1,depression scale,9,2024-01-01
+55,43,Kenya,3,loneliness scale,24,2024-01-01
+55,43,Kenya,0,sleep scale,10,2024-01-01
+56,28,Chile,0,depression scale,9,2010-01-01
+56,28,Chile,0,loneliness scale,41,2010-01-01
+56,28,Chile,0,sleep scale,10,2010-01-01
+56,37,Chile,1,depression scale,6,2019-01-01
+56,37,Chile,0,loneliness scale,41,2019-01-01
+56,37,Chile,1,sleep scale,3,2019-01-01
+56,42,Chile,0,depression scale,4,2024-01-01
+56,42,Chile,NA,loneliness scale,45,2024-01-01
+56,42,Chile,1,sleep scale,7,2024-01-01
+57,17,South Africa,0,depression scale,0,2010-01-01
+57,17,South Africa,0,loneliness scale,28,2010-01-01
+57,17,South Afrcia,0,sleep scale,6,2010-01-01
+57,26,South Afrcia,0,depression scale,2,2019-01-01
+57,26,South Africa,0,loneliness scale,54,2019-01-01
+57,26,South Africa,1,sleep scale,14,2019-01-01
+57,31,South Africa,0,depression scale,1,2024-01-01
+57,31,South Africa,2,loneliness scale,49,2024-01-01
+57,31,South Africa,1,sleep scale,4,2024-01-01
+58,24,New Zealand,0,depression scale,2,2010-01-01
+58,24,New Zealand,0,loneliness scale,35,2010-01-01
+58,24,New Zeland,1,sleep scale,7,2010-01-01
+58,33,New Zealand,0,depression scale,0,2019-01-01
+58,33,New Zealand,2,loneliness scale,20,2019-01-01
+58,33,New Zealand,1,sleep scale,7,2019-01-01
+58,38,New Zealand,0,depression scale,5,2024-01-01
+58,38,New Zealand,0,loneliness scale,39,2024-01-01
+58,38,New Zealand,0,sleep scale,-8,2024-01-01
+59,16,Australia,0,depression scale,5,2010-01-01
+59,16,Australia,0,loneliness scale,43,2010-01-01
+59,16,Australia,0,sleep scale,1,2010-01-01
+59,150,Australia,0,depression scale,4,2019-01-01
+59,25,Australia,0,loneliness scale,40,2019-01-01
+59,25,Australia,0,sleep scale,2,2019-01-01
+59,30,Australia,1,depression scale,4,2024-01-01
+59,30,Australia,0,loneliness scale,45,2024-01-01
+59,30,Australia,0,sleep scale,5,2024-01-01
+60,31,Kenya,0,depression scale,4,2010-01-01
+60,31,Kenya,1,loneliness scale,39,2010-01-01
+60,31,Kenya,0,sleep scale,-2,2010-01-01
+60,40,Kenya,1,depression scale,4,2019-01-01
+60,40,Kenya,2,loneliness scale,37,2019-01-01
+60,40,Kenya,1,sleep scale,6,2019-01-01
+60,45,Kenya,0,depression scale,7,2024-01-01
+60,45,Kenya,0,loneliness scale,40,2024-01-01
+60,45,Kenya,2,sleep scale,12,2024-01-01
+61,28,Fiji,0,depression scale,0,2010-01-01
+61,28,Fiji,1,loneliness scale,32,2010-01-01
+61,28,Fiji,0,sleep scale,6,2010-01-01
+61,37,Fiji,0,depression scale,NA,2019-01-01
+61,37,Fiji,0,loneliness scale,39,2019-01-01
+61,37,Fiji,0,sleep scale,3,2019-01-01
+61,42,Fiji,0,depression scale,6,2024-01-01
+61,42,Fiji,0,loneliness scale,43,2024-01-01
+61,100,Fiji,1,sleep scale,3,2024-01-01
+62,31,India,1,depression scale,12,2010-01-01
+62,31,India,0,loneliness scale,37,2010-01-01
+62,31,India,1,sleep scale,NA,2010-01-01
+62,40,India,0,depression scale,-0,2019-01-01
+62,40,India,1,loneliness scale,36,2019-01-01
+62,40,India,NA,sleep scale,11,2019-01-01
+62,45,India,0,depression scale,4,2024-01-01
+62,45,India,1,loneliness scale,23,2024-01-01
+62,45,India,1,sleep scale,7,2024-01-01
+63,24,France,0,depression scale,0,2010-01-01
+63,24,France,0,loneliness scale,39,2010-01-01
+63,24,France,0,sleep scale,20,2010-01-01
+63,33,France,1,depression scale,3,2019-01-01
+63,33,France,0,loneliness scale,30,2019-01-01
+63,33,France,1,sleep scale,10,2019-01-01
+63,38,France,0,depression scale,9,2024-01-01
+63,38,France,2,loneliness scale,43,2024-01-01
+63,38,France,0,sleep scale,NA,2024-01-01
+64,19,Indonesia,1,depression scale,2,2010-01-01
+64,19,Indonesia,0,loneliness scale,21,2010-01-01
+64,19,Indonesia,0,sleep scale,5,2010-01-01
+64,28,Indonesia,0,depression scale,5,2019-01-01
+64,28,Indonesia,0,loneliness scale,33,2019-01-01
+64,100,Indonesia,0,sleep scale,12,2019-01-01
+64,33,Indonesia,0,depression scale,7,2024-01-01
+64,33,Indonesia,1,loneliness scale,24,2024-01-01
+64,33,Indonesia,1,sleep scale,13,2024-01-01
+65,27,China,1,depression scale,14,2010-01-01
+65,27,China,0,loneliness scale,32,2010-01-01
+65,27,China,0,sleep scale,4,2010-01-01
+65,36,China,1,depression scale,6,2019-01-01
+65,36,China,0,loneliness scale,29,2019-01-01
+65,36,China,1,sleep scale,8,2019-01-01
+65,41,China,0,depression scale,9,2024-01-01
+65,41,China,2,loneliness scale,NA,2024-01-01
+65,41,China,1,sleep scale,14,2024-01-01
+66,24,Nigeria,1,depression scale,4,2010-01-01
+66,24,Nigeria,0,loneliness scale,57,2010-01-01
+66,24,Nigeria,0,sleep scale,8,2010-01-01
+66,33,Nigeria,2,depression scale,12,2019-01-01
+66,33,Nigeria,3,loneliness scale,34,2019-01-01
+66,33,Nigeria,1,sleep scale,4,2019-01-01
+66,38,Nigeria,0,depression scale,NA,2024-01-01
+66,38,Nigeria,1,loneliness scale,NA,2024-01-01
+66,38,Nigeria,0,sleep scale,4,2024-01-01
+67,30,Brazil,0,depression scale,12,2010-01-01
+67,30,Brazil,0,loneliness scale,38,2010-01-01
+67,30,Brazil,0,sleep scale,6,2010-01-01
+67,39,Brazil,0,depression scale,9,2019-01-01
+67,39,Brazil,1,loneliness scale,47,2019-01-01
+67,39,Brazil,1,sleep scale,6,2019-01-01
+67,44,Brazil,1,depression scale,10,2024-01-01
+67,44,Brazil,1,loneliness scale,27,2024-01-01
+67,44,Brazil,1,sleep scale,9,2024-01-01
+68,16,Japan,0,depression scale,9,2010-01-01
+68,16,Japan,0,loneliness scale,57,2010-01-01
+68,16,Japan,0,sleep scale,12,2010-01-01
+68,25,Japan,0,depression scale,11,2019-01-01
+68,25,Japan,0,loneliness scale,42,2019-01-01
+68,100,Japan,0,sleep scale,6,2019-01-01
+68,30,Japan,0,depression scale,NA,2024-01-01
+68,30,Japan,1,loneliness scale,39,2024-01-01
+68,30,Japan,2,sleep scale,9,2024-01-01
+69,18,Egypt,0,depression scale,NA,2010-01-01
+69,18,Egypt,1,loneliness scale,35,2010-01-01
+69,18,Egypt,0,sleep scale,4,2010-01-01
+69,27,Egypt,1,depression scale,0,2019-01-01
+69,27,Egypt,0,loneliness scale,42,2019-01-01
+69,27,Egypt,2,sleep scale,10,2019-01-01
+69,32,Egypt,1,depression scale,4,2024-01-01
+69,32,Egypt,1,loneliness scale,40,2024-01-01
+69,32,Egypt,2,sleep scale,7,2024-01-01
+70,21,United States,1,depression scale,0,2010-01-01
+70,21,United States,0,loneliness scale,37,2010-01-01
+70,21,United States,0,sleep scale,7,2010-01-01
+70,30,United States,0,depression scale,6,2019-01-01
+70,30,United States,0,loneliness scale,60,2019-01-01
+70,30,United States,0,sleep scale,5,2019-01-01
+70,35,United States,0,depression scale,6,2024-01-01
+70,35,United States,1,loneliness scale,34,2024-01-01
+70,35,United States,NA,sleep scale,2,2024-01-01
+71,15,France,0,depression scale,3,2010-01-01
+71,15,France,0,loneliness scale,46,2010-01-01
+71,15,France,0,sleep scale,5,2010-01-01
+71,24,France,0,depression scale,15,2019-01-01
+71,24,France,1,loneliness scale,39,2019-01-01
+71,24,France,1,sleep scale,5,2019-01-01
+71,29,France,0,depression scale,0,2024-01-01
+71,29,France,1,loneliness scale,50,2024-01-01
+71,29,France,0,sleep scale,10,2024-01-01
+72,28,Germany,1,depression scale,7,2010-01-01
+72,28,Germany,0,loneliness scale,25,2010-01-01
+72,28,Germany,0,sleep scale,12,2010-01-01
+72,37,Germany,1,depression scale,9,2019-01-01
+72,37,Germany,1,loneliness scale,38,2019-01-01
+72,37,Germany,1,sleep scale,0,2019-01-01
+72,42,Germnay,1,depression scale,0,2024-01-01
+72,42,Germnay,1,loneliness scale,51,2024-01-01
+72,42,Germany,0,sleep scale,9,2024-01-01
+73,26,United Kingdom,1,depression scale,11,2010-01-01
+73,26,United Kingdom,1,loneliness scale,43,2010-01-01
+73,26,United Kingdom,0,sleep scale,13,2010-01-01
+73,35,United Kingdom,1,depression scale,5,2019-01-01
+73,35,United Kingdom,1,loneliness scale,48,2019-01-01
+73,35,United Kingdom,0,sleep scale,9,2019-01-01
+73,40,United Kingdom,NA,depression scale,1,2024-01-01
+73,40,United Kingdom,2,loneliness scale,39,2024-01-01
+73,40,Unted Kingdom,0,sleep scale,9,2024-01-01
+74,20,Chile,1,depression scale,12,2010-01-01
+74,20,Chile,1,loneliness scale,53,2010-01-01
+74,20,Chile,0,sleep scale,8,2010-01-01
+74,29,Chile,1,depression scale,-0,2019-01-01
+74,29,Chile,0,loneliness scale,59,2019-01-01
+74,29,Chile,1,sleep scale,3,2019-01-01
+74,34,Chile,0,depression scale,4,2024-01-01
+74,34,Chile,1,loneliness scale,25,2024-01-01
+74,34,Chile,1,sleep scale,8,2024-01-01
+75,26,Germany,0,depression scale,-2,2010-01-01
+75,26,Germany,0,loneliness scale,34,2010-01-01
+75,26,Germany,0,sleep scale,6,2010-01-01
+75,35,Germany,0,depression scale,9,2019-01-01
+75,35,Germany,0,loneliness scale,33,2019-01-01
+75,35,Germany,0,sleep scale,3,2019-01-01
+75,40,Germnay,1,depression scale,4,2024-01-01
+75,40,Germany,0,loneliness scale,46,2024-01-01
+75,40,Germany,0,sleep scale,8,2024-01-01
+76,24,Spain,0,depression scale,1,2010-01-01
+76,24,Spain,0,loneliness scale,49,2010-01-01
+76,24,Spain,0,sleep scale,7,2010-01-01
+76,33,Spain,1,depression scale,5,2019-01-01
+76,33,Spain,1,loneliness scale,NA,2019-01-01
+76,33,Spain,2,sleep scale,0,2019-01-01
+76,38,Spain,0,depression scale,0,2024-01-01
+76,38,Spain,0,loneliness scale,33,2024-01-01
+76,38,Spain,1,sleep scale,4,2024-01-01
+77,21,South Africa,0,depression scale,1,2010-01-01
+77,21,South Africa,0,loneliness scale,34,2010-01-01
+77,21,South Africa,0,sleep scale,6,2010-01-01
+77,30,South Africa,0,depression scale,9,2019-01-01
+77,30,South Africa,0,loneliness scale,46,2019-01-01
+77,30,South Africa,2,sleep scale,6,2019-01-01
+77,35,South Africa,0,depression scale,0,2024-01-01
+77,35,South Africa,1,loneliness scale,49,2024-01-01
+77,35,South Africa,1,sleep scale,10,2024-01-01
+78,16,Cuba,0,depression scale,6,2010-01-01
+78,16,Cuba,0,loneliness scale,47,2010-01-01
+78,16,Cuba,0,sleep scale,8,2010-01-01
+78,25,Cuba,0,depression scale,1,2019-01-01
+78,25,Cuba,0,loneliness scale,26,2019-01-01
+78,25,Cuba,0,sleep scale,5,2019-01-01
+78,30,Cuba,1,depression scale,3,2024-01-01
+78,30,Cuba,1,loneliness scale,54,2024-01-01
+78,30,Cuba,1,sleep scale,7,2024-01-01
+79,20,China,0,depression scale,0,2010-01-01
+79,20,China,1,loneliness scale,31,2010-01-01
+79,20,China,0,sleep scale,7,2010-01-01
+79,29,China,0,depression scale,7,2019-01-01
+79,29,China,0,loneliness scale,38,2019-01-01
+79,29,China,0,sleep scale,4,2019-01-01
+79,34,China,1,depression scale,12,2024-01-01
+79,34,China,2,loneliness scale,45,2024-01-01
+79,34,China,1,sleep scale,6,2024-01-01
+80,23,Papua New Guinea,0,depression scale,9,2010-01-01
+80,23,Papua New Guinea,0,loneliness scale,36,2010-01-01
+80,23,Papua New Guinea,0,sleep scale,9,2010-01-01
+80,32,Papua New Guinea,0,depression scale,2,2019-01-01
+80,32,Papua New Guinea,0,loneliness scale,42,2019-01-01
+80,32,Papua New Guinea,0,sleep scale,10,2019-01-01
+80,37,Papua New Guinea,2,depression scale,-0,2024-01-01
+80,37,Papua New Guinea,0,loneliness scale,23,2024-01-01
+80,37,Papua New Guinea,1,sleep scale,12,2024-01-01
+81,25,Canada,0,depression scale,6,2010-01-01
+81,25,Canada,0,loneliness scale,31,2010-01-01
+81,25,Canada,1,sleep scale,3,2010-01-01
+81,34,Canada ,0,depression scale,19,2019-01-01
+81,34,Canada,1,loneliness scale,24,2019-01-01
+81,34,Canada,1,sleep scale,6,2019-01-01
+81,39,Canada,0,depression scale,9,2024-01-01
+81,39,Canada,1,loneliness scale,44,2024-01-01
+81,39,Canada,1,sleep scale,NA,2024-01-01
+82,20,China,0,depression scale,0,2010-01-01
+82,20,China,0,loneliness scale,37,2010-01-01
+82,20,China,0,sleep scale,11,2010-01-01
+82,29,China,0,depression scale,5,2019-01-01
+82,29,China,0,loneliness scale,20,2019-01-01
+82,29,China,0,sleep scale,6,2019-01-01
+82,34,China,1,depression scale,11,2024-01-01
+82,34,China,1,loneliness scale,47,2024-01-01
+82,34,China,0,sleep scale,4,2024-01-01
+83,19,New Zealand,0,depression scale,15,2010-01-01
+83,19,New Zealand,0,loneliness scale,21,2010-01-01
+83,19,New Zealand,0,sleep scale,7,2010-01-01
+83,28,New Zealand,0,depression scale,4,2019-01-01
+83,28,New Zeland,1,loneliness scale,28,2019-01-01
+83,28,New Zealand,0,sleep scale,8,2019-01-01
+83,33,New Zealand,0,depression scale,14,2024-01-01
+83,33,New Zealand,1,loneliness scale,36,2024-01-01
+83,33,New Zealand,0,sleep scale,16,2024-01-01
+84,28,Kenya,0,depression scale,5,2010-01-01
+84,28,Kenya,0,loneliness scale,37,2010-01-01
+84,28,Kenya,0,sleep scale,13,2010-01-01
+84,37,Kenya,0,depression scale,7,2019-01-01
+84,37,Kenya,1,loneliness scale,38,2019-01-01
+84,37,Kenya,1,sleep scale,8,2019-01-01
+84,42,Kenya ,0,depression scale,14,2024-01-01
+84,42,Kenya,1,loneliness scale,56,2024-01-01
+84,42,Kenya,1,sleep scale,6,2024-01-01
+85,24,Argentina,0,depression scale,8,2010-01-01
+85,24,Argentin a,0,loneliness scale,41,2010-01-01
+85,24,Argentina,0,sleep scale,11,2010-01-01
+85,33,Argentina,0,depression scale,5,2019-01-01
+85,33,Argentina,0,loneliness scale,40,2019-01-01
+85,33,Argentina,0,sleep scale,9,2019-01-01
+85,38,Argentina,0,depression scale,8,2024-01-01
+85,38,Argentina,1,loneliness scale,37,2024-01-01
+85,38,Argentina,0,sleep scale,7,2024-01-01
+86,29,Papua New Guinea,0,depression scale,1,2010-01-01
+86,29,Papua New Guinea,0,loneliness scale,43,2010-01-01
+86,29,Papua New Guinea,0,sleep scale,12,2010-01-01
+86,38,Papua New Guinea,1,depression scale,0,2019-01-01
+86,38,Papua New Guinea,1,loneliness scale,55,2019-01-01
+86,38,Papua New Guinea,2,sleep scale,13,2019-01-01
+86,43,Papua New Guinea,1,depression scale,5,2024-01-01
+86,43,Papua New Guinea,0,loneliness scale,30,2024-01-01
+86,43,Papua New Guinea,0,sleep scale,5,2024-01-01
+87,15,Brazil,0,depression scale,0,2010-01-01
+87,15,Brazil,0,loneliness scale,43,2010-01-01
+87,15,Brazil,NA,sleep scale,7,2010-01-01
+87,24,Brazil,1,depression scale,0,2019-01-01
+87,24,Brazil,0,loneliness scale,42,2019-01-01
+87,24,Brazil,0,sleep scale,10,2019-01-01
+87,29,Brazil,0,depression scale,7,2024-01-01
+87,29,Brazil,0,loneliness scale,20,2024-01-01
+87,29,Brazil,0,sleep scale,11,2024-01-01
+88,23,Argentina,0,depression scale,0,2010-01-01
+88,23,Argentina,0,loneliness scale,54,2010-01-01
+88,23,Argentina,0,sleep scale,5,2010-01-01
+88,32,Argentina,0,depression scale,15,2019-01-01
+88,32,Argentina,1,loneliness scale,45,2019-01-01
+88,32,Argentina,2,sleep scale,12,2019-01-01
+88,37,Argentina,1,depression scale,16,2024-01-01
+88,37,Argentina,0,loneliness scale,56,2024-01-01
+88,37,Argentina,1,sleep scale,8,2024-01-01
+89,24,China,0,depression scale,0,2010-01-01
+89,24,China,2,loneliness scale,44,2010-01-01
+89,24,China,0,sleep scale,5,2010-01-01
+89,33,China,0,depression scale,9,2019-01-01
+89,33,China,1,loneliness scale,NA,2019-01-01
+89,33,China,0,sleep scale,3,2019-01-01
+89,38,China,0,depression scale,NA,2024-01-01
+89,38,China,0,loneliness scale,43,2024-01-01
+89,38,China,0,sleep scale,6,2024-01-01
+90,31,Canada,0,depression scale,2,2010-01-01
+90,31,Canada,0,loneliness scale,-45,2010-01-01
+90,31,Canada,2,sleep scale,6,2010-01-01
+90,40,Canada,1,depression scale,NA,2019-01-01
+90,40,Canada,0,loneliness scale,32,2019-01-01
+90,40,Canada ,1,sleep scale,14,2019-01-01
+90,45,Canada,0,depression scale,9,2024-01-01
+90,45,Canada,2,loneliness scale,33,2024-01-01
+90,45,Canada,1,sleep scale,NA,2024-01-01
+91,26,Indonesia,0,depression scale,-0,2010-01-01
+91,26,Indonesia,1,loneliness scale,48,2010-01-01
+91,26,Indonesia,0,sleep scale,15,2010-01-01
+91,35,Indonesia,1,depression scale,0,2019-01-01
+91,35,Indonesia,2,loneliness scale,48,2019-01-01
+91,35,Indonesia,0,sleep scale,12,2019-01-01
+91,40,Indonesia,0,depression scale,0,2024-01-01
+91,40,Indonesia,0,loneliness scale,36,2024-01-01
+91,40,Indonesia,1,sleep scale,-2,2024-01-01
+92,15,Fiji,0,depression scale,1,2010-01-01
+92,15,Fiji,0,loneliness scale,46,2010-01-01
+92,15,Fiji,0,sleep scale,4,2010-01-01
+92,24,Fiji,0,depression scale,2,2019-01-01
+92,24,Fiji,0,loneliness scale,38,2019-01-01
+92,24,Fiji,0,sleep scale,7,2019-01-01
+92,29,Fiji,1,depression scale,7,2024-01-01
+92,29,Fiji,0,loneliness scale,43,2024-01-01
+92,29,Fiji,0,sleep scale,9,2024-01-01
+93,25,Indonesia,0,depression scale,3,2010-01-01
+93,25,Indonesia,0,loneliness scale,44,2010-01-01
+93,25,Indonesia,0,sleep scale,8,2010-01-01
+93,34,Indonesia,0,depression scale,1,2019-01-01
+93,34,Indonesia,0,loneliness scale,55,2019-01-01
+93,34,Indonesia,0,sleep scale,4,2019-01-01
+93,39,Indonesia,2,depression scale,9,2024-01-01
+93,39,Indonesia,0,loneliness scale,25,2024-01-01
+93,39,Indonesia,2,sleep scale,10,2024-01-01
+94,18,Australia,0,depression scale,9,2010-01-01
+94,18,Australia,0,loneliness scale,22,2010-01-01
+94,18,Australia,0,sleep scale,NA,2010-01-01
+94,27,Australia,0,depression scale,16,2019-01-01
+94,27,Australia,0,loneliness scale,32,2019-01-01
+94,27,Australia,1,sleep scale,4,2019-01-01
+94,32,Australia,0,depression scale,0,2024-01-01
+94,32,Australia,0,loneliness scale,39,2024-01-01
+94,32,Australia,3,sleep scale,7,2024-01-01
+95,17,Egypt,0,depression scale,0,2010-01-01
+95,17,Egypt,1,loneliness scale,48,2010-01-01
+95,17,Egypt,0,sleep scale,6,2010-01-01
+95,26,Egypt,0,depression scale,8,2019-01-01
+95,26,Egypt,0,loneliness scale,NA,2019-01-01
+95,26,Egypt,0,sleep scale,0,2019-01-01
+95,31,Egypt,0,depression scale,4,2024-01-01
+95,31,Egypt,1,loneliness scale,50,2024-01-01
+95,31,Egypt,0,sleep scale,7,2024-01-01
+96,20,Egypt,0,depression scale,3,2010-01-01
+96,20,Egypt,0,loneliness scale,42,2010-01-01
+96,20,Egypt,0,sleep scale,11,2010-01-01
+96,29,Egypt,0,depression scale,5,2019-01-01
+96,29,Egypt,0,loneliness scale,62,2019-01-01
+96,29,Egypt,0,sleep scale,12,2019-01-01
+96,100,Egypt,2,depression scale,6,2024-01-01
+96,34,Egypt,1,loneliness scale,46,2024-01-01
+96,34,Egypt,1,sleep scale,5,2024-01-01
+97,19,Japan,0,depression scale,8,2010-01-01
+97,19,Japan,0,loneliness scale,39,2010-01-01
+97,19,Japan,0,sleep scale,6,2010-01-01
+97,28,Japan,1,depression scale,-12,2019-01-01
+97,28,Japan,1,loneliness scale,55,2019-01-01
+97,28,Japan,0,sleep scale,7,2019-01-01
+97,33,Japan,1,depression scale,8,2024-01-01
+97,33,Japan,0,loneliness scale,52,2024-01-01
+97,33,Japan,1,sleep scale,0,2024-01-01
+98,24,France ,0,depression scale,0,2010-01-01
+98,24,France,1,loneliness scale,40,2010-01-01
+98,24,France,0,sleep scale,2,2010-01-01
+98,33,France,1,depression scale,11,2019-01-01
+98,33,France,0,loneliness scale,27,2019-01-01
+98,33,France,0,sleep scale,7,2019-01-01
+98,38,France,2,depression scale,4,2024-01-01
+98,38,France,1,loneliness scale,30,2024-01-01
+98,38,France,1,sleep scale,14,2024-01-01
+99,16,Argentina,0,depression scale,2,2010-01-01
+99,16,Argentina,0,loneliness scale,20,2010-01-01
+99,16,Argentina,0,sleep scale,7,2010-01-01
+99,25,Argentina,0,depression scale,11,2019-01-01
+99,25,Argentin a,0,loneliness scale,44,2019-01-01
+99,25,Argentina,1,sleep scale,8,2019-01-01
+99,30,Argentina,1,depression scale,7,2024-01-01
+99,30,Argentina,0,loneliness scale,47,2024-01-01
+99,30,Argentina,1,sleep scale,6,2024-01-01
+100,18,United States,0,depression scale,18,2010-01-01
+100,-5,United States,0,loneliness scale,41,2010-01-01
+100,18,United States,0,sleep scale,3,2010-01-01
+100,27,United States,0,depression scale,10,2019-01-01
+100,-1,United States,0,loneliness scale,42,2019-01-01
+100,27,United States,1,sleep scale,15,2019-01-01
+100,32,United States,0,depression scale,5,2024-01-01
+100,32,United States,0,loneliness scale,45,2024-01-01
+100,32,United States,NA,sleep scale,9,2024-01-01
+101,-1,Australia,1,depression scale,4,2010-01-01
+101,23,Australia,0,loneliness scale,38,2010-01-01
+101,23,Australia,0,sleep scale,1,2010-01-01
+101,32,Australia,1,depression scale,8,2019-01-01
+101,32,Australia,0,loneliness scale,39,2019-01-01
+101,32,Australia,1,sleep scale,16,2019-01-01
+101,37,Australia,0,depression scale,0,2024-01-01
+101,37,Australia,0,loneliness scale,43,2024-01-01
+101,37,Australia,2,sleep scale,7,2024-01-01
+102,28,New Zeland,0,depression scale,8,2010-01-01
+102,28,New Zealand,0,loneliness scale,20,2010-01-01
+102,28,New Zealand,0,sleep scale,7,2010-01-01
+102,37,New Zealand,1,depression scale,0,2019-01-01
+102,37,New Zealand,2,loneliness scale,64,2019-01-01
+102,37,New Zealand,0,sleep scale,13,2019-01-01
+102,42,New Zealand,1,depression scale,0,2024-01-01
+102,42,New Zealand,1,loneliness scale,55,2024-01-01
+102,42,New Zealand,1,sleep scale,5,2024-01-01
+103,28,Colombia,0,depression scale,4,2010-01-01
+103,28,Colombia,1,loneliness scale,45,2010-01-01
+103,28,Colombia,0,sleep scale,8,2010-01-01
+103,37,Colombia,0,depression scale,0,2019-01-01
+103,37,Colombia,0,loneliness scale,37,2019-01-01
+103,37,Colombia,0,sleep scale,16,2019-01-01
+103,42,Colombia,0,depression scale,3,2024-01-01
+103,42,Colombia,1,loneliness scale,34,2024-01-01
+103,42,Colombia,1,sleep scale,12,2024-01-01
+104,17,Cuba,0,depression scale,10,2010-01-01
+104,17,Cuba,0,loneliness scale,29,2010-01-01
+104,17,Cuba,0,sleep scale,16,2010-01-01
+104,26,Cuba,0,depression scale,2,2019-01-01
+104,26,Cuba,0,loneliness scale,41,2019-01-01
+104,26,Cuba,0,sleep scale,0,2019-01-01
+104,31,Cuba,0,depression scale,11,2024-01-01
+104,31,Cuba,0,loneliness scale,52,2024-01-01
+104,31,Cuba,1,sleep scale,14,2024-01-01
+105,24,New Zealand,0,depression scale,8,2010-01-01
+105,24,New Zealand,0,loneliness scale,37,2010-01-01
+105,24,New Zealand,0,sleep scale,13,2010-01-01
+105,33,New Zealand,1,depression scale,7,2019-01-01
+105,33,New Zealand,1,loneliness scale,34,2019-01-01
+105,33,New Zealand,1,sleep scale,13,2019-01-01
+105,38,New Zealand,0,depression scale,3,2024-01-01
+105,38,New Zealand,1,loneliness scale,46,2024-01-01
+105,38,New Zealand,1,sleep scale,4,2024-01-01
+106,15,Brazil,0,depression scale,15,2010-01-01
+106,15,Brazil,0,loneliness scale,38,2010-01-01
+106,15,Brazil,0,sleep scale,12,2010-01-01
+106,24,Brazil,0,depression scale,12,2019-01-01
+106,24,Brazil,0,loneliness scale,41,2019-01-01
+106,24,Brazi1,0,sleep scale,9,2019-01-01
+106,29,Brazil,0,depression scale,14,2024-01-01
+106,29,Brazil,0,loneliness scale,46,2024-01-01
+106,29,Brazil,0,sleep scale,13,2024-01-01
+107,22,United Kingdom,0,depression scale,6,2010-01-01
+107,22,United Kingdom,0,loneliness scale,36,2010-01-01
+107,22,United Kingdom,0,sleep scale,7,2010-01-01
+107,31,United Kingdom,1,depression scale,12,2019-01-01
+107,31,United Kingdom,3,loneliness scale,34,2019-01-01
+107,31,United Kingdom,0,sleep scale,NA,2019-01-01
+107,36,United Kingdom,2,depression scale,2,2024-01-01
+107,36,United Kingdom,1,loneliness scale,49,2024-01-01
+107,36,United Kingdom,0,sleep scale,2,2024-01-01
+108,19,Germany,0,depression scale,8,2010-01-01
+108,19,Germany,0,loneliness scale,31,2010-01-01
+108,19,Germany,0,sleep scale,4,2010-01-01
+108,28,Germany,0,depression scale,3,2019-01-01
+108,28,Germany,0,loneliness scale,56,2019-01-01
+108,28,Germany,0,sleep scale,-2,2019-01-01
+108,33,Germany,0,depression scale,7,2024-01-01
+108,33,Germany,0,loneliness scale,31,2024-01-01
+108,33,Germany,1,sleep scale,13,2024-01-01
+109,20,Australia,1,depression scale,11,2010-01-01
+109,20,Australia,0,loneliness scale,28,2010-01-01
+109,20,Australia,0,sleep scale,9,2010-01-01
+109,29,Australia,0,depression scale,8,2019-01-01
+109,29,Australia,0,loneliness scale,44,2019-01-01
+109,29,Australia,0,sleep scale,-10,2019-01-01
+109,34,Australia,1,depression scale,14,2024-01-01
+109,34,Australia,0,loneliness scale,32,2024-01-01
+109,34,Australia ,0,sleep scale,13,2024-01-01
+110,150,Spain,0,depression scale,9,2010-01-01
+110,28,Spain,0,loneliness scale,38,2010-01-01
+110,28,Spain,0,sleep scale,20,2010-01-01
+110,37,Spain,0,depression scale,6,2019-01-01
+110,37,Spain,0,loneliness scale,27,2019-01-01
+110,37,Spain,2,sleep scale,NA,2019-01-01
+110,42,Spain,2,depression scale,5,2024-01-01
+110,42,Spain,1,loneliness scale,41,2024-01-01
+110,42,Spain,0,sleep scale,9,2024-01-01
+111,18,Cuba,0,depression scale,7,2010-01-01
+111,18,Cuba,1,loneliness scale,32,2010-01-01
+111,18,Cuba,0,sleep scale,9,2010-01-01
+111,27,Cuba,1,depression scale,0,2019-01-01
+111,27,Cuba,0,loneliness scale,41,2019-01-01
+111,27,Cuba,0,sleep scale,5,2019-01-01
+111,32,Cuba,1,depression scale,11,2024-01-01
+111,32,Cuba,1,loneliness scale,44,2024-01-01
+111,32,Cuba,0,sleep scale,6,2024-01-01
+112,23,Indonesia,2,depression scale,6,2010-01-01
+112,23,Indonesia,0,loneliness scale,46,2010-01-01
+112,23,Indonesia,0,sleep scale,6,2010-01-01
+112,32,Indonesia,0,depression scale,1,2019-01-01
+112,32,Indonesia,1,loneliness scale,52,2019-01-01
+112,32,Indonesia,0,sleep scale,13,2019-01-01
+112,37,Indonesia,0,depression scale,NA,2024-01-01
+112,37,Indonesia,1,loneliness scale,60,2024-01-01
+112,37,Indonesia,3,sleep scale,4,2024-01-01
+113,22,Fiji ,0,depression scale,7,2010-01-01
+113,22,Fiji,1,loneliness scale,34,2010-01-01
+113,22,Fiji,0,sleep scale,12,2010-01-01
+113,31,Fiji,0,depression scale,6,2019-01-01
+113,31,Fiji,0,loneliness scale,51,2019-01-01
+113,31,Fiji,0,sleep scale,8,2019-01-01
+113,36,Fiji,1,depression scale,12,2024-01-01
+113,36,Fiji,0,loneliness scale,40,2024-01-01
+113,36,Fiji,1,sleep scale,6,2024-01-01
+114,30,India,1,depression scale,11,2010-01-01
+114,30,India,3,loneliness scale,20,2010-01-01
+114,30,India,0,sleep scale,11,2010-01-01
+114,39,India,0,depression scale,NA,2019-01-01
+114,39,India,1,loneliness scale,52,2019-01-01
+114,39,India,1,sleep scale,5,2019-01-01
+114,44,India,1,depression scale,14,2024-01-01
+114,44,India,0,loneliness scale,NA,2024-01-01
+114,44,India,1,sleep scale,13,2024-01-01
+115,26,Nigeria,0,depression scale,3,2010-01-01
+115,26,Nigeria,0,loneliness scale,33,2010-01-01
+115,26,Nigeria,0,sleep scale,7,2010-01-01
+115,35,Nigeria,1,depression scale,9,2019-01-01
+115,35,Nigeria,0,loneliness scale,40,2019-01-01
+115,35,Nigeria,1,sleep scale,6,2019-01-01
+115,40,Nigeria,0,depression scale,9,2024-01-01
+115,40,Nigeria,0,loneliness scale,38,2024-01-01
+115,40,Nigeria,1,sleep scale,11,2024-01-01
+116,24,United States,1,depression scale,6,2010-01-01
+116,24,United States,0,loneliness scale,43,2010-01-01
+116,24,United States,0,sleep scale,8,2010-01-01
+116,33,United States,1,depression scale,12,2019-01-01
+116,33,United States,0,loneliness scale,41,2019-01-01
+116,33,United States,0,sleep scale,1,2019-01-01
+116,38,United States,1,depression scale,-0,2024-01-01
+116,38,United States,1,loneliness scale,NA,2024-01-01
+116,38,United States,1,sleep scale,6,2024-01-01
+117,28,Canada,0,depression scale,7,2010-01-01
+117,28,Canada,1,loneliness scale,48,2010-01-01
+117,28,Canada,1,sleep scale,11,2010-01-01
+117,37,Canada,2,depression scale,11,2019-01-01
+117,37,Canada,0,loneliness scale,28,2019-01-01
+117,37,Canada,0,sleep scale,8,2019-01-01
+117,42,Canada,1,depression scale,9,2024-01-01
+117,42,Canada,1,loneliness scale,50,2024-01-01
+117,42,Canada,1,sleep scale,NA,2024-01-01
+118,-1,China,1,depression scale,9,2010-01-01
+118,25,China,1,loneliness scale,37,2010-01-01
+118,25,China,0,sleep scale,8,2010-01-01
+118,34,China,1,depression scale,3,2019-01-01
+118,34,China,0,loneliness scale,NA,2019-01-01
+118,34,China,1,sleep scale,3,2019-01-01
+118,39,China,1,depression scale,5,2024-01-01
+118,39,China,1,loneliness scale,34,2024-01-01
+118,39,China,0,sleep scale,9,2024-01-01
+119,16,Germany,0,depression scale,13,2010-01-01
+119,16,Germany,0,loneliness scale,43,2010-01-01
+119,16,Germany,0,sleep scale,8,2010-01-01
+119,25,Germany,1,depression scale,3,2019-01-01
+119,25,Germany,0,loneliness scale,49,2019-01-01
+119,25,Germany,0,sleep scale,11,2019-01-01
+119,30,Germany,1,depression scale,2,2024-01-01
+119,30,Germnay,1,loneliness scale,34,2024-01-01
+119,30,Germany,1,sleep scale,11,2024-01-01
+120,30,Fiji,0,depression scale,11,2010-01-01
+120,30,Fiji,1,loneliness scale,50,2010-01-01
+120,30,Fiji,0,sleep scale,11,2010-01-01
+120,39,Fiji,0,depression scale,0,2019-01-01
+120,39,Fiji,1,loneliness scale,21,2019-01-01
+120,39,Fiji,1,sleep scale,8,2019-01-01
+120,44,Fiji,1,depression scale,5,2024-01-01
+120,44,Fiji ,0,loneliness scale,34,2024-01-01
+120,44,Fiji ,0,sleep scale,4,2024-01-01
+121,28,Cuba,0,depression scale,5,2010-01-01
+121,28,Cuba,1,loneliness scale,31,2010-01-01
+121,28,Cuba,0,sleep scale,3,2010-01-01
+121,37,Cuba,1,depression scale,9,2019-01-01
+121,37,Cuba,1,loneliness scale,20,2019-01-01
+121,37,Cuba,0,sleep scale,8,2019-01-01
+121,42,Cuba,1,depression scale,1,2024-01-01
+121,42,Cuba,0,loneliness scale,43,2024-01-01
+121,42,Cuba,0,sleep scale,6,2024-01-01
+122,29,Spain,0,depression scale,5,2010-01-01
+122,29,Spain,0,loneliness scale,47,2010-01-01
+122,29,Spain,0,sleep scale,9,2010-01-01
+122,38,Spain,1,depression scale,10,2019-01-01
+122,38,Spain ,0,loneliness scale,25,2019-01-01
+122,38,Spain,1,sleep scale,8,2019-01-01
+122,43,Spain,1,depression scale,6,2024-01-01
+122,43,Spain,1,loneliness scale,66,2024-01-01
+122,43,Spain,1,sleep scale,10,2024-01-01
+123,31,France,2,depression scale,10,2010-01-01
+123,31,France,0,loneliness scale,58,2010-01-01
+123,31,France,2,sleep scale,4,2010-01-01
+123,40,France ,0,depression scale,6,2019-01-01
+123,40,France,0,loneliness scale,37,2019-01-01
+123,40,France,1,sleep scale,0,2019-01-01
+123,100,France,1,depression scale,7,2024-01-01
+123,45,France,2,loneliness scale,40,2024-01-01
+123,45,France,2,sleep scale,7,2024-01-01
+124,20,France,0,depression scale,10,2010-01-01
+124,20,France,0,loneliness scale,34,2010-01-01
+124,20,France,0,sleep scale,9,2010-01-01
+124,29,France,0,depression scale,9,2019-01-01
+124,29,France,1,loneliness scale,43,2019-01-01
+124,29,France,0,sleep scale,8,2019-01-01
+124,34,France,0,depression scale,10,2024-01-01
+124,34,France,0,loneliness scale,39,2024-01-01
+124,34,France,0,sleep scale,-10,2024-01-01
+125,24,Papua New Guinea,1,depression scale,7,2010-01-01
+125,24,Papua New Guinea,0,loneliness scale,39,2010-01-01
+125,24,Papua New Guinea,0,sleep scale,15,2010-01-01
+125,33,Papua New Guinea,0,depression scale,NA,2019-01-01
+125,33,Papua New Guinea,0,loneliness scale,48,2019-01-01
+125,33,Papua New Guinea,0,sleep scale,6,2019-01-01
+125,38,Papua New Guinea,2,depression scale,6,2024-01-01
+125,38,Papua New Guinea,1,loneliness scale,34,2024-01-01
+125,38,Papua New Guinea,0,sleep scale,5,2024-01-01
+126,27,Nigeria,0,depression scale,17,2010-01-01
+126,27,Nigeria,0,loneliness scale,32,2010-01-01
+126,27,Nigeria,1,sleep scale,7,2010-01-01
+126,36,Nigeria,0,depression scale,9,2019-01-01
+126,36,Nigeria,0,loneliness scale,23,2019-01-01
+126,36,Nigeria,0,sleep scale,13,2019-01-01
+126,41,Nigeria,NA,depression scale,7,2024-01-01
+126,41,Nigeria,1,loneliness scale,22,2024-01-01
+126,41,Nigeria,2,sleep scale,6,2024-01-01
+127,20,Colombia,0,depression scale,10,2010-01-01
+127,20,Colombia,0,loneliness scale,53,2010-01-01
+127,20,Colombia,0,sleep scale,14,2010-01-01
+127,29,Colombia,NA,depression scale,11,2019-01-01
+127,29,Colombia,0,loneliness scale,57,2019-01-01
+127,29,Colombia,0,sleep scale,4,2019-01-01
+127,34,Colombia,0,depression scale,0,2024-01-01
+127,34,Colombia,0,loneliness scale,36,2024-01-01
+127,-5,Colombia,0,sleep scale,6,2024-01-01
+128,15,Brazil,0,depression scale,7,2010-01-01
+128,15,Brazil,0,loneliness scale,37,2010-01-01
+128,15,Brazil,0,sleep scale,5,2010-01-01
+128,24,Brazil,0,depression scale,0,2019-01-01
+128,24,Brazil,1,loneliness scale,45,2019-01-01
+128,24,Brazil,1,sleep scale,9,2019-01-01
+128,29,Brazil,1,depression scale,6,2024-01-01
+128,29,Brazil,0,loneliness scale,37,2024-01-01
+128,29,Brazil,0,sleep scale,12,2024-01-01
+129,25,Canada,0,depression scale,2,2010-01-01
+129,25,Canada,0,loneliness scale,40,2010-01-01
+129,25,Canada,0,sleep scale,13,2010-01-01
+129,34,Canada,0,depression scale,6,2019-01-01
+129,34,Canada,3,loneliness scale,32,2019-01-01
+129,34,Canada,1,sleep scale,NA,2019-01-01
+129,39,Canada,1,depression scale,NA,2024-01-01
+129,39,Canada,2,loneliness scale,25,2024-01-01
+129,39,Canada,1,sleep scale,14,2024-01-01
+130,27,Canada,0,depression scale,3,2010-01-01
+130,27,Canada,0,loneliness scale,28,2010-01-01
+130,27,Canada,1,sleep scale,0,2010-01-01
+130,36,Canada,0,depression scale,2,2019-01-01
+130,36,Canada,0,loneliness scale,44,2019-01-01
+130,36,Canada,0,sleep scale,5,2019-01-01
+130,41,Canada,0,depression scale,7,2024-01-01
+130,41,Canada,2,loneliness scale,45,2024-01-01
+130,41,Canada,0,sleep scale,4,2024-01-01
+131,24,Mexico,0,depression scale,13,2010-01-01
+131,24,Mexcio,1,loneliness scale,32,2010-01-01
+131,24,Mexico,0,sleep scale,9,2010-01-01
+131,33,Mexico,2,depression scale,0,2019-01-01
+131,33,Mexico,1,loneliness scale,20,2019-01-01
+131,33,Mexico,1,sleep scale,10,2019-01-01
+131,38,Mexico,0,depression scale,6,2024-01-01
+131,38,Mexico,NA,loneliness scale,NA,2024-01-01
+131,38,Mexico,0,sleep scale,6,2024-01-01
+132,27,India,0,depression scale,2,2010-01-01
+132,27,India,0,loneliness scale,25,2010-01-01
+132,27,India,0,sleep scale,8,2010-01-01
+132,36,India,1,depression scale,2,2019-01-01
+132,36,India,1,loneliness scale,41,2019-01-01
+132,36,India,2,sleep scale,3,2019-01-01
+132,41,India,1,depression scale,9,2024-01-01
+132,41,India,2,loneliness scale,42,2024-01-01
+132,41,India,0,sleep scale,4,2024-01-01
+133,29,Papua New Guinea,0,depression scale,0,2010-01-01
+133,29,Papua New Guinea,0,loneliness scale,46,2010-01-01
+133,29,Papua New Guinea,0,sleep scale,10,2010-01-01
+133,38,Papua New Guinea,1,depression scale,NA,2019-01-01
+133,38,Papua New Guinea,0,loneliness scale,37,2019-01-01
+133,38,Papua New Guinea,2,sleep scale,NA,2019-01-01
+133,43,Papua New Guinea,0,depression scale,5,2024-01-01
+133,43,Papua New Guinea,2,loneliness scale,24,2024-01-01
+133,43,Papua New Guinea,2,sleep scale,10,2024-01-01
+134,31,Mexico,0,depression scale,2,2010-01-01
+134,31,Mexico,1,loneliness scale,52,2010-01-01
+134,31,Mexico,1,sleep scale,6,2010-01-01
+134,40,Mexico,2,depression scale,9,2019-01-01
+134,-5,Mexico,1,loneliness scale,38,2019-01-01
+134,40,Mexico,0,sleep scale,8,2019-01-01
+134,45,Mexico,1,depression scale,1,2024-01-01
+134,45,Mexcio,1,loneliness scale,35,2024-01-01
+134,45,Mexico,0,sleep scale,NA,2024-01-01
+135,29,Spain,1,depression scale,8,2010-01-01
+135,29,Spain,0,loneliness scale,22,2010-01-01
+135,29,Spain,0,sleep scale,15,2010-01-01
+135,38,Spain,2,depression scale,9,2019-01-01
+135,38,Spain,0,loneliness scale,33,2019-01-01
+135,38,Spain,1,sleep scale,8,2019-01-01
+135,43,Spain,0,depression scale,0,2024-01-01
+135,43,Spain,0,loneliness scale,42,2024-01-01
+135,43,Spain ,0,sleep scale,1,2024-01-01
+136,22,China,0,depression scale,6,2010-01-01
+136,22,China,1,loneliness scale,29,2010-01-01
+136,22,China,NA,sleep scale,5,2010-01-01
+136,31,China,1,depression scale,16,2019-01-01
+136,31,China,1,loneliness scale,56,2019-01-01
+136,31,China,1,sleep scale,5,2019-01-01
+136,36,China,1,depression scale,6,2024-01-01
+136,36,China,2,loneliness scale,30,2024-01-01
+136,36,China,0,sleep scale,NA,2024-01-01
+137,18,Cuba,0,depression scale,11,2010-01-01
+137,18,Cuba,0,loneliness scale,45,2010-01-01
+137,18,Cuba,0,sleep scale,7,2010-01-01
+137,27,Cuba,0,depression scale,5,2019-01-01
+137,27,Cuba,0,loneliness scale,35,2019-01-01
+137,27,Cuba ,1,sleep scale,12,2019-01-01
+137,-1,Cuba,1,depression scale,6,2024-01-01
+137,32,Cuba,0,loneliness scale,43,2024-01-01
+137,32,Cuba,0,sleep scale,15,2024-01-01
+138,20,Brazil,1,depression scale,5,2010-01-01
+138,20,Brazil,1,loneliness scale,60,2010-01-01
+138,20,Brazil,1,sleep scale,6,2010-01-01
+138,29,Brazil,0,depression scale,0,2019-01-01
+138,29,Brazil,1,loneliness scale,23,2019-01-01
+138,29,Brazil,1,sleep scale,3,2019-01-01
+138,34,Brazil,2,depression scale,2,2024-01-01
+138,34,Brazil,1,loneliness scale,59,2024-01-01
+138,34,Brazil,2,sleep scale,8,2024-01-01
+139,24,New Zealand,0,depression scale,8,2010-01-01
+139,24,New Zealand,0,loneliness scale,23,2010-01-01
+139,24,New Zealand,1,sleep scale,2,2010-01-01
+139,33,New Zealand,0,depression scale,5,2019-01-01
+139,33,New Zealand,1,loneliness scale,31,2019-01-01
+139,33,New Zealand,0,sleep scale,-0,2019-01-01
+139,38,New Zealand,0,depression scale,7,2024-01-01
+139,38,New Zeland,1,loneliness scale,37,2024-01-01
+139,38,New Zealand,0,sleep scale,12,2024-01-01
+140,30,Brazil,1,depression scale,1,2010-01-01
+140,30,Brazil,0,loneliness scale,37,2010-01-01
+140,30,Brazil,1,sleep scale,8,2010-01-01
+140,39,Brazil,0,depression scale,10,2019-01-01
+140,39,Brazi1,0,loneliness scale,-38,2019-01-01
+140,39,Brazil,1,sleep scale,5,2019-01-01
+140,44,Brazil,2,depression scale,9,2024-01-01
+140,44,Brazil,1,loneliness scale,30,2024-01-01
+140,44,Brazi1,2,sleep scale,7,2024-01-01
+141,26,Argentina,1,depression scale,3,2010-01-01
+141,26,Argentina,1,loneliness scale,44,2010-01-01
+141,26,Argentina,0,sleep scale,-7,2010-01-01
+141,35,Argentina,0,depression scale,8,2019-01-01
+141,35,Argentina,1,loneliness scale,32,2019-01-01
+141,35,Argentina,0,sleep scale,6,2019-01-01
+141,40,Argentina,1,depression scale,1,2024-01-01
+141,40,Argentina,1,loneliness scale,52,2024-01-01
+141,40,Argentina,1,sleep scale,11,2024-01-01
+142,30,Kenya,0,depression scale,7,2010-01-01
+142,30,Kenya,0,loneliness scale,23,2010-01-01
+142,30,Kenya,0,sleep scale,9,2010-01-01
+142,39,Kenya,0,depression scale,5,2019-01-01
+142,39,Kenya,0,loneliness scale,24,2019-01-01
+142,39,Kenya,1,sleep scale,11,2019-01-01
+142,44,Kenya,0,depression scale,7,2024-01-01
+142,44,Kenya,0,loneliness scale,27,2024-01-01
+142,44,Kenya,1,sleep scale,6,2024-01-01
+143,17,India,0,depression scale,2,2010-01-01
+143,17,India,0,loneliness scale,36,2010-01-01
+143,17,India,0,sleep scale,9,2010-01-01
+143,26,India,0,depression scale,7,2019-01-01
+143,26,India,0,loneliness scale,40,2019-01-01
+143,26,India ,0,sleep scale,13,2019-01-01
+143,31,India,0,depression scale,4,2024-01-01
+143,31,India,0,loneliness scale,NA,2024-01-01
+143,31,India,0,sleep scale,11,2024-01-01
+144,21,New Zealand,0,depression scale,1,2010-01-01
+144,21,New Zealand,0,loneliness scale,29,2010-01-01
+144,21,New Zealand,0,sleep scale,13,2010-01-01
+144,30,New Zealand,1,depression scale,10,2019-01-01
+144,30,New Zealand,1,loneliness scale,34,2019-01-01
+144,30,New Zealand,1,sleep scale,3,2019-01-01
+144,35,New Zealand,1,depression scale,7,2024-01-01
+144,35,New Zealand,1,loneliness scale,21,2024-01-01
+144,35,New Zealand,1,sleep scale,8,2024-01-01
+145,17,India,0,depression scale,8,2010-01-01
+145,17,India,0,loneliness scale,65,2010-01-01
+145,17,India,0,sleep scale,5,2010-01-01
+145,26,India,1,depression scale,7,2019-01-01
+145,26,India ,1,loneliness scale,52,2019-01-01
+145,26,India,0,sleep scale,4,2019-01-01
+145,31,India,0,depression scale,6,2024-01-01
+145,31,India,1,loneliness scale,34,2024-01-01
+145,31,India,0,sleep scale,12,2024-01-01
+146,24,India,0,depression scale,10,2010-01-01
+146,-1,India,0,loneliness scale,38,2010-01-01
+146,24,India,0,sleep scale,12,2010-01-01
+146,33,India,1,depression scale,8,2019-01-01
+146,33,India,1,loneliness scale,56,2019-01-01
+146,33,India,2,sleep scale,9,2019-01-01
+146,38,India,0,depression scale,10,2024-01-01
+146,38,India,1,loneliness scale,51,2024-01-01
+146,38,India,1,sleep scale,8,2024-01-01
+147,24,Chile,0,depression scale,12,2010-01-01
+147,24,Chile,0,loneliness scale,49,2010-01-01
+147,24,Chile,1,sleep scale,0,2010-01-01
+147,33,Chile,3,depression scale,14,2019-01-01
+147,33,Chile,1,loneliness scale,34,2019-01-01
+147,33,Chile,1,sleep scale,10,2019-01-01
+147,38,Chile,1,depression scale,0,2024-01-01
+147,38,Chile ,1,loneliness scale,47,2024-01-01
+147,38,Chile,1,sleep scale,10,2024-01-01
+148,21,Mexico,0,depression scale,8,2010-01-01
+148,21,Mexico,0,loneliness scale,32,2010-01-01
+148,21,Mexico,1,sleep scale,0,2010-01-01
+148,30,Mexico,0,depression scale,3,2019-01-01
+148,30,Mexcio,1,loneliness scale,45,2019-01-01
+148,30,Mexico,2,sleep scale,3,2019-01-01
+148,35,Mexico,0,depression scale,11,2024-01-01
+148,35,Mexico,3,loneliness scale,43,2024-01-01
+148,35,Mexico,0,sleep scale,0,2024-01-01
+149,27,Kenya,0,depression scale,7,2010-01-01
+149,27,Kenya,0,loneliness scale,47,2010-01-01
+149,27,Kenya,1,sleep scale,5,2010-01-01
+149,36,Kenya,1,depression scale,0,2019-01-01
+149,36,Kenya,2,loneliness scale,57,2019-01-01
+149,36,Kenya,1,sleep scale,15,2019-01-01
+149,41,Kenya,1,depression scale,16,2024-01-01
+149,41,Kenya,0,loneliness scale,NA,2024-01-01
+149,41,Kenya,0,sleep scale,0,2024-01-01
+150,24,France,0,depression scale,8,2010-01-01
+150,24,France,0,loneliness scale,37,2010-01-01
+150,24,France,0,sleep scale,0,2010-01-01
+150,33,France,2,depression scale,6,2019-01-01
+150,33,France,0,loneliness scale,55,2019-01-01
+150,33,France,3,sleep scale,0,2019-01-01
+150,38,France ,1,depression scale,11,2024-01-01
+150,38,France,1,loneliness scale,61,2024-01-01
+150,38,France,0,sleep scale,6,2024-01-01
+151,28,Fiji,1,depression scale,10,2010-01-01
+151,28,Fiji,1,loneliness scale,40,2010-01-01
+151,28,Fiji,1,sleep scale,6,2010-01-01
+151,37,Fiji,0,depression scale,15,2019-01-01
+151,37,Fiji,1,loneliness scale,29,2019-01-01
+151,37,Fiji,1,sleep scale,11,2019-01-01
+151,42,Fiji,1,depression scale,3,2024-01-01
+151,42,Fiji,0,loneliness scale,33,2024-01-01
+151,42,Fiji,1,sleep scale,2,2024-01-01
+152,25,United Kingdom,0,depression scale,2,2010-01-01
+152,25,United Kingdom,0,loneliness scale,37,2010-01-01
+152,25,United Kingdom,0,sleep scale,9,2010-01-01
+152,34,United Kingdom,1,depression scale,10,2019-01-01
+152,34,United Kingdom,0,loneliness scale,49,2019-01-01
+152,34,United Kingdom,0,sleep scale,5,2019-01-01
+152,39,United Kingdom,1,depression scale,5,2024-01-01
+152,39,United Kingdom,1,loneliness scale,43,2024-01-01
+152,39,United Kingdom,1,sleep scale,10,2024-01-01
+153,27,Germany,1,depression scale,4,2010-01-01
+153,27,Germany,0,loneliness scale,52,2010-01-01
+153,27,Germany,0,sleep scale,0,2010-01-01
+153,36,Germany,1,depression scale,2,2019-01-01
+153,36,Germany,1,loneliness scale,36,2019-01-01
+153,36,Germany,1,sleep scale,5,2019-01-01
+153,41,Germany,1,depression scale,10,2024-01-01
+153,41,Germany,2,loneliness scale,47,2024-01-01
+153,41,Germany,1,sleep scale,5,2024-01-01
+154,17,Nigeria ,0,depression scale,1,2010-01-01
+154,17,Nigeria,0,loneliness scale,32,2010-01-01
+154,17,Nigeria,0,sleep scale,9,2010-01-01
+154,26,Nigeria,1,depression scale,0,2019-01-01
+154,26,Nigeria,0,loneliness scale,27,2019-01-01
+154,26,Nigeria,1,sleep scale,7,2019-01-01
+154,31,Nigeria,1,depression scale,8,2024-01-01
+154,100,Nigeria,3,loneliness scale,38,2024-01-01
+154,31,Nigeria,0,sleep scale,5,2024-01-01
+155,24,Kenya,0,depression scale,1,2010-01-01
+155,24,Kenya,0,loneliness scale,31,2010-01-01
+155,24,Kenya,1,sleep scale,12,2010-01-01
+155,33,Kenya,0,depression scale,3,2019-01-01
+155,33,Kenya,1,loneliness scale,49,2019-01-01
+155,33,Kenya,1,sleep scale,6,2019-01-01
+155,38,Kenya,2,depression scale,-2,2024-01-01
+155,38,Kenya,1,loneliness scale,49,2024-01-01
+155,38,Kenya,2,sleep scale,10,2024-01-01
+156,16,Papua New Guinea,0,depression scale,6,2010-01-01
+156,16,Papua New Guinea,0,loneliness scale,34,2010-01-01
+156,16,Papua New Guinea,0,sleep scale,10,2010-01-01
+156,25,Papua New Guinea,0,depression scale,11,2019-01-01
+156,25,Papua New Guinea,0,loneliness scale,38,2019-01-01
+156,25,Papua New Guinea,1,sleep scale,9,2019-01-01
+156,30,Papua New Guinea,0,depression scale,4,2024-01-01
+156,30,Papua New Guinea,2,loneliness scale,33,2024-01-01
+156,30,Papua New Guinea,0,sleep scale,10,2024-01-01
+157,21,Papua New Guinea,0,depression scale,6,2010-01-01
+157,21,Papua New Guinea,1,loneliness scale,41,2010-01-01
+157,21,Papua New Guinea,1,sleep scale,9,2010-01-01
+157,30,Papua New Guinea,0,depression scale,6,2019-01-01
+157,30,Papua New Guinea ,0,loneliness scale,38,2019-01-01
+157,30,Papua New Guinea,1,sleep scale,11,2019-01-01
+157,35,Papua New Guinea,0,depression scale,7,2024-01-01
+157,35,Papua New Guinea,0,loneliness scale,46,2024-01-01
+157,35,Papua New Guinea,1,sleep scale,4,2024-01-01
+158,25,Kenya,0,depression scale,7,2010-01-01
+158,25,Kenya,0,loneliness scale,24,2010-01-01
+158,25,Kenya,0,sleep scale,1,2010-01-01
+158,34,Kenya,1,depression scale,2,2019-01-01
+158,34,Kenya,0,loneliness scale,40,2019-01-01
+158,100,Kenya,2,sleep scale,11,2019-01-01
+158,39,Kenya,2,depression scale,17,2024-01-01
+158,39,Kenya,0,loneliness scale,50,2024-01-01
+158,39,Kenya,0,sleep scale,16,2024-01-01
+159,25,Spain,0,depression scale,14,2010-01-01
+159,25,Spain,0,loneliness scale,39,2010-01-01
+159,25,Spain,0,sleep scale,1,2010-01-01
+159,34,Spain,0,depression scale,13,2019-01-01
+159,34,Spain,1,loneliness scale,50,2019-01-01
+159,34,Spain,0,sleep scale,11,2019-01-01
+159,39,Spain,2,depression scale,27,2024-01-01
+159,39,Spain,0,loneliness scale,55,2024-01-01
+159,39,Spain,1,sleep scale,9,2024-01-01
+160,15,Canada,0,depression scale,0,2010-01-01
+160,15,Canada,0,loneliness scale,49,2010-01-01
+160,15,Canada,0,sleep scale,3,2010-01-01
+160,24,Canada,0,depression scale,10,2019-01-01
+160,24,Canada,0,loneliness scale,55,2019-01-01
+160,24,Canada,0,sleep scale,6,2019-01-01
+160,29,Canada,1,depression scale,2,2024-01-01
+160,29,Canada,0,loneliness scale,33,2024-01-01
+160,29,Canada,0,sleep scale,7,2024-01-01
+161,20,Kenya,1,depression scale,11,2010-01-01
+161,20,Kenya,0,loneliness scale,43,2010-01-01
+161,20,Kenya,0,sleep scale,3,2010-01-01
+161,29,Kenya,0,depression scale,3,2019-01-01
+161,29,Kenya,0,loneliness scale,35,2019-01-01
+161,150,Kenya,0,sleep scale,5,2019-01-01
+161,34,Kenya,2,depression scale,10,2024-01-01
+161,34,Kenya,0,loneliness scale,51,2024-01-01
+161,34,Kenya,2,sleep scale,7,2024-01-01
+162,24,Kenya,0,depression scale,6,2010-01-01
+162,24,Kenya,0,loneliness scale,40,2010-01-01
+162,24,Kenya,0,sleep scale,14,2010-01-01
+162,33,Kenya,0,depression scale,4,2019-01-01
+162,33,Kenya,1,loneliness scale,27,2019-01-01
+162,33,Kenya ,0,sleep scale,2,2019-01-01
+162,38,Kenya,1,depression scale,7,2024-01-01
+162,38,Kenya,1,loneliness scale,46,2024-01-01
+162,38,Kenya,0,sleep scale,9,2024-01-01
+163,23,France,0,depression scale,13,2010-01-01
+163,23,France,0,loneliness scale,42,2010-01-01
+163,23,France,1,sleep scale,14,2010-01-01
+163,32,France,1,depression scale,6,2019-01-01
+163,32,France,0,loneliness scale,33,2019-01-01
+163,32,France,1,sleep scale,7,2019-01-01
+163,37,France,1,depression scale,5,2024-01-01
+163,37,France,1,loneliness scale,-26,2024-01-01
+163,37,France,0,sleep scale,10,2024-01-01
+164,26,New Zealand,0,depression scale,0,2010-01-01
+164,26,New Zealand,0,loneliness scale,40,2010-01-01
+164,26,New Zealand,0,sleep scale,8,2010-01-01
+164,35,New Zealand,1,depression scale,5,2019-01-01
+164,35,New Zealand,1,loneliness scale,27,2019-01-01
+164,35,New Zealand,1,sleep scale,5,2019-01-01
+164,40,New Zealand,0,depression scale,0,2024-01-01
+164,40,New Zealand,1,loneliness scale,34,2024-01-01
+164,40,New Zeland,1,sleep scale,3,2024-01-01
+165,27,China,0,depression scale,10,2010-01-01
+165,27,China,1,loneliness scale,29,2010-01-01
+165,27,China,0,sleep scale,3,2010-01-01
+165,36,China,2,depression scale,16,2019-01-01
+165,36,China,1,loneliness scale,NA,2019-01-01
+165,36,China,2,sleep scale,10,2019-01-01
+165,41,China,2,depression scale,1,2024-01-01
+165,41,China,2,loneliness scale,36,2024-01-01
+165,41,China,1,sleep scale,12,2024-01-01
+166,29,France,0,depression scale,6,2010-01-01
+166,29,France,0,loneliness scale,37,2010-01-01
+166,29,France,0,sleep scale,0,2010-01-01
+166,38,France,1,depression scale,10,2019-01-01
+166,38,France,1,loneliness scale,44,2019-01-01
+166,38,France,1,sleep scale,8,2019-01-01
+166,43,France,3,depression scale,0,2024-01-01
+166,43,France,1,loneliness scale,57,2024-01-01
+166,43,France,1,sleep scale,4,2024-01-01
+167,15,Brazil,0,depression scale,16,2010-01-01
+167,15,Brazil,1,loneliness scale,31,2010-01-01
+167,15,Brazil,1,sleep scale,7,2010-01-01
+167,24,Brazil,0,depression scale,7,2019-01-01
+167,24,Brazil,0,loneliness scale,35,2019-01-01
+167,24,Brazil,0,sleep scale,0,2019-01-01
+167,29,Brazil,0,depression scale,12,2024-01-01
+167,29,Brazil,0,loneliness scale,49,2024-01-01
+167,29,Brazil,0,sleep scale,14,2024-01-01
+168,25,Brazil,0,depression scale,2,2010-01-01
+168,25,Brazil,0,loneliness scale,21,2010-01-01
+168,25,Brazil,0,sleep scale,7,2010-01-01
+168,34,Brazil,0,depression scale,4,2019-01-01
+168,-1,Brazil,1,loneliness scale,20,2019-01-01
+168,34,Brazil,1,sleep scale,2,2019-01-01
+168,39,Brazil,2,depression scale,7,2024-01-01
+168,39,Brazil,1,loneliness scale,51,2024-01-01
+168,39,Brazil,0,sleep scale,3,2024-01-01
+169,22,China,1,depression scale,0,2010-01-01
+169,22,China,0,loneliness scale,31,2010-01-01
+169,22,China,0,sleep scale,4,2010-01-01
+169,31,China,2,depression scale,2,2019-01-01
+169,31,China,0,loneliness scale,27,2019-01-01
+169,31,China,0,sleep scale,9,2019-01-01
+169,36,China,1,depression scale,10,2024-01-01
+169,36,China,1,loneliness scale,36,2024-01-01
+169,36,China,0,sleep scale,9,2024-01-01
+170,27,South Africa,1,depression scale,10,2010-01-01
+170,27,South Africa,1,loneliness scale,43,2010-01-01
+170,27,South Africa,2,sleep scale,7,2010-01-01
+170,36,South Africa,2,depression scale,10,2019-01-01
+170,36,South Africa,0,loneliness scale,55,2019-01-01
+170,36,South Africa,0,sleep scale,7,2019-01-01
+170,41,South Africa,0,depression scale,7,2024-01-01
+170,41,South Africa,2,loneliness scale,39,2024-01-01
+170,41,South Africa,0,sleep scale,7,2024-01-01
+171,28,Canada,0,depression scale,4,2010-01-01
+171,28,Canada,0,loneliness scale,26,2010-01-01
+171,28,Canada,0,sleep scale,8,2010-01-01
+171,37,Canada,1,depression scale,5,2019-01-01
+171,37,Canada,1,loneliness scale,42,2019-01-01
+171,37,Canada,1,sleep scale,10,2019-01-01
+171,42,Canada,1,depression scale,8,2024-01-01
+171,42,Canada,1,loneliness scale,34,2024-01-01
+171,42,Canada,1,sleep scale,7,2024-01-01
+172,16,Canada,0,depression scale,5,2010-01-01
+172,16,Canada,0,loneliness scale,43,2010-01-01
+172,16,Canada,0,sleep scale,NA,2010-01-01
+172,25,Canada,0,depression scale,8,2019-01-01
+172,25,Canada,0,loneliness scale,20,2019-01-01
+172,25,Canada,0,sleep scale,8,2019-01-01
+172,30,Canada,3,depression scale,3,2024-01-01
+172,30,Canada,0,loneliness scale,42,2024-01-01
+172,30,Canada,0,sleep scale,11,2024-01-01
+173,20,Nigeria,0,depression scale,0,2010-01-01
+173,20,Nigeria,0,loneliness scale,51,2010-01-01
+173,20,Nigeria,0,sleep scale,2,2010-01-01
+173,29,Nigeria,0,depression scale,0,2019-01-01
+173,29,Nigeria,0,loneliness scale,-47,2019-01-01
+173,29,Nigeria,0,sleep scale,7,2019-01-01
+173,34,Nigeria,0,depression scale,11,2024-01-01
+173,34,Nigeria,1,loneliness scale,45,2024-01-01
+173,34,Nigeria,0,sleep scale,8,2024-01-01
+174,27,China,0,depression scale,6,2010-01-01
+174,27,China,1,loneliness scale,47,2010-01-01
+174,27,China,0,sleep scale,12,2010-01-01
+174,36,China,0,depression scale,7,2019-01-01
+174,36,China,1,loneliness scale,48,2019-01-01
+174,36,China,0,sleep scale,8,2019-01-01
+174,41,China,0,depression scale,3,2024-01-01
+174,41,China,0,loneliness scale,-34,2024-01-01
+174,41,China ,0,sleep scale,NA,2024-01-01
+175,17,South Africa,0,depression scale,8,2010-01-01
+175,17,South Africa,0,loneliness scale,44,2010-01-01
+175,17,South Africa,0,sleep scale,6,2010-01-01
+175,26,South Africa,1,depression scale,11,2019-01-01
+175,26,South Africa,1,loneliness scale,-38,2019-01-01
+175,26,South Africa,0,sleep scale,15,2019-01-01
+175,31,South Africa,2,depression scale,7,2024-01-01
+175,31,South Africa,1,loneliness scale,45,2024-01-01
+175,31,South Africa,0,sleep scale,9,2024-01-01
+176,27,New Zealand,0,depression scale,4,2010-01-01
+176,27,New Zealand,0,loneliness scale,48,2010-01-01
+176,27,New Zealand,0,sleep scale,6,2010-01-01
+176,36,New Zealand,0,depression scale,16,2019-01-01
+176,36,New Zealand,1,loneliness scale,48,2019-01-01
+176,36,New Zealand,1,sleep scale,4,2019-01-01
+176,41,New Zealand,0,depression scale,9,2024-01-01
+176,41,New Zealand,0,loneliness scale,43,2024-01-01
+176,41,New Zealand,0,sleep scale,8,2024-01-01
+177,30,United States,2,depression scale,16,2010-01-01
+177,30,United States,0,loneliness scale,43,2010-01-01
+177,30,United States,0,sleep scale,3,2010-01-01
+177,39,United States,0,depression scale,13,2019-01-01
+177,39,United States,0,loneliness scale,32,2019-01-01
+177,39,United States,1,sleep scale,8,2019-01-01
+177,44,United States,0,depression scale,11,2024-01-01
+177,44,United States,1,loneliness scale,26,2024-01-01
+177,44,United States,1,sleep scale,NA,2024-01-01
+178,30,Spain,1,depression scale,0,2010-01-01
+178,30,Spain,1,loneliness scale,37,2010-01-01
+178,30,Spain,0,sleep scale,3,2010-01-01
+178,39,Spain,1,depression scale,13,2019-01-01
+178,39,Spain,1,loneliness scale,50,2019-01-01
+178,39,Spain,0,sleep scale,6,2019-01-01
+178,44,Spain,0,depression scale,13,2024-01-01
+178,44,Spain,0,loneliness scale,36,2024-01-01
+178,44,Spain,0,sleep scale,6,2024-01-01
+179,27,Chile,1,depression scale,0,2010-01-01
+179,27,Chile,0,loneliness scale,59,2010-01-01
+179,27,Chile,2,sleep scale,10,2010-01-01
+179,36,Chile,2,depression scale,1,2019-01-01
+179,36,Chile,2,loneliness scale,20,2019-01-01
+179,36,Chile,0,sleep scale,4,2019-01-01
+179,41,Chile,0,depression scale,3,2024-01-01
+179,41,Chile,2,loneliness scale,40,2024-01-01
+179,41,Chile,1,sleep scale,NA,2024-01-01
+180,27,Brazil,0,depression scale,10,2010-01-01
+180,27,Brazil,0,loneliness scale,51,2010-01-01
+180,27,Brazil,0,sleep scale,9,2010-01-01
+180,36,Brazil,0,depression scale,0,2019-01-01
+180,36,Brazil,1,loneliness scale,27,2019-01-01
+180,36,Brazil,1,sleep scale,4,2019-01-01
+180,41,Brazil,1,depression scale,3,2024-01-01
+180,41,Brazil,1,loneliness scale,28,2024-01-01
+180,41,Brazil,1,sleep scale,15,2024-01-01
+181,22,Chile,0,depression scale,3,2010-01-01
+181,22,Chile,1,loneliness scale,29,2010-01-01
+181,22,Chile,0,sleep scale,1,2010-01-01
+181,31,Chile,1,depression scale,NA,2019-01-01
+181,31,Chile,1,loneliness scale,39,2019-01-01
+181,31,Chile ,1,sleep scale,4,2019-01-01
+181,36,Chile,2,depression scale,2,2024-01-01
+181,36,Chile,1,loneliness scale,43,2024-01-01
+181,36,Chile,1,sleep scale,6,2024-01-01
+182,27,Egypt,1,depression scale,0,2010-01-01
+182,27,Egypt ,0,loneliness scale,20,2010-01-01
+182,27,Egypt,0,sleep scale,1,2010-01-01
+182,36,Egypt,1,depression scale,4,2019-01-01
+182,36,Egypt,0,loneliness scale,52,2019-01-01
+182,36,Egypt,1,sleep scale,0,2019-01-01
+182,41,Egypt,1,depression scale,1,2024-01-01
+182,41,Egypt,0,loneliness scale,49,2024-01-01
+182,41,Egypt,0,sleep scale,7,2024-01-01
+183,20,Chile ,0,depression scale,8,2010-01-01
+183,20,Chile,1,loneliness scale,48,2010-01-01
+183,20,Chile,0,sleep scale,6,2010-01-01
+183,29,Chile,0,depression scale,0,2019-01-01
+183,29,Chile,0,loneliness scale,26,2019-01-01
+183,29,Chile,0,sleep scale,9,2019-01-01
+183,34,Chile,2,depression scale,3,2024-01-01
+183,34,Chile,1,loneliness scale,52,2024-01-01
+183,34,Chile,1,sleep scale,13,2024-01-01
+184,20,Spain,0,depression scale,12,2010-01-01
+184,20,Spain,0,loneliness scale,36,2010-01-01
+184,20,Spain,0,sleep scale,3,2010-01-01
+184,29,Spain,0,depression scale,11,2019-01-01
+184,29,Spain,0,loneliness scale,39,2019-01-01
+184,29,Spain,0,sleep scale,6,2019-01-01
+184,34,Spain,2,depression scale,7,2024-01-01
+184,34,Spain,2,loneliness scale,50,2024-01-01
+184,34,Spain,1,sleep scale,6,2024-01-01
+185,22,Brazil,0,depression scale,3,2010-01-01
+185,22,Brazil,0,loneliness scale,36,2010-01-01
+185,22,Brazil,0,sleep scale,4,2010-01-01
+185,31,Brazil,0,depression scale,7,2019-01-01
+185,31,Brazil,1,loneliness scale,36,2019-01-01
+185,31,Brazil,1,sleep scale,5,2019-01-01
+185,36,Brazil,1,depression scale,11,2024-01-01
+185,36,Brazil,1,loneliness scale,32,2024-01-01
+185,36,Brazil,1,sleep scale,8,2024-01-01
+186,19,Germany,0,depression scale,1,2010-01-01
+186,19,Germnay,0,loneliness scale,55,2010-01-01
+186,19,Germany,0,sleep scale,11,2010-01-01
+186,28,Germany,0,depression scale,0,2019-01-01
+186,28,Germany,1,loneliness scale,40,2019-01-01
+186,28,Germany,1,sleep scale,9,2019-01-01
+186,33,Germany,1,depression scale,0,2024-01-01
+186,33,Germany,1,loneliness scale,47,2024-01-01
+186,100,Germany,1,sleep scale,11,2024-01-01
+187,23,Brazil,0,depression scale,1,2010-01-01
+187,23,Brazil,0,loneliness scale,48,2010-01-01
+187,23,Brazil,0,sleep scale,9,2010-01-01
+187,32,Brazil,1,depression scale,0,2019-01-01
+187,32,Brazil,1,loneliness scale,40,2019-01-01
+187,32,Brazil,1,sleep scale,12,2019-01-01
+187,37,Brazil,1,depression scale,13,2024-01-01
+187,37,Brazil,0,loneliness scale,33,2024-01-01
+187,37,Brazil,0,sleep scale,14,2024-01-01
+188,24,United States,1,depression scale,5,2010-01-01
+188,24,United States,1,loneliness scale,42,2010-01-01
+188,24,United States,0,sleep scale,2,2010-01-01
+188,33,United States,1,depression scale,8,2019-01-01
+188,33,United States,3,loneliness scale,35,2019-01-01
+188,33,United States,2,sleep scale,1,2019-01-01
+188,38,United States,0,depression scale,NA,2024-01-01
+188,38,United States,2,loneliness scale,35,2024-01-01
+188,38,United States,0,sleep scale,2,2024-01-01
+189,25,Brazil,0,depression scale,7,2010-01-01
+189,25,Brazil,0,loneliness scale,20,2010-01-01
+189,25,Brazil,0,sleep scale,3,2010-01-01
+189,-5,Brazil,1,depression scale,7,2019-01-01
+189,34,Brazi1,2,loneliness scale,52,2019-01-01
+189,34,Brazil,0,sleep scale,11,2019-01-01
+189,39,Brazil,1,depression scale,9,2024-01-01
+189,39,Brazil,1,loneliness scale,45,2024-01-01
+189,39,Brazil,1,sleep scale,8,2024-01-01
+190,15,Chile,0,depression scale,2,2010-01-01
+190,15,Chile,0,loneliness scale,37,2010-01-01
+190,15,Chile,0,sleep scale,6,2010-01-01
+190,24,Chile,0,depression scale,2,2019-01-01
+190,24,Chile,0,loneliness scale,50,2019-01-01
+190,24,Chile,1,sleep scale,4,2019-01-01
+190,29,Chile,0,depression scale,14,2024-01-01
+190,29,Chile,0,loneliness scale,41,2024-01-01
+190,29,Chile,0,sleep scale,4,2024-01-01
+191,29,Nigeria,1,depression scale,0,2010-01-01
+191,29,Nigeria,1,loneliness scale,38,2010-01-01
+191,29,Nigeria,0,sleep scale,7,2010-01-01
+191,38,Nigeria,2,depression scale,10,2019-01-01
+191,38,Nigeria,2,loneliness scale,27,2019-01-01
+191,38,Nigeria,1,sleep scale,5,2019-01-01
+191,43,Nigeria,1,depression scale,6,2024-01-01
+191,43,Nigeria,0,loneliness scale,54,2024-01-01
+191,43,Nigeria ,0,sleep scale,10,2024-01-01
+192,18,Brazil,0,depression scale,8,2010-01-01
+192,18,Brazil,0,loneliness scale,37,2010-01-01
+192,18,Brazil,0,sleep scale,5,2010-01-01
+192,27,Brazil,0,depression scale,12,2019-01-01
+192,27,Brazil,0,loneliness scale,48,2019-01-01
+192,27,Brazil,0,sleep scale,13,2019-01-01
+192,32,Brazil,1,depression scale,1,2024-01-01
+192,32,Brazil,0,loneliness scale,32,2024-01-01
+192,32,Brazil,0,sleep scale,9,2024-01-01
+193,21,Nigeria,0,depression scale,-0,2010-01-01
+193,21,Nigeria,0,loneliness scale,53,2010-01-01
+193,21,Nigeria,0,sleep scale,3,2010-01-01
+193,30,Nigeria,2,depression scale,6,2019-01-01
+193,30,Nigeria,0,loneliness scale,37,2019-01-01
+193,30,Nigeria,0,sleep scale,9,2019-01-01
+193,35,Nigeria,0,depression scale,8,2024-01-01
+193,35,Nigeria,0,loneliness scale,36,2024-01-01
+193,35,Nigeria,0,sleep scale,12,2024-01-01
+194,25,Kenya,0,depression scale,5,2010-01-01
+194,25,Kenya,2,loneliness scale,36,2010-01-01
+194,25,Kenya,0,sleep scale,4,2010-01-01
+194,34,Kenya,0,depression scale,4,2019-01-01
+194,34,Kenya,1,loneliness scale,48,2019-01-01
+194,34,Kenya,0,sleep scale,10,2019-01-01
+194,39,Kenya,0,depression scale,5,2024-01-01
+194,39,Kenya,1,loneliness scale,31,2024-01-01
+194,39,Kenya,1,sleep scale,18,2024-01-01
+195,24,Indonesia,0,depression scale,5,2010-01-01
+195,24,Indonesia,0,loneliness scale,50,2010-01-01
+195,24,Indonesia,0,sleep scale,1,2010-01-01
+195,33,Indonesia,0,depression scale,10,2019-01-01
+195,33,Indonesia,2,loneliness scale,34,2019-01-01
+195,33,Indonesia,0,sleep scale,7,2019-01-01
+195,38,Indonesia,1,depression scale,6,2024-01-01
+195,38,Indonesia,2,loneliness scale,NA,2024-01-01
+195,38,Indonesia,1,sleep scale,NA,2024-01-01
+196,22,Cuba,0,depression scale,3,2010-01-01
+196,22,Cuba,0,loneliness scale,52,2010-01-01
+196,22,Cuba,0,sleep scale,7,2010-01-01
+196,31,Cuba,0,depression scale,12,2019-01-01
+196,31,Cuba,0,loneliness scale,40,2019-01-01
+196,31,Cuba,0,sleep scale,10,2019-01-01
+196,36,Cuba,0,depression scale,NA,2024-01-01
+196,36,Cuba,1,loneliness scale,38,2024-01-01
+196,36,Cuba,2,sleep scale,-0,2024-01-01
+197,17,South Africa,0,depression scale,6,2010-01-01
+197,17,South Africa,0,loneliness scale,29,2010-01-01
+197,17,South Africa,0,sleep scale,3,2010-01-01
+197,26,South Africa,1,depression scale,7,2019-01-01
+197,26,South Africa,1,loneliness scale,37,2019-01-01
+197,26,South Africa,0,sleep scale,6,2019-01-01
+197,31,South Africa,1,depression scale,2,2024-01-01
+197,31,South Africa,0,loneliness scale,33,2024-01-01
+197,31,South Africa,2,sleep scale,5,2024-01-01
+198,27,China,0,depression scale,4,2010-01-01
+198,27,China,0,loneliness scale,50,2010-01-01
+198,27,China,0,sleep scale,5,2010-01-01
+198,-1,China,0,depression scale,2,2019-01-01
+198,36,China,0,loneliness scale,35,2019-01-01
+198,36,China ,1,sleep scale,10,2019-01-01
+198,41,China,0,depression scale,2,2024-01-01
+198,41,China,0,loneliness scale,25,2024-01-01
+198,41,China,0,sleep scale,5,2024-01-01
+199,30,United States,0,depression scale,2,2010-01-01
+199,30,United States,2,loneliness scale,60,2010-01-01
+199,30,United States,0,sleep scale,NA,2010-01-01
+199,39,United States,2,depression scale,12,2019-01-01
+199,39,United States,0,loneliness scale,35,2019-01-01
+199,150,United Stetes,2,sleep scale,2,2019-01-01
+199,44,United States,2,depression scale,NA,2024-01-01
+199,44,United States,2,loneliness scale,42,2024-01-01
+199,44,United States,1,sleep scale,1,2024-01-01
+200,22,Unted Kingdom,0,depression scale,11,2010-01-01
+200,22,United Kingdom,0,loneliness scale,50,2010-01-01
+200,22,United Kingdom,0,sleep scale,2,2010-01-01
+200,31,United Kingdom,1,depression scale,1,2019-01-01
+200,31,United Kingdom,0,loneliness scale,36,2019-01-01
+200,31,United Kingdom,1,sleep scale,8,2019-01-01
+200,36,United Kingdom,1,depression scale,5,2024-01-01
+200,36,United Kingdom,2,loneliness scale,47,2024-01-01
+200,36,United Kingdom,0,sleep scale,1,2024-01-01
+201,17,Nigeria,0,depression scale,2,2010-01-01
+201,17,Nigeria,1,loneliness scale,48,2010-01-01
+201,17,Nigeria,0,sleep scale,9,2010-01-01
+201,26,Nigeria,1,depression scale,15,2019-01-01
+201,26,Nigeria,0,loneliness scale,50,2019-01-01
+201,150,Nigeria,1,sleep scale,3,2019-01-01
+201,31,Nigeria,1,depression scale,4,2024-01-01
+201,31,Nigeria,0,loneliness scale,41,2024-01-01
+201,31,Nigeria,1,sleep scale,9,2024-01-01
+202,23,Colombia,0,depression scale,8,2010-01-01
+202,23,Colombia,0,loneliness scale,44,2010-01-01
+202,23,Colombia,0,sleep scale,5,2010-01-01
+202,32,Colombia,0,depression scale,0,2019-01-01
+202,32,Colombia,1,loneliness scale,38,2019-01-01
+202,32,Colombia,0,sleep scale,7,2019-01-01
+202,37,Colombia,0,depression scale,13,2024-01-01
+202,37,Colombia,0,loneliness scale,26,2024-01-01
+202,37,Colombia,1,sleep scale,11,2024-01-01
+203,30,China,0,depression scale,10,2010-01-01
+203,30,China,1,loneliness scale,54,2010-01-01
+203,30,China,0,sleep scale,9,2010-01-01
+203,39,China,1,depression scale,5,2019-01-01
+203,39,China,1,loneliness scale,45,2019-01-01
+203,39,China,0,sleep scale,8,2019-01-01
+203,44,China,1,depression scale,2,2024-01-01
+203,44,China,0,loneliness scale,42,2024-01-01
+203,44,China,0,sleep scale,7,2024-01-01
+204,25,Mexico,0,depression scale,10,2010-01-01
+204,25,Mexico,0,loneliness scale,42,2010-01-01
+204,25,Mexico,0,sleep scale,1,2010-01-01
+204,34,Mexico,1,depression scale,13,2019-01-01
+204,34,Mexico,1,loneliness scale,NA,2019-01-01
+204,34,Mexico,1,sleep scale,6,2019-01-01
+204,39,Mexico,2,depression scale,0,2024-01-01
+204,39,Mexico,1,loneliness scale,32,2024-01-01
+204,39,Mexico,0,sleep scale,6,2024-01-01
+205,27,Papua New Guinea,1,depression scale,9,2010-01-01
+205,27,Papua New Guinea,0,loneliness scale,56,2010-01-01
+205,27,Papua New Guinea,0,sleep scale,11,2010-01-01
+205,36,Papua New Guinea,0,depression scale,7,2019-01-01
+205,36,Papua New Guinea,1,loneliness scale,37,2019-01-01
+205,36,Papua New Guinea,1,sleep scale,7,2019-01-01
+205,41,Papua New Guinea,0,depression scale,12,2024-01-01
+205,41,Papua New Guinea,1,loneliness scale,41,2024-01-01
+205,41,Papua New Guinea,2,sleep scale,6,2024-01-01
+206,21,India,1,depression scale,4,2010-01-01
+206,21,India,0,loneliness scale,42,2010-01-01
+206,21,India,0,sleep scale,12,2010-01-01
+206,30,India,2,depression scale,7,2019-01-01
+206,30,India,0,loneliness scale,38,2019-01-01
+206,30,India ,1,sleep scale,7,2019-01-01
+206,35,India,0,depression scale,3,2024-01-01
+206,35,India,0,loneliness scale,37,2024-01-01
+206,35,India,3,sleep scale,9,2024-01-01
+207,21,Fiji,0,depression scale,0,2010-01-01
+207,21,Fiji,0,loneliness scale,24,2010-01-01
+207,21,Fiji,0,sleep scale,11,2010-01-01
+207,30,Fiji,1,depression scale,10,2019-01-01
+207,30,Fiji,0,loneliness scale,38,2019-01-01
+207,30,Fiji,1,sleep scale,11,2019-01-01
+207,35,Fiji,0,depression scale,-0,2024-01-01
+207,35,Fiji,0,loneliness scale,43,2024-01-01
+207,35,Fiji,1,sleep scale,11,2024-01-01
+208,19,Cuba,0,depression scale,4,2010-01-01
+208,19,Cuba,0,loneliness scale,48,2010-01-01
+208,19,Cuba,0,sleep scale,8,2010-01-01
+208,28,Cuba,0,depression scale,-0,2019-01-01
+208,28,Cuba,0,loneliness scale,49,2019-01-01
+208,28,Cuba,1,sleep scale,8,2019-01-01
+208,33,Cuba,1,depression scale,8,2024-01-01
+208,33,Cuba,1,loneliness scale,48,2024-01-01
+208,33,Cuba,1,sleep scale,13,2024-01-01
+209,21,France,0,depression scale,4,2010-01-01
+209,21,France,0,loneliness scale,45,2010-01-01
+209,21,France ,0,sleep scale,11,2010-01-01
+209,30,France,1,depression scale,13,2019-01-01
+209,30,France,0,loneliness scale,41,2019-01-01
+209,30,France,1,sleep scale,14,2019-01-01
+209,35,France,0,depression scale,0,2024-01-01
+209,35,France,2,loneliness scale,45,2024-01-01
+209,-5,France ,1,sleep scale,7,2024-01-01
+210,31,Japan,2,depression scale,9,2010-01-01
+210,31,Japan ,0,loneliness scale,55,2010-01-01
+210,31,Japan,0,sleep scale,7,2010-01-01
+210,40,Japan,0,depression scale,2,2019-01-01
+210,40,Japan,1,loneliness scale,45,2019-01-01
+210,40,Japan,2,sleep scale,6,2019-01-01
+210,45,Japan,1,depression scale,3,2024-01-01
+210,45,Japan,0,loneliness scale,41,2024-01-01
+210,45,Japan,0,sleep scale,4,2024-01-01
+211,17,Germany,0,depression scale,5,2010-01-01
+211,17,Germany,0,loneliness scale,21,2010-01-01
+211,17,Germany,0,sleep scale,8,2010-01-01
+211,26,Germany,1,depression scale,16,2019-01-01
+211,26,Germany,0,loneliness scale,34,2019-01-01
+211,26,Germany,1,sleep scale,6,2019-01-01
+211,-5,Germany,0,depression scale,-0,2024-01-01
+211,31,Germany,2,loneliness scale,41,2024-01-01
+211,31,Germany,0,sleep scale,7,2024-01-01
+212,30,Germany,1,depression scale,2,2010-01-01
+212,30,Germany,1,loneliness scale,51,2010-01-01
+212,30,Germany,0,sleep scale,12,2010-01-01
+212,39,Germany,2,depression scale,6,2019-01-01
+212,39,Germany,0,loneliness scale,45,2019-01-01
+212,39,Germany,0,sleep scale,5,2019-01-01
+212,44,Germany,2,depression scale,3,2024-01-01
+212,44,Germany,2,loneliness scale,37,2024-01-01
+212,44,Germany,1,sleep scale,8,2024-01-01
+213,22,South Africa,0,depression scale,2,2010-01-01
+213,22,South Africa,1,loneliness scale,38,2010-01-01
+213,22,South Africa,1,sleep scale,12,2010-01-01
+213,31,South Africa,1,depression scale,9,2019-01-01
+213,31,South Africa,2,loneliness scale,44,2019-01-01
+213,31,South Africa,0,sleep scale,10,2019-01-01
+213,36,South Africa,1,depression scale,7,2024-01-01
+213,36,South Africa,0,loneliness scale,20,2024-01-01
+213,36,South Afrcia,0,sleep scale,13,2024-01-01
+214,24,Argentina,1,depression scale,3,2010-01-01
+214,24,Argentina,0,loneliness scale,49,2010-01-01
+214,24,Argentina,1,sleep scale,5,2010-01-01
+214,33,Argentina,2,depression scale,12,2019-01-01
+214,33,Argentina,1,loneliness scale,28,2019-01-01
+214,33,Argentina,0,sleep scale,11,2019-01-01
+214,38,Argentina,0,depression scale,4,2024-01-01
+214,38,Argentina,0,loneliness scale,35,2024-01-01
+214,38,Argentina,1,sleep scale,15,2024-01-01
+215,29,Australia ,0,depression scale,15,2010-01-01
+215,29,Australia,0,loneliness scale,35,2010-01-01
+215,29,Australia,0,sleep scale,8,2010-01-01
+215,38,Australia,0,depression scale,5,2019-01-01
+215,38,Australia,0,loneliness scale,47,2019-01-01
+215,38,Australia,0,sleep scale,1,2019-01-01
+215,43,Australia,1,depression scale,8,2024-01-01
+215,43,Australia,0,loneliness scale,40,2024-01-01
+215,43,Australia,2,sleep scale,6,2024-01-01
+216,26,Mexico,1,depression scale,4,2010-01-01
+216,26,Mexico,0,loneliness scale,30,2010-01-01
+216,26,Mexico,0,sleep scale,9,2010-01-01
+216,35,Mexico,0,depression scale,10,2019-01-01
+216,35,Mexico,1,loneliness scale,37,2019-01-01
+216,35,Mexico,0,sleep scale,8,2019-01-01
+216,40,Mexcio,1,depression scale,2,2024-01-01
+216,40,Mexico,0,loneliness scale,NA,2024-01-01
+216,40,Mexico,0,sleep scale,12,2024-01-01
+217,17,Mexico,0,depression scale,8,2010-01-01
+217,17,Mexico,0,loneliness scale,47,2010-01-01
+217,17,Mexico,0,sleep scale,15,2010-01-01
+217,26,Mexico,0,depression scale,2,2019-01-01
+217,26,Mexico,0,loneliness scale,33,2019-01-01
+217,26,Mexico,1,sleep scale,NA,2019-01-01
+217,31,Mexico,0,depression scale,1,2024-01-01
+217,31,Mexico,0,loneliness scale,45,2024-01-01
+217,31,Mexico,1,sleep scale,9,2024-01-01
+218,30,Chile ,1,depression scale,12,2010-01-01
+218,30,Chile,0,loneliness scale,33,2010-01-01
+218,30,Chile,1,sleep scale,6,2010-01-01
+218,39,Chile,0,depression scale,4,2019-01-01
+218,39,Chile,1,loneliness scale,36,2019-01-01
+218,39,Chile,0,sleep scale,4,2019-01-01
+218,44,Chile,1,depression scale,4,2024-01-01
+218,44,Chile,0,loneliness scale,55,2024-01-01
+218,44,Chile,2,sleep scale,8,2024-01-01
+219,24,Cuba,0,depression scale,6,2010-01-01
+219,24,Cuba,0,loneliness scale,38,2010-01-01
+219,24,Cuba,0,sleep scale,-0,2010-01-01
+219,33,Cuba,0,depression scale,5,2019-01-01
+219,33,Cuba,1,loneliness scale,38,2019-01-01
+219,33,Cuba,0,sleep scale,7,2019-01-01
+219,38,Cuba,1,depression scale,1,2024-01-01
+219,38,Cuba,1,loneliness scale,NA,2024-01-01
+219,38,Cuba,0,sleep scale,NA,2024-01-01
+220,16,New Zeland,0,depression scale,0,2010-01-01
+220,16,New Zealand,0,loneliness scale,41,2010-01-01
+220,16,New Zealand,0,sleep scale,13,2010-01-01
+220,25,New Zealand,0,depression scale,4,2019-01-01
+220,25,New Zealand,0,loneliness scale,49,2019-01-01
+220,25,New Zealand,2,sleep scale,11,2019-01-01
+220,30,New Zealand,0,depression scale,3,2024-01-01
+220,30,New Zealand,1,loneliness scale,20,2024-01-01
+220,30,New Zealand,0,sleep scale,14,2024-01-01
+221,22,Papua New Guinea,0,depression scale,3,2010-01-01
+221,22,Papua New Guinea,0,loneliness scale,20,2010-01-01
+221,22,Papua New Guinea,1,sleep scale,15,2010-01-01
+221,31,Papua New Guinea,1,depression scale,NA,2019-01-01
+221,31,Papua New Guinea,1,loneliness scale,40,2019-01-01
+221,31,Papua New Guinea,0,sleep scale,9,2019-01-01
+221,36,Papua New Guinea,0,depression scale,8,2024-01-01
+221,36,Papua New Guinea,1,loneliness scale,40,2024-01-01
+221,36,Papua New Guinea,0,sleep scale,4,2024-01-01
+222,15,Nigeria,0,depression scale,5,2010-01-01
+222,15,Nigeria,0,loneliness scale,30,2010-01-01
+222,15,Nigeria,0,sleep scale,9,2010-01-01
+222,24,Nigeria,0,depression scale,5,2019-01-01
+222,24,Nigeria,0,loneliness scale,47,2019-01-01
+222,24,Nigeria,0,sleep scale,6,2019-01-01
+222,29,Nigeria,0,depression scale,-6,2024-01-01
+222,29,Nigeria,0,loneliness scale,43,2024-01-01
+222,29,Nigeria,0,sleep scale,6,2024-01-01
+223,27,India,0,depression scale,4,2010-01-01
+223,27,India,0,loneliness scale,47,2010-01-01
+223,27,India,0,sleep scale,4,2010-01-01
+223,36,India,1,depression scale,6,2019-01-01
+223,36,India,0,loneliness scale,48,2019-01-01
+223,36,India,0,sleep scale,1,2019-01-01
+223,41,India ,0,depression scale,10,2024-01-01
+223,41,India,0,loneliness scale,28,2024-01-01
+223,41,India,2,sleep scale,6,2024-01-01
+224,21,Spain,0,depression scale,4,2010-01-01
+224,21,Spain,0,loneliness scale,22,2010-01-01
+224,21,Spain,0,sleep scale,12,2010-01-01
+224,30,Spain,1,depression scale,4,2019-01-01
+224,30,Spain,0,loneliness scale,33,2019-01-01
+224,30,Spain,0,sleep scale,9,2019-01-01
+224,35,Spain,0,depression scale,6,2024-01-01
+224,35,Spain,2,loneliness scale,32,2024-01-01
+224,35,Spain,0,sleep scale,6,2024-01-01
+225,25,Germany,0,depression scale,14,2010-01-01
+225,25,Germany,0,loneliness scale,55,2010-01-01
+225,25,Germany,0,sleep scale,7,2010-01-01
+225,34,Germany,0,depression scale,10,2019-01-01
+225,34,Germany,0,loneliness scale,30,2019-01-01
+225,34,Germany,0,sleep scale,6,2019-01-01
+225,39,Germany,1,depression scale,4,2024-01-01
+225,39,Germany,0,loneliness scale,32,2024-01-01
+225,39,Germnay,1,sleep scale,6,2024-01-01
+226,25,New Zealand,0,depression scale,0,2010-01-01
+226,25,New Zealand,0,loneliness scale,30,2010-01-01
+226,25,New Zealand,1,sleep scale,10,2010-01-01
+226,34,New Zealand,0,depression scale,6,2019-01-01
+226,34,New Zealand,0,loneliness scale,49,2019-01-01
+226,34,New Zealand,0,sleep scale,14,2019-01-01
+226,-1,New Zealand,0,depression scale,NA,2024-01-01
+226,39,New Zealand,0,loneliness scale,27,2024-01-01
+226,39,New Zealand,2,sleep scale,2,2024-01-01
+227,27,New Zealand,0,depression scale,-0,2010-01-01
+227,27,New Zealand,0,loneliness scale,39,2010-01-01
+227,27,New Zealand,0,sleep scale,4,2010-01-01
+227,36,New Zealand,0,depression scale,7,2019-01-01
+227,36,New Zealand,2,loneliness scale,26,2019-01-01
+227,36,New Zealand,2,sleep scale,6,2019-01-01
+227,41,New Zealand,1,depression scale,4,2024-01-01
+227,41,New Zealand,2,loneliness scale,51,2024-01-01
+227,41,New Zealand,2,sleep scale,6,2024-01-01
+228,19,New Zealand,0,depression scale,9,2010-01-01
+228,19,New Zealand,0,loneliness scale,39,2010-01-01
+228,19,New Zealand,0,sleep scale,5,2010-01-01
+228,28,New Zealand,0,depression scale,2,2019-01-01
+228,28,New Zealand,0,loneliness scale,34,2019-01-01
+228,28,New Zealand,0,sleep scale,5,2019-01-01
+228,33,New Zealand,1,depression scale,0,2024-01-01
+228,33,New Zealand,0,loneliness scale,37,2024-01-01
+228,33,New Zealand,0,sleep scale,6,2024-01-01
+229,16,Chile,0,depression scale,11,2010-01-01
+229,16,Chile,0,loneliness scale,28,2010-01-01
+229,16,Chile,0,sleep scale,8,2010-01-01
+229,25,Chile,0,depression scale,4,2019-01-01
+229,25,Chile,0,loneliness scale,42,2019-01-01
+229,25,Chile ,0,sleep scale,13,2019-01-01
+229,30,Chile,0,depression scale,12,2024-01-01
+229,30,Chile,0,loneliness scale,29,2024-01-01
+229,30,Chile,1,sleep scale,0,2024-01-01
+230,29,Fiji,1,depression scale,7,2010-01-01
+230,29,Fiji,0,loneliness scale,33,2010-01-01
+230,29,Fiji,0,sleep scale,10,2010-01-01
+230,38,Fiji,1,depression scale,7,2019-01-01
+230,38,Fiji,0,loneliness scale,38,2019-01-01
+230,38,Fiji,0,sleep scale,11,2019-01-01
+230,43,Fiji,2,depression scale,NA,2024-01-01
+230,43,Fiji,0,loneliness scale,34,2024-01-01
+230,43,Fiji,1,sleep scale,7,2024-01-01
+231,19,New Zealand,0,depression scale,5,2010-01-01
+231,19,New Zealand,0,loneliness scale,47,2010-01-01
+231,19,New Zealand,0,sleep scale,4,2010-01-01
+231,28,New Zealand,0,depression scale,9,2019-01-01
+231,28,New Zealand,0,loneliness scale,43,2019-01-01
+231,28,New Zealand,0,sleep scale,8,2019-01-01
+231,33,New Zealand,0,depression scale,0,2024-01-01
+231,33,New Zealand,1,loneliness scale,35,2024-01-01
+231,33,New Zealand,3,sleep scale,3,2024-01-01
+232,28,United States,0,depression scale,0,2010-01-01
+232,28,United States,0,loneliness scale,56,2010-01-01
+232,28,United States,0,sleep scale,8,2010-01-01
+232,37,United States,1,depression scale,5,2019-01-01
+232,37,United States,1,loneliness scale,36,2019-01-01
+232,37,United States,2,sleep scale,3,2019-01-01
+232,42,United States,1,depression scale,1,2024-01-01
+232,42,United States,0,loneliness scale,27,2024-01-01
+232,42,United States,1,sleep scale,11,2024-01-01
+233,19,China,0,depression scale,0,2010-01-01
+233,19,China,0,loneliness scale,38,2010-01-01
+233,19,China,0,sleep scale,4,2010-01-01
+233,28,China,0,depression scale,7,2019-01-01
+233,28,China,0,loneliness scale,NA,2019-01-01
+233,28,China,0,sleep scale,5,2019-01-01
+233,33,China,2,depression scale,0,2024-01-01
+233,33,China,1,loneliness scale,24,2024-01-01
+233,33,China,1,sleep scale,11,2024-01-01
+234,31,Spain,0,depression scale,0,2010-01-01
+234,31,Spain,1,loneliness scale,27,2010-01-01
+234,31,Spain,0,sleep scale,7,2010-01-01
+234,40,Spain,1,depression scale,7,2019-01-01
+234,40,Spain,1,loneliness scale,37,2019-01-01
+234,40,Spain,1,sleep scale,0,2019-01-01
+234,45,Spain,0,depression scale,22,2024-01-01
+234,45,Spain,1,loneliness scale,39,2024-01-01
+234,45,Spain,0,sleep scale,11,2024-01-01
+235,31,Mexico,0,depression scale,5,2010-01-01
+235,31,Mexico,0,loneliness scale,35,2010-01-01
+235,31,Mexico,0,sleep scale,7,2010-01-01
+235,40,Mexico,1,depression scale,5,2019-01-01
+235,40,Mexico,1,loneliness scale,25,2019-01-01
+235,40,Mexico,2,sleep scale,NA,2019-01-01
+235,45,Mexico,1,depression scale,NA,2024-01-01
+235,45,Mexico,0,loneliness scale,42,2024-01-01
+235,45,Mexico,1,sleep scale,13,2024-01-01
+236,21,Australia,0,depression scale,3,2010-01-01
+236,21,Australia,0,loneliness scale,33,2010-01-01
+236,21,Australia,0,sleep scale,2,2010-01-01
+236,30,Australia,0,depression scale,0,2019-01-01
+236,30,Australia,0,loneliness scale,51,2019-01-01
+236,30,Australia,0,sleep scale,9,2019-01-01
+236,35,Australia,2,depression scale,8,2024-01-01
+236,35,Australia,1,loneliness scale,57,2024-01-01
+236,35,Australia,0,sleep scale,13,2024-01-01
+237,27,Kenya,0,depression scale,0,2010-01-01
+237,27,Kenya,0,loneliness scale,47,2010-01-01
+237,27,Kenya,0,sleep scale,8,2010-01-01
+237,36,Kenya,0,depression scale,5,2019-01-01
+237,36,Kenya,1,loneliness scale,34,2019-01-01
+237,36,Kenya,1,sleep scale,2,2019-01-01
+237,41,Kenya,0,depression scale,0,2024-01-01
+237,41,Kenya,3,loneliness scale,20,2024-01-01
+237,41,Kenya ,1,sleep scale,5,2024-01-01
+238,16,India,0,depression scale,11,2010-01-01
+238,16,India,0,loneliness scale,41,2010-01-01
+238,16,India,0,sleep scale,10,2010-01-01
+238,25,India ,0,depression scale,0,2019-01-01
+238,25,India,0,loneliness scale,35,2019-01-01
+238,25,India,0,sleep scale,7,2019-01-01
+238,30,India,0,depression scale,10,2024-01-01
+238,30,India,2,loneliness scale,48,2024-01-01
+238,30,India,0,sleep scale,10,2024-01-01
+239,26,Nigeria,0,depression scale,0,2010-01-01
+239,26,Nigeria,1,loneliness scale,22,2010-01-01
+239,26,Nigeria,1,sleep scale,9,2010-01-01
+239,35,Nigeria,1,depression scale,0,2019-01-01
+239,35,Nigeria,1,loneliness scale,35,2019-01-01
+239,35,Nigeria,2,sleep scale,6,2019-01-01
+239,40,Nigeria,0,depression scale,6,2024-01-01
+239,-1,Nigeria,1,loneliness scale,40,2024-01-01
+239,40,Nigeria,0,sleep scale,NA,2024-01-01
+240,17,Canada,0,depression scale,11,2010-01-01
+240,17,Canada,0,loneliness scale,55,2010-01-01
+240,17,Canada,0,sleep scale,6,2010-01-01
+240,26,Canada,0,depression scale,14,2019-01-01
+240,26,Canada ,0,loneliness scale,NA,2019-01-01
+240,26,Canada,0,sleep scale,2,2019-01-01
+240,31,Canada,0,depression scale,4,2024-01-01
+240,31,Canada,0,loneliness scale,40,2024-01-01
+240,31,Canada,NA,sleep scale,3,2024-01-01
+241,22,Cuba,0,depression scale,5,2010-01-01
+241,22,Cuba,0,loneliness scale,40,2010-01-01
+241,22,Cuba,0,sleep scale,9,2010-01-01
+241,31,Cuba,0,depression scale,6,2019-01-01
+241,31,Cuba,0,loneliness scale,42,2019-01-01
+241,31,Cuba,1,sleep scale,10,2019-01-01
+241,36,Cuba,0,depression scale,9,2024-01-01
+241,36,Cuba,2,loneliness scale,NA,2024-01-01
+241,36,Cuba,1,sleep scale,11,2024-01-01
+242,28,Brazil,0,depression scale,16,2010-01-01
+242,28,Brazil,1,loneliness scale,66,2010-01-01
+242,28,Brazi1,0,sleep scale,6,2010-01-01
+242,37,Brazil,2,depression scale,11,2019-01-01
+242,37,Brazil,0,loneliness scale,43,2019-01-01
+242,37,Brazil,0,sleep scale,10,2019-01-01
+242,42,Brazil,0,depression scale,0,2024-01-01
+242,42,Brazil,0,loneliness scale,41,2024-01-01
+242,42,Brazil,1,sleep scale,0,2024-01-01
+243,15,Spain,0,depression scale,0,2010-01-01
+243,15,Spain,0,loneliness scale,56,2010-01-01
+243,15,Spain,0,sleep scale,16,2010-01-01
+243,24,Spain,0,depression scale,6,2019-01-01
+243,24,Spain,0,loneliness scale,38,2019-01-01
+243,24,Spain,1,sleep scale,12,2019-01-01
+243,29,Spain,0,depression scale,0,2024-01-01
+243,29,Spain,0,loneliness scale,42,2024-01-01
+243,29,Spain,0,sleep scale,5,2024-01-01
+244,28,Argentina,0,depression scale,13,2010-01-01
+244,28,Argentina,1,loneliness scale,40,2010-01-01
+244,28,Argentina,0,sleep scale,4,2010-01-01
+244,37,Argentina,1,depression scale,7,2019-01-01
+244,37,Argentina,1,loneliness scale,47,2019-01-01
+244,37,Argentina,1,sleep scale,-12,2019-01-01
+244,42,Argentina,0,depression scale,5,2024-01-01
+244,42,Argentina,1,loneliness scale,39,2024-01-01
+244,42,Argentina,1,sleep scale,7,2024-01-01
+245,16,Fiji ,0,depression scale,7,2010-01-01
+245,16,Fiji,0,loneliness scale,41,2010-01-01
+245,16,Fiji,0,sleep scale,10,2010-01-01
+245,25,Fiji,0,depression scale,10,2019-01-01
+245,25,Fiji,0,loneliness scale,53,2019-01-01
+245,25,Fiji,1,sleep scale,15,2019-01-01
+245,30,Fiji,0,depression scale,7,2024-01-01
+245,30,Fiji,0,loneliness scale,32,2024-01-01
+245,30,Fiji,0,sleep scale,9,2024-01-01
+246,19,Kenya,0,depression scale,-0,2010-01-01
+246,19,Kenya,0,loneliness scale,32,2010-01-01
+246,19,Kenya,0,sleep scale,2,2010-01-01
+246,28,Kenya,0,depression scale,15,2019-01-01
+246,28,Kenya,0,loneliness scale,30,2019-01-01
+246,28,Kenya,0,sleep scale,12,2019-01-01
+246,33,Kenya,1,depression scale,4,2024-01-01
+246,33,Kenya,0,loneliness scale,40,2024-01-01
+246,33,Kenya,1,sleep scale,2,2024-01-01
+247,24,France,1,depression scale,6,2010-01-01
+247,24,France,0,loneliness scale,32,2010-01-01
+247,24,France,0,sleep scale,12,2010-01-01
+247,33,France ,0,depression scale,3,2019-01-01
+247,33,France,1,loneliness scale,54,2019-01-01
+247,33,France ,1,sleep scale,9,2019-01-01
+247,38,France,1,depression scale,14,2024-01-01
+247,38,France,1,loneliness scale,33,2024-01-01
+247,38,France,1,sleep scale,9,2024-01-01
+248,26,Egypt,0,depression scale,9,2010-01-01
+248,26,Egypt,0,loneliness scale,39,2010-01-01
+248,26,Egypt,0,sleep scale,10,2010-01-01
+248,35,Egypt,1,depression scale,5,2019-01-01
+248,35,Egypt,0,loneliness scale,22,2019-01-01
+248,-1,Egypt,0,sleep scale,6,2019-01-01
+248,40,Egypt,1,depression scale,6,2024-01-01
+248,40,Egypt,1,loneliness scale,48,2024-01-01
+248,40,Egypt,1,sleep scale,7,2024-01-01
+249,17,Chile,0,depression scale,12,2010-01-01
+249,17,Chile,0,loneliness scale,49,2010-01-01
+249,17,Chile,0,sleep scale,8,2010-01-01
+249,26,Chile,1,depression scale,9,2019-01-01
+249,26,Chile,0,loneliness scale,NA,2019-01-01
+249,26,Chile,0,sleep scale,8,2019-01-01
+249,31,Chile,1,depression scale,-6,2024-01-01
+249,31,Chile,0,loneliness scale,52,2024-01-01
+249,31,Chile,0,sleep scale,6,2024-01-01
+250,29,Mexico,1,depression scale,12,2010-01-01
+250,29,Mexico,0,loneliness scale,30,2010-01-01
+250,29,Mexico,0,sleep scale,11,2010-01-01
+250,38,Mexico,1,depression scale,6,2019-01-01
+250,38,Mexcio,2,loneliness scale,42,2019-01-01
+250,38,Mexico,2,sleep scale,6,2019-01-01
+250,43,Mexico,2,depression scale,13,2024-01-01
+250,43,Mexico,0,loneliness scale,NA,2024-01-01
+250,43,Mexico,1,sleep scale,NA,2024-01-01
