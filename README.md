@@ -6,5 +6,5 @@ Exercises for the course [Health Research Methods](https://kurser.ku.dk/course/s
 
 - Clone the repository or download it as a ZIP file and extract it to your computer (Click on green button <> Code to download). 
 - Open the folder in RStudio and open the R project file `Data_analysis_exercises.Rproj`. This will set the working directory to the project folder. 
-- You can then open the R scripts in the `scripts` folder and run the code line by line or in chunks.
+- You can then open the R scripts in the `src` folder (aka source) and run the code line by line or in chunks.
 
