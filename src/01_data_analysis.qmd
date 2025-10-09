@@ -1,0 +1,546 @@
+---
+title: "Quantitative data analysis"
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme:
+      light: flatly
+      dark: darkly
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+# Overview
+
+In this exercise you will:
+- Load three simulated datasets
+- Compute summary statistics with skimr and gtsummary
+- Estimate the prevalence of problem_sleeping in 2010
+- Estimate the incidence of ICD-10 insomnia
+- Create a 2x2 table (sleeping problems vs stressed in 2024) with epiR
+- Model risk of ICD-10 insomnia using GLM with adjustment
+- Fit and interpret a machine learning model
+
+Throughout, we will guide you step-by-step and explain what each chunk does.
+
+# Setup
+
+We load the packages we will use. If a package is missing, uncomment the
+install.packages lines and run once.
+
+```{r, warning=FALSE}
+needed <- c("tidyverse", "lubridate", "skimr", "gtsummary", 
+"epiR", "broom", "sandwich", "lmtest",
+"tidymodels", "lightgbm", "bonsai", "vip")
+
+to_install <- needed[!suppressWarnings(
+  sapply(needed, requireNamespace, quietly = TRUE)
+)]
+if (length(to_install) > 0) {
+  install.packages(to_install, dependencies = TRUE)
+}
+
+library(tidyverse)
+library(lubridate)
+library(skimr)
+library(gtsummary)
+library(epiR)
+library(broom)
+library(sandwich)
+library(lmtest)
+
+# Modeling (tidymodels + LightGBM)
+library(tidymodels)
+library(lightgbm)
+library(bonsai)
+library(vip)
+
+set.seed(123) # for reproducibility where randomness is used
+
+# Helper to compute age (in years) at a given date
+age_at <- function(birthdate, on_date) {
+  floor(as.numeric(difftime(on_date, birthdate, units = "days")) / 365.25)
+}
+
+# Define code sets used across the analysis
+insomnia_icd10 <- c("G47.0", "F51.0")
+antidepressant_atc <- c("N06AB04", "N06AB05", "N06AB10", "N06AA09")
+```
+# 1) Load the data
+
+We read three CSVs from the processed_data folder. We also parse date
+columns and ensure key variables are consistently typed.
+
+```{r}
+overall_df <- readr::read_csv(
+  "../processed_data/overall_data.csv"
+)
+
+survey_df <- readr::read_csv(
+  "../processed_data/survey_data.csv"
+)
+
+register_df <- readr::read_csv(
+  "../processed_data/health_register_data.csv"
+)
+
+# Quick peek
+glimpse(overall_df)
+glimpse(survey_df)
+glimpse(register_df)
+
+# Ensure categorical variables are factors with consistent levels
+overall_df <- overall_df |>
+  mutate(
+    sex_at_birth = factor(sex_at_birth, levels = c("Male", "Female")),
+    environment = factor(environment, levels = c("Urban", "Rural")),
+    SES = factor(SES, levels = c("low", "medium", "high")),
+    country = factor(country)
+  )
+
+survey_df <- survey_df |>
+  mutate(
+    problem_sleeping = factor(problem_sleeping, levels = c("yes", "no")),
+    feeling_stressed = factor(feeling_stressed, levels = c("yes", "no")),
+    feeling_lonely = factor(feeling_lonely, levels = c("yes", "no"))
+  )
+
+register_df <- register_df |>
+  mutate(
+    measurement_type = factor(measurement_type, levels = c("ICD-10", "ATC"))
+  )
+```
+
+# 2) Merge overall data into survey and register data
+
+We create:
+- merged_survey: one row per person per survey time, with demographics
+- merged_register: register events enriched with demographics
+
+We also compute age at survey date in merged_survey.
+
+```{r}
+merged_survey <- survey_df |>
+  left_join(overall_df, by = "ID") |>
+  mutate(
+    year = lubridate::year(datettime),
+    age = age_at(birthdate, datettime)
+  )
+
+merged_register <- register_df |>
+  left_join(overall_df, by = "ID")
+```
+
+# 3a) Summary statistics for survey data (skimr and gtsummary)
+
+We start with a general skim of the merged_survey dataset, then build a
+Table 1 using gtsummary (stratified by sex and overall).
+
+```{r}
+# Skim a subset of variables for readability
+merged_survey |>
+  select(
+    age, sex_at_birth, country, environment, SES,
+    problem_sleeping, feeling_stressed, feeling_lonely, year
+  ) |>
+  skim()
+```
+
+```{r}
+# A gtsummary "Table 1" by sex_at_birth (survey-level)
+tbl_summary(
+  merged_survey |>
+    select(
+      sex_at_birth, age, country, environment, SES,
+      problem_sleeping, feeling_stressed, feeling_lonely
+    ),
+  by = sex_at_birth,
+  type = list(age ~ "continuous2"),
+  statistic = list(
+    all_continuous() ~ "{mean} ({sd})",
+    all_categorical() ~ "{n} / {N} ({p}%)"
+  ),
+  missing = "no"
+) |>
+  add_overall() |>
+  modify_header(label ~ "**Variable**") |>
+  modify_spanning_header(c("stat_1", "stat_2") ~ "**Sex at birth**")
+```
+
+# 3b) Summarize health register data and include counts in gtsummary
+
+First, we summarize the register events overall and by code groups of
+interest (insomnia ICD-10 and antidepressant ATC). Then, we compute the
+number of insomnia diagnoses and antidepressant dispensations per person.
+
+```{r}
+# Overall register event counts by type
+reg_counts_type <- merged_register |>
+  count(measurement_type, name = "n_events")
+reg_counts_type
+
+# Top ICD-10 and ATC codes
+top_icd10 <- merged_register |>
+  filter(measurement_type == "ICD-10") |>
+  count(measurement, sort = TRUE, name = "n") |>
+  slice_head(n = 10)
+top_icd10
+
+top_atc <- merged_register |>
+  filter(measurement_type == "ATC") |>
+  count(measurement, sort = TRUE, name = "n") |>
+  slice_head(n = 10)
+top_atc
+
+# Total insomnia events and unique people
+insomnia_summary <- merged_register |>
+  filter(measurement_type == "ICD-10", measurement %in% insomnia_icd10) |>
+  summarize(
+    insomnia_events = n(),
+    people_with_insomnia = n_distinct(ID)
+  )
+insomnia_summary
+
+# Total antidepressant events and unique people
+antidepressant_summary <- merged_register |>
+  filter(measurement_type == "ATC", measurement %in% antidepressant_atc) |>
+  summarize(
+    antidepressant_events = n(),
+    people_with_antidepressant = n_distinct(ID)
+  )
+antidepressant_summary
+
+```
+
+# 4) Prevalence of problem_sleeping in 2010
+
+We define prevalence as the proportion with problem_sleeping == "yes"
+in the 2010 survey wave.
+
+```{r}
+prev_2010 <- merged_survey |>
+  filter(year == 2010) |>
+  summarise(
+    n = n(),
+    cases = sum(problem_sleeping == "yes", na.rm = TRUE),
+    prev = cases / n
+  )
+
+prev_2010
+```
+
+Compute a 95% CI for the prevalence using a binomial exact test.
+
+```{r}
+ci_2010 <- merged_survey |>
+  filter(year == 2010) |>
+  transmute(y = as.integer(problem_sleeping == "yes")) |>
+  summarise(n = n(), cases = sum(y), .by = NULL)
+
+binom_ci <- binom.test(ci_2010$cases, ci_2010$n)
+binom_ci
+```
+
+Tip: You may also stratify by sex, country, etc., to explore differences.
+
+```{r}
+merged_survey |>
+  filter(year == 2010) |>
+  group_by(sex_at_birth) |>
+  summarise(
+    n = n(),
+    cases = sum(problem_sleeping == "yes", na.rm = TRUE),
+    prev = cases / n,
+    .groups = "drop"
+  )
+```
+
+# 5) Incidence of ICD-10 insomnia
+
+We will estimate incidence after a common baseline (2010-06-15):
+- Define insomnia ICD-10 codes
+- Exclude prevalent cases with insomnia before baseline
+- Among those at risk, compute:
+  - Cumulative incidence (incidence proportion) from baseline to 2024-12-31
+  - Incidence rate per 1,000 person-years using person-time
+
+```{r}
+admin_end <- as.Date("2024-12-31")
+baseline <- as.Date("2010-06-15")
+
+# First insomnia date per ID (if any)
+first_insomnia <- merged_register |>
+  filter(
+    measurement_type == "ICD-10",
+    measurement %in% insomnia_icd10
+  ) |>
+  group_by(ID) |>
+  summarize(
+    first_insomnia_date = min(datettime, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+# Merge first insomnia with overall, compute risk set at baseline
+risk_df <- overall_df |>
+  select(ID, birthdate) |>
+  left_join(first_insomnia, by = "ID") |>
+  mutate(
+    prevalent_before_bl = !is.na(first_insomnia_date) &
+      first_insomnia_date < baseline,
+    at_risk = !prevalent_before_bl
+  )
+
+# Compute incidence among those at risk
+incidence_df <- risk_df |>
+  filter(at_risk) |>
+  mutate(
+    event_post_bl = !is.na(first_insomnia_date) &
+      first_insomnia_date >= baseline &
+      first_insomnia_date <= admin_end,
+    t0 = baseline,
+    t1 = if_else(event_post_bl, first_insomnia_date, admin_end),
+    pt_years = as.numeric(t1 - t0) / 365.25
+  )
+
+# Incidence proportion (cumulative incidence)
+inc_prop <- incidence_df |>
+  summarize(
+    N_at_risk = n(),
+    events = sum(event_post_bl),
+    inc_prop = events / N_at_risk
+  )
+inc_prop
+
+# Incidence rate per 1,000 person-years
+inc_rate <- incidence_df |>
+  summarize(
+    events = sum(event_post_bl),
+    pt = sum(pt_years),
+    rate_per_1000_py = (events / pt) * 1000
+  )
+
+inc_rate
+```
+
+# 6) 2x2 table: sleeping problems vs feeling stressed
+
+We build a 2x2 table with tidyverse, then pass the counts to epiR to
+obtain risk ratio, odds ratio, and confidence intervals.
+
+```{r}
+count_data <- merged_survey |>
+  filter(year == 2024) |>
+  select(ID, problem_sleeping, feeling_stressed) |> 
+  group_by(feeling_stressed, problem_sleeping) |>
+  summarize(n = n())
+
+count_data
+
+epi_2x2 <- epi.2by2(count_data, method = "cross.sectional", digits = 2, conf.level = 0.95, units = 100, interpret = TRUE)
+
+epi_2x2
+```
+
+# 7) Adjusted risk of ICD-10 insomnia if having sleeping problems (GLM)
+
+We estimate the risk ratio (preferred over odds ratio for common outcomes)
+for incident insomnia after baseline, comparing those with vs without
+sleeping problems in 2010, adjusting for age, sex, country, environment,
+and SES. We use a Poisson regression with robust standard errors to
+approximate risk ratios.
+
+Steps:
+- Exposure: problem_sleeping at 2010 survey
+- Outcome: incident insomnia after 2010-06-15
+- Adjusters: age at 2010, sex_at_birth, country, environment, SES
+
+```{r}
+# Build the baseline (2010) analysis dataset
+baseline_2010 <- merged_survey |>
+  filter(year == 2010) |>
+  select(
+    ID, birthdate, sex_at_birth, country, environment, SES,
+    problem_sleeping, datettime
+  ) |>
+  rename(baseline_date = datettime) |>
+  mutate(age_2010 = age_at(birthdate, baseline_date))
+
+# Merge with incidence outcome (from section 5)
+analysis_df <- baseline_2010 |>
+  left_join(
+    incidence_df |>
+      select(ID, event_post_bl),
+    by = "ID"
+  ) |>
+  left_join(
+    risk_df |>
+      select(ID, at_risk),
+    by = "ID"
+  ) |>
+  filter(at_risk) |>
+  mutate(
+    problem_sleeping_2010 = forcats::fct_drop(problem_sleeping),
+    has_insomnia_post2010 = as.integer(event_post_bl)
+  ) |>
+  select(
+    ID, has_insomnia_post2010, problem_sleeping_2010, age_2010,
+    sex_at_birth, country, environment, SES
+  ) |>
+  drop_na()
+
+# Fit Poisson regression with log link for risk ratios
+mod_rr <- glm(
+  has_insomnia_post2010 ~ problem_sleeping_2010 + age_2010 +
+    sex_at_birth + country + environment + SES,
+  family = poisson(link = "log"),
+  data = analysis_df
+)
+
+# Robust (sandwich) SEs for valid CIs
+vc <- sandwich::vcovHC(mod_rr, type = "HC0")
+ct <- lmtest::coeftest(mod_rr, vcov. = vc)
+ct
+
+# Tidy exponentiated estimates (risk ratios)
+rr_out <- broom::tidy(mod_rr) |>
+  mutate(
+    se_robust = sqrt(diag(vc)),
+    z = estimate / se_robust,
+    p.value = 2 * pnorm(abs(z), lower.tail = FALSE),
+    rr = exp(estimate),
+    conf.low = exp(estimate - 1.96 * se_robust),
+    conf.high = exp(estimate + 1.96 * se_robust)
+  ) |>
+  select(term, rr, conf.low, conf.high, p.value)
+
+rr_out
+```
+
+Interpretation: The coefficient for problem_sleeping_2010yes is the
+adjusted risk ratio for incident insomnia after 2010 among those with
+sleeping problems at baseline vs those without.
+
+# 8) Predict sleeping problems (LightGBM via tidymodels) and importance
+
+We will predict problem_sleeping in 2024 from age, sex, country,
+environment, and SES. We fit a LightGBM classifier via tidymodels (bonsai)
+and plot feature importances.
+
+```{r}
+# Prepare 2024 data for modeling
+rf_2024 <- merged_survey |>
+  filter(year == 2024) |>
+  transmute(
+    problem_sleeping = forcats::fct_drop(problem_sleeping),
+    age_2024 = age,
+    sex_at_birth,
+    country,
+    environment,
+    SES
+  ) |>
+  drop_na()
+
+# Ensure target is a factor with two levels
+rf_2024 <- rf_2024 |>
+  mutate(problem_sleeping = factor(problem_sleeping, levels = c("yes", "no")))
+
+# 80/20 stratified split (preserves class balance)
+set.seed(123) # ensure reproducible split
+rf_split <- initial_split(
+  rf_2024,
+  prop = 0.80,
+  strata = problem_sleeping
+)
+rf_train <- training(rf_split)
+rf_test <- testing(rf_split)
+
+# Recipe on training data only (prevents leakage)
+sleep_rec <- recipe(
+  problem_sleeping ~ age_2024 + sex_at_birth + country +
+    environment + SES,
+  data = rf_train
+) |>
+  step_zv(all_predictors()) |>
+  step_novel(all_nominal_predictors()) |>
+  step_dummy(all_nominal_predictors(), one_hot = TRUE)
+
+# LightGBM model spec (reasonable defaults; no tuning to keep it simple)
+lgb_spec <- boost_tree(
+  mode = "classification",
+  trees = 1000,
+  learn_rate = 0.05,
+  tree_depth = 6,
+  min_n = 5,
+  loss_reduction = 0.0,
+  sample_size = 0.8
+) |>
+  set_engine("lightgbm", num_threads = 0, verbose = -1)
+
+# Workflow
+lgb_wf <- workflow() |>
+  add_model(lgb_spec) |>
+  add_recipe(sleep_rec)
+
+# Fit on training set
+lgb_fit <- fit(lgb_wf, data = rf_train)
+```
+
+Evaluate on held-out test set.
+
+```{r}
+preds <- predict(lgb_fit, rf_test, type = "prob") |>
+  bind_cols(
+    predict(lgb_fit, rf_test, type = "class"),
+    rf_test |> select(problem_sleeping)
+  )
+
+yardstick::roc_auc(preds, truth = problem_sleeping, .pred_yes)
+yardstick::accuracy(preds, truth = problem_sleeping, .pred_class)
+yardstick::conf_mat(preds, truth = problem_sleeping, estimate = .pred_class)
+```
+
+Extract and plot feature importance. We pull the underlying LightGBM
+model, compute gain-based importance, and visualize it.
+
+```{r}
+# Extract underlying LightGBM booster and compute importance
+lgb_engine <- workflows::extract_fit_engine(lgb_fit)
+imp <- lightgbm::lgb.importance(lgb_engine)
+
+imp_tbl <- as_tibble(imp) |>
+  arrange(desc(Gain)) |>
+  mutate(Feature = forcats::fct_reorder(Feature, Gain))
+
+imp_tbl |>
+  select(Feature, Gain, Cover, Frequency) |>
+  head(20)
+
+# Plot top 20 features by gain
+imp_tbl |>
+  slice_head(n = 20) |>
+  ggplot(aes(x = Feature, y = Gain)) +
+  geom_col(fill = "#2C7FB8") +
+  coord_flip() +
+  labs(
+    title = "LightGBM feature importance (gain)",
+    x = "Feature",
+    y = "Importance (gain)"
+  ) +
+  theme_minimal()
+```
+
+# Wrap-up
+
+You have:
+- Combined surveys with registers and demographics
+- Described the data using skimr and gtsummary
+- Summarized health registers and integrated register-based counts into gtsummary
+- Estimated prevalence and incidence
+- Built a 2x2 table and obtained effect measures using epiR
+- Modeled adjusted risk using poisson regression with robust SEs
+- Fit a machine learning model and interpreted feature importance
+
+Feel free to play with the code
