@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Descriptive Question Worksheet</title>
+<meta name="description" content="Fill in the Lesko, Fox and Edwards (2022) framework for descriptive epidemiology for your own research project, then download it as a PDF.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=Public+Sans:ital,wght@0,400..700;1,400..600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+<script>try { if (localStorage.getItem("hrm-theme") === "dark") document.documentElement.setAttribute("data-theme", "dark"); } catch (e) {}</script>
+<style>
+  :root {
+    --desk: #dfe7e4;
+    --paper: #ffffff;
+    --spot: #0e5a57;          /* the pre-printed form ink */
+    --spot-deep: #093f3d;
+    --spot-line: #9cc2bd;
+    --spot-soft: #e8f2f0;     /* dropout tint behind answer fields */
+    --spot-wash: #f3f8f7;
+    --pen: #16202a;           /* the student's own writing */
+    --muted: #4a625f;
+    --faint: #6f8582;
+    --flag: #9a4a08;
+    --flag-soft: #fbf0e3;
+    --focus: #1d7f7a;
+    --heading: #093f3d;
+    --rule: #e3ecea;
+    --field-hover: #e1eeeb;
+    --field-focus: #ffffff;
+    --box-bg: #ffffff;
+    --placeholder: #667c79;
+    --selection: #bfe0db;
+    --thumb: #b4c7c3;
+    --bar: #093f3d;
+    --bar-ink: #eaf4f2;
+    --bar-muted: #b9d6d1;
+    --bar-line: rgba(234, 244, 242, .35);
+    --sec-bg: #0e5a57;
+    --sec-ink: #ffffff;
+    --sec-aside: #cfe6e2;
+    --chip-bg: #ffffff;
+    --chip-ink: #0e5a57;
+    --tip-bg: #ffffff;
+    --ink-flash: #cfe8e3;
+    --nudge-ink: #6b3405;
+    --rail-hover: rgba(255, 255, 255, .55);
+    --shadow: rgba(9, 40, 38, .22);
+    --toast-bg: #16202a;
+    color-scheme: light;
+    --display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+    --body: "Public Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    --ease: cubic-bezier(.16, 1, .3, 1);
+  }
+  /* black theme: the same form, printed in light teal ink on black stock */
+  :root[data-theme="dark"] {
+    --desk: #000000;
+    --paper: #0c1111;
+    --spot: #5fc4ba;
+    --spot-deep: #8fdcd3;
+    --spot-line: #2e4b48;
+    --spot-soft: #142020;
+    --spot-wash: #101918;
+    --pen: #e6eeed;
+    --muted: #a5bab7;
+    --faint: #829996;
+    --flag: #f0a35c;
+    --flag-soft: #2a1d10;
+    --focus: #7fe0d6;
+    --heading: #a6e6de;
+    --rule: #1c2827;
+    --field-hover: #1a2828;
+    --field-focus: #050808;
+    --box-bg: #050808;
+    --placeholder: #829996;
+    --selection: #1f4d48;
+    --thumb: #2c3b3a;
+    --bar: #000000;
+    --bar-ink: #e6eeed;
+    --bar-muted: #93aaa7;
+    --bar-line: rgba(230, 238, 237, .28);
+    --sec-bg: #123f3c;
+    --sec-ink: #eaf6f4;
+    --sec-aside: #9fcfc8;
+    --chip-bg: #eaf6f4;
+    --chip-ink: #123f3c;
+    --tip-bg: #151f1f;
+    --ink-flash: #1f4d48;
+    --nudge-ink: #f6d2ab;
+    --rail-hover: rgba(255, 255, 255, .06);
+    --shadow: rgba(0, 0, 0, .7);
+    --toast-bg: #e6eeed;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+  body {
+    margin: 0;
+    background: var(--desk);
+    color: var(--pen);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--selection); color: var(--pen); }
+  a { color: var(--spot); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:hover { color: var(--spot-deep); }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  ::-webkit-scrollbar { width: 12px; height: 12px; }
+  ::-webkit-scrollbar-thumb { background: var(--thumb); border-radius: 6px; border: 3px solid var(--desk); }
+  ::-webkit-scrollbar-track { background: var(--desk); }
+  html { scrollbar-color: var(--thumb) var(--desk); }
+  .ico { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+  /* ---------- toolbar ---------- */
+  .toolbar {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--bar);
+    color: var(--bar-ink);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .14);
+    border-bottom: 1px solid var(--rule);
+  }
+  .toolbar-inner {
+    max-width: 1320px; margin: 0 auto; padding: 10px 24px;
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .brand { display: flex; align-items: baseline; gap: 12px; margin-right: auto; min-width: 0; }
+  .brand b { font-family: var(--display); font-stretch: 78%; font-weight: 700; font-size: 19px; letter-spacing: .01em; white-space: nowrap; }
+  .save-state { font-size: 13px; color: var(--bar-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .save-state.warn { color: #ffd9a8; }
+  .btn {
+    font: inherit; font-size: 14px; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 8px 13px; border-radius: 4px; cursor: pointer;
+    border: 1px solid var(--bar-line); background: transparent; color: var(--bar-ink);
+    transition: background .2s var(--ease), border-color .2s var(--ease);
+  }
+  .btn:hover { background: rgba(234, 244, 242, .1); border-color: rgba(234, 244, 242, .6); }
+  .btn.primary { background: var(--bar-ink); color: var(--bar); border-color: var(--bar-ink); }
+  .btn.primary:hover { background: #ffffff; }
+  .btn.icon-only { padding: 8px 9px; }
+  .btn .ico-sun { display: none; }
+  :root[data-theme="dark"] .btn .ico-sun { display: block; }
+  :root[data-theme="dark"] .btn .ico-moon { display: none; }
+  .btn[aria-busy="true"] { opacity: .7; cursor: progress; }
+  .btn .lbl-short { display: none; }
+
+  /* ---------- layout ---------- */
+  .layout {
+    max-width: 1320px; margin: 0 auto; padding: 28px 24px 80px;
+    display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 28px; align-items: start;
+  }
+  .rail { position: sticky; top: 84px; font-size: 14px; }
+  .rail h2 { font-family: var(--display); font-stretch: 80%; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; font-weight: 700; }
+  .rail ol { list-style: none; margin: 0; padding: 0; }
+  .rail a {
+    display: grid; grid-template-columns: 26px 1fr auto; align-items: center; gap: 8px;
+    padding: 7px 8px; border-radius: 4px; text-decoration: none; color: var(--pen);
+    transition: background .2s var(--ease);
+  }
+  .rail a:hover { background: var(--rail-hover); }
+  .rail a.here { background: var(--paper); box-shadow: 0 1px 3px rgba(9, 40, 38, .1); }
+  .rail .code { font-family: var(--display); font-weight: 800; font-stretch: 80%; color: var(--spot); text-align: center; border: 1.5px solid var(--spot); border-radius: 2px; line-height: 20px; font-size: 13px; }
+  .rail .count { font-variant-numeric: tabular-nums; color: var(--faint); font-size: 12.5px; }
+  .rail .done .count { color: var(--spot); font-weight: 700; }
+  .rail-note { margin-top: 18px; font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+  .rail-note p { margin: 0 0 8px; }
+
+  /* ---------- the form sheet ---------- */
+  .sheet {
+    background: var(--paper);
+    box-shadow: 0 1px 2px rgba(9, 40, 38, .08), 0 12px 32px -12px var(--shadow);
+    border-radius: 3px;
+    min-width: 0;
+  }
+  .masthead {
+    padding: 34px 40px 26px; border-bottom: 3px double var(--spot);
+  }
+  .masthead h1 {
+    font-family: var(--display); font-stretch: 72%; font-weight: 800; font-size: clamp(34px, 5vw, 54px);
+    line-height: .98; letter-spacing: -.01em; margin: 0 0 12px; color: var(--heading); text-wrap: balance;
+  }
+  .masthead p { margin: 0; color: var(--muted); max-width: 62ch; font-size: 15px; }
+  .titleblock { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); margin-top: 22px; border: 1.5px solid var(--spot); }
+  .titleblock > div { padding: 10px 14px 12px; min-width: 0; }
+  .titleblock > div + div { border-left: 1.5px solid var(--spot); }
+  .titleblock label { display: block; font-family: var(--display); font-stretch: 80%; font-weight: 700; font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--spot); margin-bottom: 5px; }
+  .titleblock textarea { min-height: 46px; font-size: 17px; font-weight: 600; }
+  .howto {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0;
+    border-bottom: 1px solid var(--spot-line); font-size: 14px; color: var(--muted);
+  }
+  .howto div { padding: 14px 20px 14px 40px; position: relative; }
+  .howto div + div { border-left: 1px solid var(--spot-line); padding-left: 20px; }
+  .howto b { color: var(--pen); display: block; font-weight: 600; margin-bottom: 2px; }
+  .howto .term { font-size: inherit; }
+
+  section.part { padding: 0 0 12px; }
+  .part-head {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--sec-bg); color: var(--sec-ink);
+    padding: 10px 40px; margin: 28px 0 6px;
+  }
+  .part-head .code {
+    width: 32px; height: 32px; display: grid; place-items: center; flex: none;
+    background: var(--chip-bg); color: var(--chip-ink); font-family: var(--display); font-weight: 800; font-stretch: 80%; font-size: 19px; border-radius: 2px;
+  }
+  .part-head h2 { margin: 0; font-family: var(--display); font-stretch: 78%; font-weight: 700; font-size: 21px; letter-spacing: .06em; text-transform: uppercase; }
+  .part-head .aside { margin-left: auto; font-size: 13px; color: var(--sec-aside); }
+  .part-intro { padding: 8px 40px 4px; color: var(--muted); max-width: 86ch; font-size: 15px; }
+  .part-intro p { margin: 6px 0; }
+
+  .field {
+    display: grid; grid-template-columns: 46px minmax(0, 1fr) 260px; gap: 0 22px;
+    padding: 18px 40px 18px 40px; border-bottom: 1px solid var(--rule);
+  }
+  .field:last-child { border-bottom: 0; }
+  .field.wide .fmain { grid-column: 2 / 4; }
+  .field.wide .fnote { grid-column: 2 / 4; margin-top: 14px; max-width: 70ch; }
+  .field .fcode { font-family: var(--display); font-stretch: 80%; font-weight: 800; color: var(--spot); font-size: 16px; padding-top: 1px; font-variant-numeric: tabular-nums; }
+  .field .fmain { min-width: 0; }
+  .flabel { font-weight: 650; font-size: 16.5px; line-height: 1.4; margin-bottom: 3px; color: var(--pen); }
+  .fhelp { color: var(--muted); font-size: 14.5px; margin: 0 0 10px; max-width: 70ch; }
+  .fopt { font-weight: 400; color: var(--faint); font-size: 13.5px; }
+
+  input[type=text], input[type=date], textarea, select {
+    width: 100%; font: inherit; color: var(--pen); font-size: 16px;
+    background: var(--spot-soft);
+    border: 0; border-bottom: 1.5px solid var(--spot);
+    border-radius: 2px 2px 0 0; padding: 9px 11px;
+    transition: background .2s var(--ease), box-shadow .2s var(--ease);
+    caret-color: var(--spot);
+  }
+  textarea { min-height: 76px; resize: vertical; line-height: 1.5; field-sizing: content; max-height: 420px; }
+  input::placeholder, textarea::placeholder { color: var(--placeholder); opacity: 1; }
+  input[type=text]:hover, textarea:hover, select:hover { background: var(--field-hover); }
+  input[type=text]:focus, input[type=date]:focus, textarea:focus, select:focus {
+    outline: none; background: var(--field-focus); box-shadow: 0 0 0 1.5px var(--spot) inset, 0 3px 0 -1.5px var(--spot);
+  }
+
+  /* tick boxes, as on a paper form */
+  .choices { display: grid; gap: 6px; }
+  .choices.cols { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .choice { display: grid; grid-template-columns: 22px 1fr; gap: 10px; align-items: start; padding: 7px 10px; border-radius: 3px; cursor: pointer; transition: background .2s var(--ease); }
+  .choice:hover { background: var(--spot-wash); }
+  .choice input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .box { width: 20px; height: 20px; border: 1.5px solid var(--spot); border-radius: 2px; margin-top: 1px; display: grid; place-items: center; background: var(--box-bg); }
+  .choice.radio .box { border-radius: 50%; }
+  .box svg { width: 16px; height: 16px; fill: none; stroke: var(--pen); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+  .box path { stroke-dasharray: 20; stroke-dashoffset: 20; transition: stroke-dashoffset .32s var(--ease); }
+  .choice input:checked + .box path { stroke-dashoffset: 0; }
+  .choice input:focus-visible + .box { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .choice .ctext { font-size: 15.5px; line-height: 1.45; }
+  .choice .ctext small { display: block; color: var(--muted); font-size: 13.5px; }
+  .choice input:checked ~ .ctext > span:first-child { font-weight: 650; }
+  .other-wrap { margin-top: 8px; }
+
+  .nudge {
+    margin-top: 10px; padding: 9px 12px; background: var(--flag-soft); color: var(--nudge-ink);
+    font-size: 14px; border-radius: 3px; display: flex; gap: 9px; align-items: flex-start;
+  }
+  .nudge .ico { color: var(--flag); margin-top: 2px; }
+  .nudge[hidden] { display: none; }
+
+  /* margin notes: the paper's worked example */
+  .fnote { font-size: 13.5px; color: var(--muted); line-height: 1.5; border-top: 1.5px solid var(--spot-line); padding-top: 8px; align-self: start; }
+  .fnote .nh { display: flex; gap: 6px; align-items: center; font-family: var(--display); font-stretch: 82%; font-weight: 700; font-size: 12.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--spot); margin-bottom: 4px; }
+  .fnote .nh .ico { width: 15px; height: 15px; }
+  .fnote p { margin: 0 0 6px; }
+  .fnote details summary { display: none; }
+
+  /* ---------- glossary terms ---------- */
+  .term {
+    font: inherit; color: inherit; background: none; border: 0; padding: 0; margin: 0; cursor: help;
+    text-decoration: underline dotted var(--spot); text-decoration-thickness: 1.5px; text-underline-offset: 4px;
+  }
+  .term:hover, .term[aria-expanded="true"] { color: var(--heading); background: var(--spot-soft); border-radius: 2px; }
+  .tip {
+    position: fixed; z-index: 50; width: min(380px, calc(100vw - 24px));
+    background: var(--tip-bg); color: var(--pen); border-radius: 4px; padding: 14px 16px 12px;
+    box-shadow: 0 2px 4px rgba(9, 40, 38, .08), 0 14px 34px -6px var(--shadow);
+    font-size: 14.5px; line-height: 1.5;
+    opacity: 0; transform: translateY(4px); pointer-events: none;
+    transition: opacity .16s var(--ease), transform .22s var(--ease);
+  }
+  .tip.show { opacity: 1; transform: none; pointer-events: auto; }
+  .tip h3 { margin: 0 0 4px; font-family: var(--display); font-stretch: 80%; font-weight: 800; font-size: 19px; color: var(--heading); letter-spacing: .005em; }
+  .tip p { margin: 0 0 8px; }
+  .tip .extra { color: var(--muted); font-size: 13.5px; }
+  .tip .src { display: flex; justify-content: space-between; align-items: center; gap: 10px; border-top: 1px solid var(--rule); padding-top: 8px; margin-top: 4px; font-size: 12.5px; color: var(--muted); }
+  .tip .src a { display: inline-flex; align-items: center; gap: 4px; font-weight: 600; white-space: nowrap; }
+  .tip .src a .ico { width: 14px; height: 14px; }
+
+  /* ---------- Box B: the assembled question ---------- */
+  .qbox { margin: 12px 40px 4px; border: 3px double var(--spot); padding: 18px 22px; background: var(--spot-wash); }
+  .qbox .qlab { font-family: var(--display); font-stretch: 80%; font-weight: 700; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--spot); margin-bottom: 6px; }
+  .qtext { font-size: clamp(18px, 2.1vw, 23px); line-height: 1.5; margin: 0; text-wrap: pretty; }
+  .slot { background: var(--box-bg); box-shadow: inset 0 -1.5px 0 var(--spot); padding: 0 4px; border-radius: 2px 2px 0 0; }
+  .slot.empty { color: var(--faint); font-style: italic; font-size: .82em; background: transparent; box-shadow: inset 0 -1.5px 0 var(--spot-line); white-space: nowrap; }
+  a.slot { text-decoration: none; }
+  .slot.fresh { animation: ink .9s var(--ease); }
+  @keyframes ink { from { background: var(--ink-flash); } to { background: var(--box-bg); } }
+  .qactions { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 14px; font-size: 14px; color: var(--muted); }
+  .btn-ink { font: inherit; font-size: 14px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 4px; border: 1.5px solid var(--spot); background: var(--box-bg); color: var(--spot); cursor: pointer; transition: background .2s var(--ease); }
+  .btn-ink:hover { background: var(--spot-soft); }
+  .btn-ink.subtle { border-color: transparent; background: transparent; }
+  .btn-ink.subtle:hover { background: var(--spot-soft); }
+
+  /* ---------- variables table ---------- */
+  .vtable { width: 100%; border-collapse: collapse; font-size: 15px; }
+  .vtable th { text-align: left; font-family: var(--display); font-stretch: 82%; font-weight: 700; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--spot); padding: 6px 8px; border-bottom: 1.5px solid var(--spot); }
+  .vtable td { padding: 6px 4px; vertical-align: top; border-bottom: 1px solid var(--rule); }
+  .vtable td:first-child { padding-left: 0; }
+  .vtable input[type=text], .vtable textarea, .vtable select { font-size: 15px; padding: 7px 9px; }
+  .vtable textarea { min-height: 40px; }
+  .vtable .del { background: none; border: 0; color: var(--faint); cursor: pointer; padding: 8px 6px; border-radius: 3px; }
+  .vtable .del:hover { color: var(--flag); background: var(--flag-soft); }
+  .role-seg { display: grid; gap: 4px; }
+  .role-seg .choice { padding: 4px 6px; grid-template-columns: 18px 1fr; gap: 7px; }
+  .role-seg .box { width: 17px; height: 17px; }
+  .role-seg .ctext { font-size: 14px; }
+  .vadd { margin-top: 10px; }
+
+  /* threats */
+  .threat-apply { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .threat-apply .choice { padding: 5px 12px 5px 8px; border: 1px solid var(--spot-line); }
+  .threat-apply .choice:has(input:checked) { border-color: var(--spot); background: var(--spot-wash); }
+
+  .foot { padding: 26px 40px 34px; border-top: 3px double var(--spot); margin-top: 20px; font-size: 13.5px; color: var(--muted); display: grid; gap: 8px; }
+  .foot p { margin: 0; max-width: 100ch; }
+
+  .toast {
+    position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 16px); z-index: 60;
+    background: var(--toast-bg); color: var(--paper); padding: 11px 16px; border-radius: 4px; font-size: 14.5px;
+    max-width: min(560px, calc(100vw - 32px)); box-shadow: 0 10px 30px -8px rgba(0, 0, 0, .4);
+    opacity: 0; pointer-events: none; transition: opacity .2s var(--ease), transform .3s var(--ease);
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  #printView { display: none; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 1180px) {
+    .field { grid-template-columns: 46px minmax(0, 1fr); }
+    .fnote { grid-column: 2; margin-top: 12px; border-top: 0; padding-top: 0; }
+    .fnote details { border: 1px solid var(--spot-line); border-radius: 3px; padding: 0 12px; }
+    .fnote details[open] { padding-bottom: 8px; }
+    .fnote details summary { display: flex; cursor: pointer; list-style: none; padding: 8px 0; }
+    .fnote details summary::-webkit-details-marker { display: none; }
+    .fnote .nh-static { display: none; }
+    .field.wide .fmain, .field.wide .fnote { grid-column: 2; }
+  }
+  @media (max-width: 960px) {
+    .layout { grid-template-columns: 1fr; padding: 16px 12px 60px; }
+    .rail { display: none; }
+  }
+  @media (max-width: 720px) {
+    .toolbar { position: static; }
+    .toolbar-inner { padding: 8px 16px; gap: 8px; }
+    .brand { width: 100%; }
+    .btn { padding: 7px 10px; }
+    .btn .lbl-long { display: none; }
+    .btn .lbl-short { display: inline; }
+    .masthead { padding: 24px 18px 20px; }
+    .titleblock { grid-template-columns: 1fr; }
+    .titleblock > div + div { border-left: 0; border-top: 1.5px solid var(--spot); }
+    .howto { grid-template-columns: 1fr; }
+    .howto div, .howto div + div { padding: 10px 18px; border-left: 0; }
+    .howto div + div { border-top: 1px solid var(--spot-line); }
+    .part-head { padding: 10px 18px; }
+    .part-head .aside { display: none; }
+    .part-intro { padding: 8px 18px 4px; }
+    .field { grid-template-columns: 1fr; padding: 16px 18px; }
+    .field .fcode { margin-bottom: 2px; }
+    .fnote, .field.wide .fmain, .field.wide .fnote { grid-column: 1; }
+    .qbox { margin: 12px 18px 4px; padding: 14px 14px; }
+    .foot { padding: 22px 18px 28px; }
+    .vtable thead { display: none; }
+    .vtable, .vtable tbody, .vtable tr, .vtable td { display: block; width: 100%; }
+    .vtable tr { border: 1px solid var(--spot-line); border-radius: 3px; padding: 8px 10px; margin-bottom: 10px; }
+    .vtable td { border: 0; padding: 4px 0; }
+    .vtable td::before { content: attr(data-h); display: block; font-size: 12px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--spot); margin-bottom: 3px; }
+    .vtable td.del-cell::before { content: none; }
+  }
+
+  /* ---------- print fallback (used when the PDF library cannot load) ---------- */
+  @media print {
+    @page { size: A4; margin: 16mm 16mm 18mm; }
+    :root, :root[data-theme="dark"] { --spot: #0e5a57; --spot-soft: #e8f2f0; --spot-wash: #f3f8f7; --pen: #16202a; }
+    body { background: #fff; font-size: 10.5pt; }
+    .toolbar, .layout, .tip, .toast { display: none !important; }
+    #printView { display: block; color: #16202a; }
+    .pv-head { background: var(--spot); color: #fff; padding: 10pt 12pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .pv-head h1 { margin: 0; font-family: var(--display); font-stretch: 78%; font-size: 20pt; }
+    .pv-head p { margin: 2pt 0 0; font-size: 9pt; color: #d6ebe7; }
+    .pv-id { display: grid; grid-template-columns: 2fr 1fr; border: 1pt solid var(--spot); margin: 8pt 0; }
+    .pv-id div { padding: 5pt 8pt; border-right: 1pt solid var(--spot); }
+    .pv-id div:last-child { border-right: 0; }
+    .pv-id small, .pv-f small { display: block; font-size: 7.5pt; letter-spacing: .06em; text-transform: uppercase; color: var(--spot); font-weight: 700; }
+    .pv-q { border: 3px double var(--spot); padding: 8pt 10pt; margin: 8pt 0 4pt; font-size: 12pt; background: var(--spot-wash); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .pv-sec { background: var(--spot); color: #fff; padding: 4pt 8pt; margin: 12pt 0 4pt; font-family: var(--display); font-stretch: 78%; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; font-size: 11pt; break-after: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .pv-f { display: grid; grid-template-columns: 28pt 1fr; padding: 5pt 0; border-bottom: .5pt solid #cfdedb; break-inside: avoid; }
+    .pv-f .c { color: var(--spot); font-weight: 700; }
+    .pv-f .l { font-weight: 600; }
+    .pv-f .a { white-space: pre-wrap; margin-top: 2pt; }
+    .pv-f .a.empty { color: #8a9c99; font-style: italic; }
+    .pv-opt { display: inline-block; margin-right: 12pt; }
+    .pv-opt.on { font-weight: 700; }
+    .pvb { display: inline-block; width: 8pt; height: 8pt; border: .8pt solid #9cc2bd; vertical-align: -1pt; margin-right: 3pt; }
+    .pvb.on { border-color: #16202a; background: #16202a; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .pv-t { width: 100%; border-collapse: collapse; margin-top: 3pt; font-size: 9.5pt; }
+    .pv-t th, .pv-t td { border: .5pt solid #9cc2bd; padding: 3pt 5pt; text-align: left; vertical-align: top; }
+    .pv-t th { background: var(--spot-soft); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .pv-foot { margin-top: 14pt; font-size: 8pt; color: #4a625f; border-top: 1pt solid var(--spot); padding-top: 5pt; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 19.5h14"/></symbol>
+  <symbol id="i-save" viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5z"/><path d="M8 4v5h7V4"/><path d="M8 20v-6h8v6"/></symbol>
+  <symbol id="i-open" viewBox="0 0 24 24"><path d="M3.5 7V5h6l2 2h9v12h-17z"/><path d="M12 16v-6"/><path d="M9.5 12.5L12 10l2.5 2.5"/></symbol>
+  <symbol id="i-clear" viewBox="0 0 24 24"><path d="M5 7h14"/><path d="M10 4h4"/><path d="M7 7l1 13h8l1-13"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.5c2.5-1 5.5-1 8 .5 2.5-1.5 5.5-1.5 8-.5V19c-2.5-1-5.5-1-8 .5-2.5-1.5-5.5-1.5-8-.5z"/><path d="M12 6v13.5"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v6H4V6h6"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5"/><path d="M12 17.3v.2"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><path d="M8 8h11v12H8z"/><path d="M5 16V4h11"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-example" viewBox="0 0 24 24"><path d="M6 3.5h9l3 3v14H6z"/><path d="M9 10h6"/><path d="M9 13.5h6"/><path d="M9 17h3.5"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M19.5 14.5A8 8 0 0 1 9.5 4.5a8 8 0 1 0 10 10z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></symbol>
+</svg>
+
+<header class="toolbar">
+  <div class="toolbar-inner">
+    <div class="brand"><b>Descriptive question worksheet</b><span class="save-state" id="saveState" aria-live="polite">Nothing written yet</span></div>
+    <button class="btn" id="btnOpen" type="button" title="Open a worksheet you saved earlier (.json)"><svg class="ico"><use href="#i-open"/></svg><span class="lbl-long">Open saved file</span><span class="lbl-short">Open</span></button>
+    <button class="btn" id="btnExample" type="button" title="Fill the worksheet with the HIV viral suppression example from Lesko et al. (2022)"><svg class="ico"><use href="#i-example"/></svg><span class="lbl-long">Load example</span><span class="lbl-short">Example</span></button>
+    <button class="btn" id="btnSave" type="button" title="Save your answers as a file you can open again later"><svg class="ico"><use href="#i-save"/></svg><span class="lbl-long">Save progress file</span><span class="lbl-short">Save</span></button>
+    <button class="btn" id="btnClear" type="button" title="Remove every answer from this worksheet"><svg class="ico"><use href="#i-clear"/></svg><span class="lbl-long">Clear</span><span class="lbl-short">Clear</span></button>
+    <button class="btn primary" id="btnPdf" type="button"><svg class="ico"><use href="#i-download"/></svg><span class="lbl-long">Download PDF</span><span class="lbl-short">PDF</span></button>
+    <button class="btn icon-only" id="btnTheme" type="button" aria-pressed="false" title="Switch to the black theme" aria-label="Black theme"><svg class="ico ico-moon"><use href="#i-moon"/></svg><svg class="ico ico-sun"><use href="#i-sun"/></svg></button>
+    <input type="file" id="fileIn" accept=".json,application/json" hidden>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="rail" aria-label="Sections of the worksheet">
+    <h2>Sections</h2>
+    <ol id="railList"></ol>
+    <div class="rail-note">
+      <p>Terms with a dotted underline open a short definition. Each one links to the passage in the textbook.</p>
+      <p>Your answers stay in this browser only. Save a progress file if you change computer.</p>
+    </div>
+  </nav>
+
+  <main class="sheet" id="sheet">
+    <div class="masthead">
+      <h1>Describe the health of a population</h1>
+      <p>A worksheet for the descriptive part of your own project. Work through the four elements of a well-defined descriptive question: the target population, the outcome, the measure of occurrence, and the auxiliary variables. Then list the threats to your estimate and how you will report it.</p>
+      <div class="titleblock">
+        <div><label for="f_project">Working title</label><textarea id="f_project" data-f="project" rows="1" placeholder="e.g. Anaemia among women of reproductive age in …"></textarea></div>
+        <div><label for="f_authors">Authors (group members)</label><textarea id="f_authors" data-f="authors" rows="1" placeholder="e.g. A. Hassan, J. Møller, K. Osei"></textarea></div>
+      </div>
+    </div>
+    <div class="howto">
+      <div><b>Write in the shaded fields</b>Short and concrete is better than complete. Leave a field empty rather than guess.</div>
+      <div><b>Point at a <button class="term" type="button" data-term="descriptive">dotted term</button></b>to see its definition and the textbook section it comes from.</div>
+      <div><b>Download the PDF</b>when you are done, and bring it to supervision or to the next session.</div>
+    </div>
+    <div id="parts"></div>
+    <div class="foot">
+      <p><b>Framework:</b> Lesko CR, Fox MP, Edwards JK. A framework for descriptive epidemiology. <i>Am J Epidemiol</i>. 2022;191(12):2063–2070. <a href="https://doi.org/10.1093/aje/kwac115" target="_blank" rel="noopener">doi:10.1093/aje/kwac115</a>. The worked HIV examples in the margins paraphrase this paper.</p>
+      <p><b>Definitions:</b> quoted or adapted from Baker C. <i>Epidemiology</i>. Virginia Tech Publishing; 2023. <a href="https://doi.org/10.21061/epidemiology" target="_blank" rel="noopener">doi:10.21061/epidemiology</a>. Licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a>. Definitions marked “Lesko et al.” come from the framework paper.</p>
+    </div>
+  </main>
+</div>
+
+<div class="tip" id="tip" role="tooltip" aria-hidden="true"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div id="printView" aria-hidden="true"></div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ================================================================
+     Glossary. Book definitions come from Baker C, Epidemiology (VT
+     Pressbooks, CC BY-NC-SA 4.0); `find` is a verbatim phrase on the
+     page, used as a text fragment so the link lands on the definition.
+     ================================================================ */
+  var BOOK = "https://pressbooks.lib.vt.edu/epidemiology/chapter/";
+  var PAPER = "https://pmc.ncbi.nlm.nih.gov/articles/PMC10144679/";
+  var CH = {
+    sum:  { slug: "epidemiology-in-sum/", name: "Ch. 1 Epidemiology in sum" },
+    meas: { slug: "measuring-things-in-epidemiology/", name: "Ch. 2 Measuring things" },
+    des:  { slug: "study-designs/", name: "Ch. 3 Study designs" },
+    diag: { slug: "diagnostics-and-screening/", name: "Ch. 4 Diagnostics and screening" },
+    bias: { slug: "the-wrecking-ball-bias-confounding-interaction-and-effect-modification/", name: "Ch. 5 The wrecking ball" }
+  };
+  function frag(t) { return "#:~:text=" + encodeURIComponent(t).replace(/-/g, "%2D"); }
+
+  var G = {
+    "descriptive": { t: "Descriptive epidemiology", ch: "sum", sec: "1.2.2", find: "Descriptive epidemiology is about who",
+      d: "“Descriptive epidemiology is about who, what, where, and when.” It quantifies a population and its health problem by person, place and time.",
+      x: "Analytic epidemiology asks why and how. A descriptive question does not need an exposure or a causal model." },
+    "person": { t: "Person", ch: "sum", sec: "1.2.2", find: "Person includes any and all characteristics",
+      d: "“Person includes any and all characteristics of the patients affected by the outcome we are interested in.” Examples: age, sex, gender, education, behaviours, housing status, occupation." },
+    "place": { t: "Place", ch: "sum", sec: "1.2.2", find: "Place makes us think not just about geographic",
+      d: "Not only the geographic location, but the characteristics of those places: where people live, fall ill or seek care, whether it is rural, the climate, the type of facility." },
+    "time": { t: "Time", ch: "sum", sec: "1.2.2", find: "has to do with when the outcome or exposure occurred",
+      d: "“Time … has to do with when the outcome or exposure occurred”: a calendar date, a season, or a moment relative to another event.",
+      x: "Lesko et al. insist that the target population is anchored in time: a date for prevalence, or a time origin for follow-up." },
+    "target": { t: "Target population", src: "paper", find: "target population",
+      d: "“The group in which we would like to characterize the distribution of the outcome”, defined by person, place and time.",
+      x: "It does not have to be enumerated (unlike a cohort or a sample), but you must be able to say whether any given person belongs to it." },
+    "studysample": { t: "Study sample", src: "paper",
+      d: "The enumerated set of individuals whose information is captured in a data set, such as a survey, a register, a surveillance system or a clinical cohort.",
+      x: "There is rarely a single, perfect existing study sample that can stand in for the target population (Lesko et al.)." },
+    "analytic": { t: "Analytical sample", src: "paper",
+      d: "The subset of the study sample in which disease occurrence is actually measured, given practical limits such as missing measurements or eligibility.",
+      x: "If the causes of the outcome are distributed differently in the analytical sample than in the study sample, the estimate has selection bias." },
+    "estimand": { t: "Descriptive estimand", src: "paper",
+      d: "The quantity you want to know: a function of the outcomes that occurred for everyone in the target population, such as the proportion suppressed on a given date.",
+      x: "A well-defined question names all four parts: target population, outcome, measure of occurrence and auxiliary variables." },
+    "inclusion": { t: "Inclusion and exclusion criteria", ch: "bias", sec: "5.1.1", find: "Inclusion criteria is a definitive list",
+      d: "Inclusion criteria: “a definitive list of characteristics of participants that you want to enroll in the study.” Exclusion criteria: “a list of characteristics that participants should not have.”" },
+    "surveillance": { t: "Surveillance", ch: "des", sec: "3.6", find: "This is known as disease surveillance",
+      d: "An ongoing, systematic data collection system for a health problem, for example notifiable disease reporting." },
+    "sampling": { t: "Sampling bias", ch: "bias", sec: "5.1.1", find: "A bias that results in certain people having a greater chance",
+      d: "“A bias that results in certain people having a greater chance of being selected than others and affects the external validity of the study.”",
+      x: "A convenience sample without a clear sampling frame quietly assumes it behaves like a random sample (Lesko et al.)." },
+    "selection": { t: "Selection bias", ch: "bias", sec: "5.1.1", find: "selection bias is when individuals have different probabilities",
+      d: "When individuals have different probabilities of being selected into the study sample. The result may not apply to the population you care about.",
+      x: "For a descriptive study, the question is whether the people in your analysis differ from the target population in the causes of the outcome (Lesko et al.)." },
+    "external": { t: "External validity (generalisability)", ch: "bias", sec: "5.1.1", find: "the study does not have external validity",
+      d: "Whether results can be applied to a population other than the one studied. Selection bias can mean “the results cannot be applied to any other population.”" },
+    "nonresponse": { t: "Non-response bias", ch: "bias", sec: "5.1.1", find: "Participants who do not respond to participate",
+      d: "“Participants who do not respond to participate are different than the participants who choose to respond.”" },
+    "attrition": { t: "Attrition bias", ch: "bias", sec: "5.1.1", find: "Participants who leave the study are different",
+      d: "“Participants who leave the study are different than the participants who stay.”" },
+    "casedef": { t: "Case definition", ch: "des", sec: "3.6", find: "Case definitions include a standard set of criteria",
+      d: "“A standard set of criteria used to determine if an individual should be classified as a case.” Established definitions often already exist for a condition." },
+    "validity": { t: "Validity (accuracy)", ch: "diag", sec: "4.3", find: "Internal validity is accuracy",
+      d: "The ability of a measuring instrument “to give a true measure”. It can only be evaluated against an accepted, independent method: a gold standard." },
+    "reliability": { t: "Reliability (precision)", ch: "diag", sec: "4.3", find: "Reliability is precision",
+      d: "The ability of a measuring instrument to give consistent results on repeated measurements of the same individual." },
+    "gold": { t: "Gold standard", ch: "diag", sec: "4.3", find: "This accepted and independent method is known as a gold standard",
+      d: "An accepted and independent method for confirming a measurement, against which a test or questionnaire is compared." },
+    "sensitivity": { t: "Sensitivity", ch: "diag", sec: "4.4", find: "The percent of positives identified by the screening tests",
+      d: "The true-positive rate: the share of people who truly have the outcome (by the gold standard) whom your measurement classifies as having it. TP / (TP + FN).",
+      x: "Low sensitivity misses cases, so prevalence is underestimated." },
+    "specificity": { t: "Specificity", ch: "diag", sec: "4.4", find: "The percent of negatives identified by the screening test",
+      d: "The true-negative rate: the share of people who truly do not have the outcome whom your measurement classifies as not having it. TN / (FP + TN).",
+      x: "With a rare outcome, even small losses of specificity can inflate prevalence a lot." },
+    "measbias": { t: "Measurement bias", ch: "diag", sec: "4.3", find: "Measurement bias is when we have constant errors",
+      d: "Constant errors introduced by a faulty measuring device, such as a miscalibrated blood pressure manometer." },
+    "misclass": { t: "Information bias (misclassification)", ch: "bias", sec: "5.1.1", find: "Information bias is when people systematically get placed",
+      d: "When people are systematically placed in the wrong category for exposure and/or outcome. Non-differential if the error is the same in every group; differential if it depends on the group." },
+    "cross": { t: "Cross-sectional study", ch: "des", sec: "3.4", find: "Cross-sectional studies measure the prevalence",
+      d: "Measures the prevalence of disease and of exposures at one point in time; also known as a prevalence study. Think of a photo or snapshot: you do not know when the disease started, only that it is present now." },
+    "longit": { t: "Longitudinal (cohort) design", ch: "des", sec: "3.4", find: "Every cohort study has at least two data collection points",
+      d: "People are followed over time from a time origin, so that new events can be counted. “Every cohort study has at least two data collection points and they do not overlap.”",
+      x: "Prospective: set up now and followed into the future. Retrospective: set up now using information already recorded." },
+    "count": { t: "Count", ch: "meas", sec: "2.1", find: "Counts are the simplest",
+      d: "“The number of cases of a disease or other health phenomenon being studied.” The simplest measure, but hard to compare without a denominator." },
+    "proportion": { t: "Proportion", ch: "meas", sec: "2.1.1", find: "Proportions are a measure that states a count",
+      d: "“A ratio in which the denominator contains the numerator.” It can be written as a percentage and shows the magnitude of a problem." },
+    "rate": { t: "Rate", ch: "meas", sec: "2.1.2", find: "A rate is a ratio that consists of a numerator",
+      d: "A ratio “in which time forms part of the denominator.” It needs a count of events, the size of the population, and the time period." },
+    "prevalence": { t: "Prevalence", ch: "meas", sec: "2.1.1", find: "Prevalence is the number of existing cases",
+      d: "“The number of existing cases of a disease or health condition in a population at some designated time.” It is a proportion that shows the burden of a problem.",
+      x: "Prevalence ≈ incidence × average duration. Long-lasting conditions build up prevalence." },
+    "pointprev": { t: "Point prevalence", ch: "meas", sec: "2.1.1", find: "we usually are discussing point prevalence",
+      d: "Prevalence at a specific point in time, such as a survey date or 31 December. If no time is specified, prevalence usually means point prevalence." },
+    "periodprev": { t: "Period prevalence", ch: "meas", sec: "2.1.1", find: "Period prevalence is the prevalence over a specified period",
+      d: "“The prevalence over a specified period of time.” The numerator is the existing cases at the start plus the new cases during the period; the denominator is often the average population." },
+    "incidence": { t: "Incidence", ch: "meas", sec: "2.1.2", find: "Incidence is the number of new cases of a disease",
+      d: "“The number of new cases of a disease that occur in a group during a certain time period.” It estimates the risk of developing disease." },
+    "cumrisk": { t: "Cumulative incidence (risk)", ch: "meas", sec: "2.3.1", find: "Cumulative incidence is a proportion and can only range",
+      d: "The proportion of a closed (fixed) population that develops the outcome over a stated period. It “can only range from 0 to 1.”",
+      x: "When follow-up is incomplete, estimate it with Kaplan-Meier or a life table. With competing events, report the cumulative incidence function (Lesko et al.)." },
+    "incrate": { t: "Incidence rate", ch: "meas", sec: "2.3.2", find: "we typically use incidence rate",
+      d: "New cases divided by the person-time at risk. It is used for open or dynamic populations where people come and go; also called incidence density. It ranges from zero to infinity." },
+    "persontime": { t: "Person-time", ch: "meas", sec: "2.3.2.1", find: "Using person-time",
+      d: "The denominator of an incidence rate: the sum of the time each person contributed while at risk. Five people followed for 5 years give 25 person-years." },
+    "tte": { t: "Time to event", src: "paper",
+      d: "The average or median time from a time origin until the outcome occurs. Lesko et al. list it next to risk, rate and prevalence as a measure of occurrence.",
+      x: "The textbook's Kaplan-Meier section (2.3.1.2) shows how censored follow-up is handled." },
+    "censor": { t: "Censoring (loss to follow-up)", ch: "meas", sec: "2.3.1", find: "Study subjects are often censored",
+      d: "Subjects are censored when they did not complete follow-up, for example because they disappeared, moved away, left for other health problems, died, or were recruited late.",
+      x: "Treating censored people as if they were like those who stayed is an assumption. Say whether it is reasonable for your data (Lesko et al.)." },
+    "competing": { t: "Competing event", src: "paper",
+      d: "An event that prevents the event of interest from occurring. For example, death before a diagnosis of dementia means the person can never be diagnosed.",
+      x: "Censoring people at a competing event describes a hypothetical world in which they could not die. The cumulative incidence function describes the real one." },
+    "lateentry": { t: "Late entry", src: "paper",
+      d: "People who come under observation after the time origin, such as those who enrol in a clinic years after diagnosis. Early events among them go unseen, unless the analysis accounts for it." },
+    "origin": { t: "Time origin (anchor)", src: "paper",
+      d: "The point when time starts for everyone: a diagnosis date, birth, enrolment, or a fixed calendar date. For prevalence, the anchor is the date on which the population is described." },
+    "crude": { t: "Crude rate", ch: "meas", sec: "2.1.2", find: "This rate is the rawest version of a rate",
+      d: "“The rawest version of a rate”: a simple numerator over a simple denominator. Differences in crude rates between populations may reflect their age or sex structure." },
+    "adjusted": { t: "Adjusted (standardised) rate", ch: "meas", sec: "2.1.2", find: "An adjusted rate is a measure in which statistical procedures",
+      d: "A rate in which “statistical procedures have been applied to remove the effect of differences in composition” of populations, for example by the direct or indirect method.",
+      x: "In descriptive work, adjustment implies an intervention on the data. Report the crude estimate first (Lesko et al.)." },
+    "specific": { t: "Specific rate (stratum-specific)", ch: "meas", sec: "2.1.2", find: "The third type of rate we use is called a specific rate",
+      d: "A rate for “a particular subgroup of the population defined in terms of factors such as race, age, sex”, for example an age-specific death rate." },
+    "strat": { t: "Stratification variable", src: "paper",
+      d: "An auxiliary variable used to characterise how the outcome is distributed across subgroups, for example prevalence by sex, age group or district. You report each stratum's estimate.",
+      x: "The textbook calls these specific rates (Ch. 2.1.2)." },
+    "nuisance": { t: "Nuisance variable", src: "paper",
+      d: "An auxiliary variable you standardise over or adjust for because it differs between populations or between your sample and the target population, not because you want to describe it.",
+      x: "Only standardise with a reason you can write down. Indiscriminate adjustment gives uninterpretable results (Lesko et al.)." },
+    "confounding": { t: "Confounding", ch: "bias", sec: "5.1.2", find: "Confounding is a third factor",
+      d: "“A third factor that makes you misinterpret the relationship you see between an exposure and an outcome.”",
+      x: "A descriptive question has no exposure effect to protect, so “adjusting for confounders” is usually the wrong goal here. It can hide real disparities." },
+    "table1": { t: "Table 1", ch: "sum", sec: "1.2.2", find: "or the first table usually shown",
+      d: "The first table in an epidemiological or clinical paper: “our first look at a study population”, describing its characteristics by person, place and time." },
+    "ecologic": { t: "Ecological data and the ecologic fallacy", ch: "des", sec: "3.4", find: "Ecological studies use group summary measures",
+      d: "Ecological data are group summaries (e.g. district rates) rather than measures on individuals. Assuming a group result holds for individuals is the ecologic fallacy." }
+  };
+
+  function termUrl(g) {
+    if (g.src === "paper") return PAPER + (g.find ? frag(g.find) : "");
+    return BOOK + CH[g.ch].slug + frag(g.find);
+  }
+  function termSource(g) {
+    if (g.src === "paper") return "Lesko, Fox & Edwards (2022)";
+    return "Baker, Epidemiology · §" + g.sec;
+  }
+
+  /* ================================================================
+     Worksheet schema
+     ================================================================ */
+  var MEASURES = [
+    { v: "pointprev", label: "[[pointprev|Point prevalence]]", small: "Proportion with the outcome on one date", phrase: "point prevalence" },
+    { v: "periodprev", label: "[[periodprev|Period prevalence]]", small: "Proportion with the outcome at any time in a period", phrase: "period prevalence" },
+    { v: "cumrisk", label: "[[cumrisk|Cumulative incidence (risk)]]", small: "Proportion who develop it over a stated follow-up", phrase: "cumulative incidence (risk)" },
+    { v: "incrate", label: "[[incrate|Incidence rate]]", small: "New cases per [[persontime|person-time]] at risk", phrase: "incidence rate" },
+    { v: "tte", label: "Average or median [[tte|time to event]]", small: "How long until the outcome occurs", phrase: "average time to" },
+    { v: "mean", label: "Mean or median of a characteristic", small: "For a continuous outcome, e.g. haemoglobin, BMI", phrase: "mean (or median)" },
+    { v: "countm", label: "[[count|Count]] or number of cases", small: "Useful for planning, hard to compare", phrase: "number of cases" },
+    { v: "other", label: "Other", small: "Describe it below", phrase: "" }
+  ];
+
+  var SECTIONS = [
+    { id: "B", title: "Your descriptive question", aside: "assembled from sections 1–4", custom: "question" },
+    { id: "1", title: "Target population", aside: "person · place · time",
+      intro: "The [[target|target population]] is the group whose health you want to describe, defined by [[person]], [[place]] and anchored in [[time]]. It is not the same as the people in your data set. Keep those apart: the [[studysample|study sample]] and the [[analytic|analytical sample]] come next.",
+      fields: [
+      { id: "person", code: "1.1", type: "input", label: "Person: who, in a short phrase?", help: "The phrase that will appear in your question. Age, sex, a condition, a life stage, an occupation.", ph: "e.g. women aged 15–49 years", core: true,
+        ex: "Adults (18 years or older) living with HIV who had been linked to HIV care, meaning they had seen a clinician who knew their HIV status and could prescribe antiretroviral therapy." },
+      { id: "place", code: "1.2", type: "input", label: "Place: where?", help: "A country, district, catchment area or type of setting. Say what defines the boundary.", ph: "e.g. rural districts of the Northern Region", core: true,
+        ex: "The United States." },
+      { id: "time", code: "1.3", type: "input", label: "Time: anchored when?", help: "A date for a snapshot, or a calendar period. This is when your population is defined, not when you analyse the data.", ph: "e.g. during the 2025 rainy season / on 1 July 2025", core: true,
+        ex: "On 31 December 2019. People had to be diagnosed before and be alive on that date." },
+      { id: "criteria", code: "1.4", type: "textarea", label: "Membership: how would you decide if someone belongs?", help: "Write it as [[inclusion|inclusion and exclusion criteria]]. You do not need a list of everyone in the target population, but you must be able to classify any individual.", ph: "Included if …\nExcluded if …", core: true,
+        ex: "Diagnosed with HIV before 31 December 2019, at least one visit with a clinician able to prescribe ART, and alive through 31 December 2019." },
+      { id: "source", code: "1.5", type: "textarea", label: "Data source: where will the information come from?", help: "Name the survey, register, [[surveillance]] system, cohort or records, and the purpose they were originally collected for. This is your [[studysample|study sample]].", ph: "e.g. Demographic and Health Survey 2022, women’s questionnaire", core: true,
+        ex: "Two options: national HIV surveillance (mandated reporting, but not all diagnoses are reported and people who move states may be counted twice), or the NA-ACCORD clinical cohort collaboration, often based in academic centres where care may differ." },
+      { id: "selection", code: "1.6", type: "choice", label: "How did people get into those data?", help: "This decides how far the data can speak for the target population.", core: true,
+        options: [
+          { v: "census", label: "Everyone, or nearly everyone", small: "Census, population register, complete notification" },
+          { v: "prob", label: "A probability (random) sample", small: "Every member had a known chance of selection, e.g. DHS, MICS" },
+          { v: "conv", label: "A convenience or facility-based sample", small: "Whoever attended, volunteered or was reachable" },
+          { v: "agg", label: "Only [[ecologic|aggregated data]]", small: "Group summaries, no individual records" },
+          { v: "unsure", label: "Not sure yet", small: "" }
+        ],
+        ex: "Surveillance aims to capture everyone diagnosed. A clinical cohort captures people attending particular clinics." },
+      { id: "analytic", code: "1.7", type: "textarea", label: "Analytical sample: who will actually be in the analysis?", help: "Who in the data set will be dropped: missing outcome, outside the age range, incomplete records? Estimate how many if you can.", ph: "e.g. Women with a haemoglobin measurement; about 8% have none", core: false,
+        ex: "People in the study sample with a viral load measured around 31 December 2019. Those with no measurement in 2019 are treated as lost to follow-up (see 3.5)." }
+    ]},
+    { id: "2", title: "Outcome", aside: "event · health state · characteristic",
+      intro: "The outcome needs an unambiguous definition that you can apply in your data. Small choices in the definition, such as a threshold or a time window, can move the estimate a lot.",
+      fields: [
+      { id: "outcome", code: "2.1", type: "input", label: "Outcome: what, in a short phrase?", help: "The phrase that will appear in your question.", ph: "e.g. anaemia", core: true, ex: "Viral suppression." },
+      { id: "outdef", code: "2.2", type: "textarea", label: "Exact definition", help: "The [[casedef|case definition]] or variable definition you will apply to each person, with units and categories.", ph: "e.g. haemoglobin < 12.0 g/dL (non-pregnant), < 11.0 g/dL (pregnant), adjusted for altitude and smoking", core: true,
+        ex: "Plasma HIV RNA below a chosen threshold, for example < 200 copies/mL, on 31 December 2019." },
+      { id: "outkind", code: "2.3", type: "choice", label: "What kind of outcome is it?", core: true, cols: true,
+        options: [
+          { v: "event", label: "An event", small: "Happens at a moment: infection, birth, death, diagnosis" },
+          { v: "state", label: "A health state", small: "A condition someone is in: anaemic, suppressed, disabled" },
+          { v: "char", label: "A characteristic", small: "A measured value: BMI, blood pressure, hours of sleep" }
+        ], ex: "A health state." },
+      { id: "outscale", code: "2.4", type: "choice", label: "How is it recorded?", core: true, cols: true,
+        options: [
+          { v: "bin", label: "Yes / no", small: "Binary" },
+          { v: "cat", label: "Categories", small: "Three or more groups, ordered or not" },
+          { v: "cnt", label: "A count", small: "0, 1, 2, … episodes" },
+          { v: "cont", label: "A continuous value", small: "With units, e.g. g/dL" }
+        ] },
+      { id: "outmeas", code: "2.5", type: "textarea", label: "How and when is it measured?", help: "The instrument, test or question; who records it; and the time window you will accept around your anchor date.", ph: "e.g. HemoCue finger-prick at the household visit", core: true,
+        ex: "Routine viral load tests. A result within a window around 31 December 2019 counts as the value on that date. How wide a window is acceptable is a choice to justify." },
+      { id: "outcut", code: "2.6", type: "textarea", label: "Threshold or cut-off, if you turn a value into categories", opt: true, help: "Which cut-off, who sets it, and why it fits the purpose of your question. Would a different cut-off change the story?", ph: "e.g. WHO thresholds; I will also report mean haemoglobin",
+        ex: "In one Baltimore clinic cohort, 75% were suppressed using < 20 copies/mL but 89% using < 400 copies/mL. Same people, different threshold." },
+      { id: "outerr", code: "2.7", type: "textarea", label: "Measurement error: who could be misclassified?", help: "Compare your measure with a [[gold|gold standard]]. Is its [[sensitivity]] or [[specificity]] known? Would errors push your estimate up or down? See also [[misclass|misclassification]].", ph: "e.g. self-reported diagnosis misses undiagnosed cases, so prevalence will be too low",
+        ex: "Proxy measures and wide time windows can assign people the wrong value. Report sensitivity and specificity against a gold standard where one exists." }
+    ]},
+    { id: "3", title: "Measure of occurrence", aside: "how the outcome is summarised",
+      intro: "The measure is the number you will report. Choose the one that answers your purpose. Prevalence tells you how many people need services now; incidence tells you how often new cases arise.",
+      fields: [
+      { id: "design", code: "3.1", type: "choice", label: "Is the question a snapshot or does it follow people over time?", core: true, cols: true,
+        options: [
+          { v: "cross", label: "[[cross|Cross-sectional]]", small: "Everyone observed at one point or period" },
+          { v: "long", label: "[[longit|Longitudinal]]", small: "People followed from a time origin" }
+        ], ex: "Cross-sectional." },
+      { id: "measure", code: "3.2", type: "choice", label: "Which measure of occurrence?", core: true, cols: true, options: MEASURES, other: true, otherPh: "Describe the measure",
+        ex: "Point prevalence, on 31 December 2019." },
+      { id: "anchor", code: "3.3", type: "textarea", label: "Anchor date, or time origin and length of follow-up", help: "For a snapshot, the date or period. For follow-up, the [[origin|time origin]] (birth, diagnosis, enrolment) and how long you follow people.", ph: "e.g. survey fieldwork, March–June 2025", core: true,
+        ex: "A fixed date: 31 December 2019." },
+      { id: "why", code: "3.4", type: "textarea", label: "Why is this the right measure for your purpose?", help: "Who will use the number, and what decision could it inform?", ph: "e.g. to plan iron supplementation stock for antenatal clinics", core: true,
+        ex: "The question informs secondary and tertiary prevention for people already living with HIV, so prevalence on a date is the most relevant measure." },
+      { id: "incomplete", code: "3.5", type: "textarea", label: "Incomplete observation", help: "Will anyone have a [[competing|competing event]] (e.g. death), be [[censor|lost to follow-up]], or come under observation late ([[lateentry|late entry]])? What will you assume about them?", ph: "e.g. not applicable to a single survey round, but non-response is (see 5.1)",
+        ex: "People with no 2019 viral load: either assume they have the same chance of suppression as those measured (censoring), or treat loss to follow-up as ‘not suppressed’." }
+    ]},
+    { id: "4", title: "Auxiliary variables", aside: "stratify or standardise",
+      intro: "Other variables have one of two jobs. A [[strat|stratification variable]] describes how the outcome is distributed across subgroups. A [[nuisance|nuisance variable]] is one you standardise over so that populations can be compared. Decide the role of each before you look at the data.",
+      fields: [
+      { id: "vars", code: "4.1", type: "vars", label: "Variables and their roles", core: true,
+        ex: "Stratify by gender and race to describe disparities: suppression was lower among cisgender women than men, and lower among Black than White patients. Standardise only over factors that make a clinical cohort differ from the national target population." },
+      { id: "crudefirst", code: "4.2", type: "checks", label: "Reporting the overall estimate", core: true,
+        options: [ { v: "yes", label: "I will report the [[crude|crude]], unstratified estimate first and interpret it as my main result." } ],
+        ex: "The authors recommend reporting unadjusted results and interpreting them first in descriptive studies." },
+      { id: "adjust", code: "4.3", type: "textarea", label: "If you standardise or adjust: what does the adjusted number describe?", opt: true, help: "An [[adjusted|adjusted rate]] describes a population that does not exist. Name the standard population, and why that comparison matters. Avoid adjusting for “[[confounding|confounders]]”, since there is no exposure effect to protect here.", ph: "e.g. age-standardised to the WHO standard population, to compare with neighbouring regions",
+        ex: "Adjustment implies an intervention on the data. It can understate disparities, and adjusted numbers tend to be read causally." }
+    ]},
+    { id: "5", title: "Threats to your estimate", aside: "four missing-data problems",
+      intro: "Lesko et al. treat most threats to a descriptive estimate as missing-data problems: we do not see the outcome for everyone in the target population, or not correctly. For each, say whether it applies and what you will do.",
+      fields: [
+      { id: "t_sel", code: "5.1", type: "threat", label: "The analytical sample differs from the target population", help: "Through the sampling frame, [[nonresponse|non-response]], [[attrition]] or missing measurements. See [[selection|selection bias]] and [[external|generalisability]]. Tools: sampling weights, standardisation, reweighting, imputation.", core: true,
+        ex: "Clinical cohorts in academic centres may provide different care from clinics elsewhere, so their prevalence of suppression may not match the national one." },
+      { id: "t_meas", code: "5.2", type: "threat", label: "The outcome is measured with error", help: "Imperfect [[sensitivity]] or [[specificity]], [[measbias|measurement bias]], [[reliability|unreliable]] instruments, or time windows. Tools: validation data, quantitative bias analysis, sensitivity analysis with other cut-offs.", core: true,
+        ex: "Choice of threshold and time window. A viral load months away from 31 December may not reflect that day." },
+      { id: "t_obs", code: "5.3", type: "threat", label: "Competing events, late entry or loss to follow-up", help: "Who drops out, who dies first, who enters late? Would [[censor|censoring]] them as if they were like everyone else distort the estimate?", core: true,
+        ex: "People without a 2019 viral load may have moved clinic and still be suppressed, or may have stopped care." },
+      { id: "t_adj", code: "5.4", type: "threat", label: "Inappropriate adjustment", help: "Adjusting without a clear reason can hide disparities and invite causal readings of a descriptive number.", core: true,
+        ex: "Adjusting suppression for insurance status would partly hide the racial disparity that the question is meant to show." }
+    ]},
+    { id: "6", title: "Reporting plan", aside: "adapted from Lesko et al., Table 1",
+      intro: "Tick what you plan to include. These items come from the reporting checklist in the framework paper.",
+      fields: [
+      { id: "report", code: "6.1", type: "checks", label: "My report will include", core: true,
+        options: [
+          { v: "label", label: "The word “descriptive” in the title or abstract, and the question with all four elements" },
+          { v: "flow", label: "A flow diagram from study sample to analytical sample, with numbers at each step" },
+          { v: "t1", label: "A [[table1|Table 1]] of the analytical sample, with counts of missing data" },
+          { v: "crude", label: "The overall, crude estimate with its confidence interval" },
+          { v: "strata", label: "Prespecified [[specific|stratum-specific]] (or standardised) estimates" },
+          { v: "limits", label: "The likely direction and size of selection bias and measurement error" },
+          { v: "nocausal", label: "An interpretation that makes no causal claims, and says who can use the result" }
+        ] },
+      { id: "open", code: "6.2", type: "textarea", label: "Questions I still need to resolve", opt: true, help: "Bring these to supervision.", ph: "e.g. Can I get the sampling weights? Which time window is acceptable?" }
+    ]}
+  ];
+
+  var THREAT_LEVELS = [ { v: "yes", label: "Applies" }, { v: "maybe", label: "Possibly" }, { v: "no", label: "Unlikely" } ];
+  var ROLES = [ { v: "strat", label: "Stratify (describe)" }, { v: "nuis", label: "Standardise over" } ];
+
+  /* ================================================================
+     State
+     ================================================================ */
+  var KEY = "hrm-descriptive-framework-v1";
+  var state = {};
+  var storageOK = true;
+  var FIELD = {};
+  SECTIONS.forEach(function (s) { (s.fields || []).forEach(function (f) { FIELD[f.id] = f; f.section = s.id; }); });
+
+  function blankVar() { return { name: "", role: "", def: "", why: "" }; }
+  function defaults() {
+    return { vars: [blankVar(), blankVar()] };
+  }
+  function load() {
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (raw) { state = sanitizeState(JSON.parse(raw)); return true; }
+    } catch (e) { storageOK = false; }
+    state = defaults();
+    return false;
+  }
+  function sanitizeState(o) {
+    var s = defaults();
+    if (!o || typeof o !== "object") return s;
+    Object.keys(FIELD).forEach(function (id) {
+      var f = FIELD[id], v = o[id];
+      if (v === undefined || v === null) return;
+      if (f.type === "vars") { if (Array.isArray(v)) s.vars = v.map(function (r) { return { name: str(r && r.name), role: str(r && r.role), def: str(r && r.def), why: str(r && r.why) }; }); }
+      else if (f.type === "checks") { if (Array.isArray(v)) s[id] = v.map(str); }
+      else if (f.type === "threat") { s[id] = { apply: str(v.apply), notes: str(v.notes) }; }
+      else s[id] = str(v);
+    });
+    ["question", "measure_other", "project", "authors"].forEach(function (k) { if (o[k] != null) s[k] = str(o[k]); });
+    if (!s.authors && o.name) s.authors = str(o.name);  /* files saved by the first version */
+    if (!s.vars.length) s.vars = [blankVar()];
+    return s;
+  }
+  function str(v) { return v == null ? "" : String(v); }
+
+  var saveTimer = null;
+  var saveState = document.getElementById("saveState");
+  function scheduleSave() {
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(function () {
+      try {
+        localStorage.setItem(KEY, JSON.stringify(state));
+        var t = new Date();
+        saveState.textContent = "Saved in this browser at " + String(t.getHours()).padStart(2, "0") + ":" + String(t.getMinutes()).padStart(2, "0");
+        saveState.classList.remove("warn");
+      } catch (e) {
+        saveState.textContent = "This browser can’t keep your answers. Use “Save progress file”.";
+        saveState.classList.add("warn");
+      }
+    }, 350);
+  }
+
+  /* ================================================================
+     Rendering
+     ================================================================ */
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function md(s) {
+    return esc(s).replace(/\[\[([a-z0-9]+)(?:\|([^\]]+))?\]\]/g, function (m, k, txt) {
+      if (!G[k]) return txt || k;
+      return '<button type="button" class="term" data-term="' + k + '" aria-expanded="false">' + (txt || G[k].t.toLowerCase()) + '</button>';
+    });
+  }
+  function plain(s) { return String(s).replace(/\[\[([a-z0-9]+)(?:\|([^\]]+))?\]\]/g, function (m, k, txt) { return txt || (G[k] ? G[k].t.toLowerCase() : k); }); }
+
+  function noteHTML(f) {
+    if (!f.ex) return "<div></div>";
+    var head = '<span class="nh"><svg class="ico"><use href="#i-book"/></svg>Worked example · HIV</span>';
+    return '<aside class="fnote"><div class="nh-static">' + head + '<p>' + esc(f.ex) + '</p></div>' +
+      '<details><summary>' + head + '</summary><p>' + esc(f.ex) + '</p></details></aside>';
+  }
+
+  function choiceHTML(name, opts, multi, selected, extraClass) {
+    var type = multi ? "checkbox" : "radio";
+    var path = multi ? '<path d="M3 8.6l3.3 3.3L13.2 4.6"/>' : '<path d="M4.2 8.4l2.6 2.6 5-5.6"/>';
+    return opts.map(function (o) {
+      var on = multi ? (selected || []).indexOf(o.v) > -1 : selected === o.v;
+      return '<label class="choice ' + (multi ? "check" : "radio") + (extraClass || "") + '">' +
+        '<input type="' + type + '" name="' + name + '" value="' + o.v + '"' + (on ? " checked" : "") + '>' +
+        '<span class="box" aria-hidden="true"><svg viewBox="0 0 16 16">' + path + '</svg></span>' +
+        '<span class="ctext"><span>' + md(o.label) + '</span>' + (o.small ? '<small>' + md(o.small) + '</small>' : "") + '</span></label>';
+    }).join("");
+  }
+
+  function varsRowHTML(r, i) {
+    return '<tr data-i="' + i + '">' +
+      '<td data-h="Variable"><input type="text" data-vk="name" value="' + esc(r.name) + '" placeholder="e.g. age group" aria-label="Variable name, row ' + (i + 1) + '"></td>' +
+      '<td data-h="Role"><div class="role-seg" role="radiogroup" aria-label="Role, row ' + (i + 1) + '">' + choiceHTML("role_" + i, ROLES, false, r.role, "") + '</div></td>' +
+      '<td data-h="Categories or definition"><textarea data-vk="def" rows="1" placeholder="e.g. 15–19, 20–29, 30–39, 40–49" aria-label="Categories, row ' + (i + 1) + '">' + esc(r.def) + '</textarea></td>' +
+      '<td data-h="Why this variable?"><textarea data-vk="why" rows="1" placeholder="e.g. anaemia risk changes with parity and age" aria-label="Reason, row ' + (i + 1) + '">' + esc(r.why) + '</textarea></td>' +
+      '<td class="del-cell"><button type="button" class="del" data-del="' + i + '" title="Remove this row" aria-label="Remove row ' + (i + 1) + '"><svg class="ico"><use href="#i-x"/></svg></button></td></tr>';
+  }
+
+  function fieldHTML(f) {
+    var v = state[f.id];
+    var lab = '<div class="flabel" id="lab_' + f.id + '">' + md(f.label) + (f.opt ? ' <span class="fopt">(optional)</span>' : "") + '</div>';
+    var help = f.help ? '<p class="fhelp">' + md(f.help) + '</p>' : "";
+    var ctl = "";
+    if (f.type === "input") ctl = '<input type="text" id="f_' + f.id + '" data-f="' + f.id + '" value="' + esc(v || "") + '" placeholder="' + esc(f.ph || "") + '" aria-labelledby="lab_' + f.id + '">';
+    else if (f.type === "date") ctl = '<input type="date" id="f_' + f.id + '" data-f="' + f.id + '" value="' + esc(v || "") + '" aria-labelledby="lab_' + f.id + '" style="max-width:220px">';
+    else if (f.type === "textarea") ctl = '<textarea id="f_' + f.id + '" data-f="' + f.id + '" placeholder="' + esc(f.ph || "") + '" aria-labelledby="lab_' + f.id + '">' + esc(v || "") + '</textarea>';
+    else if (f.type === "choice") {
+      ctl = '<div class="choices' + (f.cols ? " cols" : "") + '" role="radiogroup" aria-labelledby="lab_' + f.id + '" data-choice="' + f.id + '">' + choiceHTML(f.id, f.options, false, v, "") + '</div>';
+      if (f.other) ctl += '<div class="other-wrap" id="otherwrap_' + f.id + '"' + (v === "other" ? "" : " hidden") + '><input type="text" data-f="' + f.id + '_other" value="' + esc(state[f.id + "_other"] || "") + '" placeholder="' + esc(f.otherPh || "") + '" aria-label="' + esc(f.otherPh || "Other") + '"></div>';
+      if (f.id === "measure") ctl += '<div class="nudge" id="nudge_measure" hidden><svg class="ico"><use href="#i-flag"/></svg><span></span></div>';
+    }
+    else if (f.type === "checks") ctl = '<div class="choices" data-checks="' + f.id + '" aria-labelledby="lab_' + f.id + '">' + choiceHTML(f.id, f.options, true, v, "") + '</div>';
+    else if (f.type === "threat") {
+      var t = v || { apply: "", notes: "" };
+      ctl = '<div class="threat-apply" role="radiogroup" aria-labelledby="lab_' + f.id + '" data-threat="' + f.id + '">' + choiceHTML(f.id + "_apply", THREAT_LEVELS, false, t.apply, "") + '</div>' +
+        '<textarea data-threatnotes="' + f.id + '" placeholder="What could happen, which direction it would push your estimate, and what you will do about it" aria-label="Notes for ' + esc(plain(f.label)) + '">' + esc(t.notes || "") + '</textarea>';
+    }
+    else if (f.type === "vars") {
+      ctl = '<p class="fhelp">One row per variable. Start with the subgroups you most want to compare.</p>' +
+        '<table class="vtable"><thead><tr><th style="width:22%">Variable</th><th style="width:22%">Role</th><th>Categories or definition</th><th>Why this variable?</th><th style="width:36px"><span class="sr" style="position:absolute;left:-9999px">Remove</span></th></tr></thead><tbody id="varsBody">' +
+        state.vars.map(varsRowHTML).join("") + '</tbody></table>' +
+        '<button type="button" class="btn-ink vadd" id="addVar"><svg class="ico"><use href="#i-plus"/></svg>Add a variable</button>';
+    }
+    return '<div class="field' + (f.type === "vars" ? " wide" : "") + '" id="fld_' + f.id + '"><div class="fcode">' + f.code + '</div><div class="fmain">' + lab + help + ctl + '</div>' + noteHTML(f) + '</div>';
+  }
+
+  function questionHTML() {
+    return '<div class="part-intro"><p>Lesko et al.’s example: <i>“What was the prevalence of viral suppression on December 31, 2019, among adults living with HIV who had been linked to HIV care in the United States?”</i> Yours builds itself below as you fill in sections 1–4. Click a blank to jump to it.</p></div>' +
+      '<div class="qbox"><div class="qlab">Assembled from your answers</div><p class="qtext" id="qtext" aria-live="polite"></p>' +
+      '<div class="qactions"><button type="button" class="btn-ink" id="useQ"><svg class="ico"><use href="#i-copy"/></svg>Copy into final wording</button><span>Then rewrite it so it reads well.</span></div></div>' +
+      '<div class="field"><div class="fcode">B.1</div><div class="fmain"><div class="flabel" id="lab_question">Final wording of your descriptive question</div>' +
+      '<p class="fhelp">' + md("One sentence that names the [[target|target population]] (person, place, time), the outcome, the measure of occurrence and any subgroups. This is your [[estimand|descriptive estimand]].") + '</p>' +
+      '<textarea id="f_question" data-f="question" aria-labelledby="lab_question" placeholder="What is the … of … among … in … on/during …, overall and by …?">' + esc(state.question || "") + '</textarea></div><div></div></div>';
+  }
+
+  function render() {
+    var html = SECTIONS.map(function (s) {
+      var body = s.custom === "question" ? questionHTML() :
+        (s.intro ? '<div class="part-intro"><p>' + md(s.intro) + '</p></div>' : "") + s.fields.map(fieldHTML).join("");
+      return '<section class="part" id="sec_' + s.id + '" aria-labelledby="h_' + s.id + '"><div class="part-head"><span class="code">' + s.id + '</span><h2 id="h_' + s.id + '">' + esc(s.title) + '</h2>' + (s.aside ? '<span class="aside">' + esc(s.aside) + '</span>' : "") + '</div>' + body + '</section>';
+    }).join("");
+    document.getElementById("parts").innerHTML = html;
+    ["project", "authors"].forEach(function (k) { document.getElementById("f_" + k).value = state[k] || ""; });
+    document.getElementById("railList").innerHTML = SECTIONS.map(function (s) {
+      return '<li><a href="#sec_' + s.id + '" data-rail="' + s.id + '"><span class="code">' + s.id + '</span><span>' + esc(s.title) + '</span><span class="count" id="cnt_' + s.id + '"></span></a></li>';
+    }).join("");
+    updateAll();
+  }
+
+  /* ================================================================
+     Assembled question, progress, nudges
+     ================================================================ */
+  function filled(id) {
+    var f = FIELD[id], v = state[id];
+    if (!f) return !!(v && String(v).trim());
+    if (f.type === "vars") return (state.vars || []).some(function (r) { return r.name.trim(); });
+    if (f.type === "checks") return Array.isArray(v) && v.length > 0;
+    if (f.type === "threat") return !!(v && v.apply);
+    return !!(v && String(v).trim());
+  }
+
+  function measurePhrase() {
+    var m = state.measure;
+    if (!m) return "";
+    if (m === "other") return (state.measure_other || "").trim();
+    var o = MEASURES.filter(function (x) { return x.v === m; })[0];
+    return o ? o.phrase : "";
+  }
+  function strataList() {
+    var names = (state.vars || []).filter(function (r) { return r.name.trim() && r.role === "strat"; }).map(function (r) { return r.name.trim(); });
+    if (names.length < 2) return names.join("");
+    return names.slice(0, -1).join(", ") + " and " + names[names.length - 1];
+  }
+  function assembleParts() {
+    var meas = measurePhrase();
+    var tte = state.measure === "tte";
+    var time = (state.time || "").trim();
+    return [
+      { t: "What is the " },
+      tte ? { t: "average time to " } : { slot: "measure", v: meas, ph: "measure (3.2)" },
+      tte ? null : { t: " of " },
+      { slot: "outcome", v: (state.outcome || "").trim(), ph: "outcome (2.1)" },
+      { t: " among " },
+      { slot: "person", v: (state.person || "").trim(), ph: "who (1.1)" },
+      { t: " in " },
+      { slot: "place", v: (state.place || "").trim(), ph: "where (1.2)" },
+      { t: ", " },
+      { slot: "time", v: time, ph: "when (1.3)" },
+      strataList() ? { t: ", overall and by " } : null,
+      strataList() ? { slot: "vars", v: strataList(), ph: "" } : null,
+      { t: "?" }
+    ].filter(Boolean);
+  }
+  function assembledText() {
+    return assembleParts().map(function (p) { return p.slot ? (p.v || "[" + p.ph + "]") : p.t; }).join("").replace(/\s+/g, " ");
+  }
+  var lastSlots = {};
+  function renderQuestion() {
+    var el = document.getElementById("qtext");
+    if (!el) return;
+    var target = { measure: "measure", outcome: "outcome", person: "person", place: "place", time: "time", vars: "vars" };
+    el.innerHTML = assembleParts().map(function (p) {
+      if (!p.slot) return esc(p.t);
+      var fresh = p.v && lastSlots[p.slot] !== p.v ? " fresh" : "";
+      lastSlots[p.slot] = p.v;
+      if (p.v) return '<span class="slot' + fresh + '">' + esc(p.v) + '</span>';
+      return '<a class="slot empty" href="#fld_' + target[p.slot] + '" data-jump="' + target[p.slot] + '">' + esc(p.ph) + '</a>';
+    }).join("");
+  }
+
+  function updateProgress() {
+    SECTIONS.forEach(function (s) {
+      var el = document.getElementById("cnt_" + s.id);
+      if (!el) return;
+      var ids = s.custom === "question" ? ["question"] : s.fields.filter(function (f) { return f.core; }).map(function (f) { return f.id; });
+      var n = ids.filter(filled).length;
+      var done = n === ids.length;
+      el.innerHTML = done ? '<svg class="ico" style="width:16px;height:16px"><use href="#i-check"/></svg>' : n + "/" + ids.length;
+      el.parentNode.classList.toggle("done", done);
+      el.setAttribute("aria-label", done ? "complete" : n + " of " + ids.length + " answered");
+    });
+  }
+
+  function updateNudges() {
+    var n = document.getElementById("nudge_measure");
+    if (!n) return;
+    var msg = "";
+    var m = state.measure, d = state.design;
+    if (d === "cross" && (m === "cumrisk" || m === "incrate" || m === "tte"))
+      msg = "A cross-sectional snapshot sees who has the outcome, not when it began. Risks, rates and times to event need people followed over time. Check 3.1.";
+    else if ((m === "pointprev" || m === "periodprev") && state.outscale === "cont" && !(state.outcut || "").trim())
+      msg = "Prevalence needs a yes/no outcome. Your outcome is continuous, so state the cut-off in 2.6, or report a mean or median.";
+    else if (m === "incrate" && state.outkind && state.outkind !== "event")
+      msg = "An incidence rate counts new events. If your outcome is a state or characteristic, define its onset as the event, or use prevalence.";
+    n.hidden = !msg;
+    n.querySelector("span").textContent = msg;
+  }
+
+  function updateAll() { renderQuestion(); updateProgress(); updateNudges(); }
+
+  /* ================================================================
+     Events
+     ================================================================ */
+  var parts = document.getElementById("sheet");
+  parts.addEventListener("input", function (e) {
+    var t = e.target;
+    if (t.dataset.f) { state[t.dataset.f] = t.value; }
+    else if (t.dataset.vk) { var i = +t.closest("tr").dataset.i; state.vars[i][t.dataset.vk] = t.value; }
+    else if (t.dataset.threatnotes) { var id = t.dataset.threatnotes; state[id] = state[id] || { apply: "", notes: "" }; state[id].notes = t.value; }
+    else return;
+    updateAll(); scheduleSave();
+  });
+  parts.addEventListener("change", function (e) {
+    var t = e.target;
+    if (t.type !== "radio" && t.type !== "checkbox") return;
+    var grp;
+    if ((grp = t.closest("[data-choice]"))) {
+      var id = grp.dataset.choice; state[id] = t.value;
+      var ow = document.getElementById("otherwrap_" + id);
+      if (ow) { ow.hidden = t.value !== "other"; if (!ow.hidden) ow.querySelector("input").focus(); }
+    } else if ((grp = t.closest("[data-checks]"))) {
+      var cid = grp.dataset.checks;
+      state[cid] = Array.prototype.slice.call(grp.querySelectorAll("input:checked")).map(function (x) { return x.value; });
+    } else if ((grp = t.closest("[data-threat]"))) {
+      var tid = grp.dataset.threat; state[tid] = state[tid] || { apply: "", notes: "" }; state[tid].apply = t.value;
+    } else if (t.closest(".role-seg")) {
+      state.vars[+t.closest("tr").dataset.i].role = t.value;
+    } else return;
+    updateAll(); scheduleSave();
+  });
+  parts.addEventListener("click", function (e) {
+    var t = e.target.closest("button, a");
+    if (!t) return;
+    if (t.id === "addVar") {
+      state.vars.push(blankVar());
+      document.getElementById("varsBody").insertAdjacentHTML("beforeend", varsRowHTML(state.vars[state.vars.length - 1], state.vars.length - 1));
+      document.querySelector('#varsBody tr:last-child input').focus();
+      scheduleSave();
+    } else if (t.dataset.del != null) {
+      state.vars.splice(+t.dataset.del, 1);
+      if (!state.vars.length) state.vars.push(blankVar());
+      document.getElementById("varsBody").innerHTML = state.vars.map(varsRowHTML).join("");
+      updateAll(); scheduleSave();
+    } else if (t.id === "useQ") {
+      var q = document.getElementById("f_question");
+      if (q.value.trim() && !confirm("Replace what you have written in B.1 with the assembled question?")) return;
+      q.value = assembledText(); state.question = q.value; q.focus();
+      updateAll(); scheduleSave();
+    } else if (t.dataset.jump) {
+      e.preventDefault();
+      var fld = document.getElementById("fld_" + t.dataset.jump);
+      fld.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
+      var inp = fld.querySelector("input[type=text], textarea, input");
+      if (inp) setTimeout(function () { inp.focus({ preventScroll: true }); }, 350);
+    }
+  });
+
+  /* rail: highlight the section in view */
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var id = en.target.id.replace("sec_", "");
+        document.querySelectorAll(".rail a").forEach(function (a) { a.classList.toggle("here", a.dataset.rail === id); });
+      });
+    }, { rootMargin: "-40% 0px -55% 0px" });
+    setTimeout(function () { document.querySelectorAll("section.part").forEach(function (s) { io.observe(s); }); }, 0);
+  }
+
+  /* ================================================================
+     Glossary tooltip: hover, focus or tap
+     ================================================================ */
+  var tip = document.getElementById("tip");
+  var tipFor = null, hideTimer = null, pinned = false;
+  function showTip(btn) {
+    var g = G[btn.dataset.term];
+    if (!g) return;
+    clearTimeout(hideTimer);
+    if (tipFor && tipFor !== btn) tipFor.setAttribute("aria-expanded", "false");
+    tipFor = btn;
+    btn.setAttribute("aria-expanded", "true");
+    tip.innerHTML = '<h3>' + esc(g.t) + '</h3><p>' + esc(g.d) + '</p>' + (g.x ? '<p class="extra">' + esc(g.x) + '</p>' : "") +
+      '<div class="src"><span>' + esc(termSource(g)) + '</span><a href="' + termUrl(g) + '" target="_blank" rel="noopener">' +
+      (g.src === "paper" ? "Open the paper" : "Read in the textbook") + '<svg class="ico"><use href="#i-ext"/></svg></a></div>';
+    tip.setAttribute("aria-hidden", "false");
+    btn.setAttribute("aria-describedby", "tip");
+    var r = btn.getBoundingClientRect();
+    var tw = tip.offsetWidth, th = tip.offsetHeight;
+    var left = Math.min(Math.max(12, r.left + r.width / 2 - tw / 2), window.innerWidth - tw - 12);
+    var top = r.bottom + 10;
+    if (top + th > window.innerHeight - 12) top = Math.max(12, r.top - th - 10);
+    tip.style.left = left + "px"; tip.style.top = top + "px";
+    tip.classList.add("show");
+  }
+  function hideTip(now) {
+    clearTimeout(hideTimer);
+    var go = function () {
+      tip.classList.remove("show"); tip.setAttribute("aria-hidden", "true");
+      if (tipFor) { tipFor.setAttribute("aria-expanded", "false"); tipFor.removeAttribute("aria-describedby"); }
+      tipFor = null; pinned = false;
+    };
+    if (now) go(); else hideTimer = setTimeout(go, 180);
+  }
+  document.addEventListener("mouseover", function (e) {
+    var b = e.target.closest && e.target.closest(".term");
+    if (b) { if (!pinned || tipFor !== b) { pinned = false; showTip(b); } return; }
+    if (e.target.closest && e.target.closest("#tip")) { clearTimeout(hideTimer); return; }
+    if (tipFor && !pinned) hideTip();
+  });
+  document.addEventListener("focusin", function (e) {
+    var b = e.target.closest && e.target.closest(".term");
+    if (b) showTip(b);
+    else if (tipFor && !(e.target.closest && e.target.closest("#tip"))) hideTip(true);
+  });
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest(".term");
+    if (b) {
+      e.preventDefault(); e.stopPropagation();
+      if (pinned && tipFor === b) { hideTip(true); return; }
+      showTip(b); pinned = true; return;
+    }
+    if (!e.target.closest("#tip") && tipFor) hideTip(true);
+  }, true);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && tipFor) { var b = tipFor; hideTip(true); b.focus(); } });
+  window.addEventListener("scroll", function () { if (tipFor && !pinned) hideTip(true); else if (tipFor) showTip(tipFor); }, { passive: true });
+  window.addEventListener("resize", function () { if (tipFor) hideTip(true); });
+
+  /* ================================================================
+     Toolbar: save file, open file, clear
+     ================================================================ */
+  var toastEl = document.getElementById("toast"), toastTimer;
+  function toast(msg, ms) {
+    toastEl.textContent = msg; toastEl.classList.add("show");
+    clearTimeout(toastTimer); toastTimer = setTimeout(function () { toastEl.classList.remove("show"); }, ms || 3600);
+  }
+  function slug() {
+    var n = ((state.authors || "").split(/[,;&]| and /)[0] || state.project || "").trim().slice(0, 40).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    return "descriptive-question" + (n ? "-" + n : "");
+  }
+  function downloadBlob(blob, filename) {
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob); a.download = filename;
+    document.body.appendChild(a); a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  }
+  document.getElementById("btnSave").addEventListener("click", function () {
+    var payload = JSON.parse(JSON.stringify(state));
+    payload._form = "DE-1 descriptive question worksheet"; payload._saved = new Date().toISOString();
+    downloadBlob(new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" }), slug() + ".json");
+    toast("Progress file saved. Open it here later with “Open saved file”.");
+  });
+  var fileIn = document.getElementById("fileIn");
+  document.getElementById("btnOpen").addEventListener("click", function () { fileIn.click(); });
+  fileIn.addEventListener("change", function () {
+    var f = fileIn.files[0]; if (!f) return;
+    var rd = new FileReader();
+    rd.onload = function () {
+      try {
+        var o = JSON.parse(rd.result);
+        if (!o || typeof o !== "object" || Array.isArray(o)) throw new Error("shape");
+        state = sanitizeState(o); lastSlots = {}; render(); scheduleSave();
+        toast("Opened “" + f.name + "”.");
+      } catch (e) { toast("That file isn’t a saved worksheet. Choose the .json file that “Save progress file” created.", 5200); }
+      fileIn.value = "";
+    };
+    rd.onerror = function () { toast("The file could not be read. Try again, or choose another file.", 5000); };
+    rd.readAsText(f);
+  });
+  document.getElementById("btnClear").addEventListener("click", function () {
+    if (!confirm("Clear every answer in this worksheet? This can’t be undone unless you saved a progress file.")) return;
+    state = defaults(); lastSlots = {};
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    render(); saveState.textContent = "Worksheet cleared"; window.scrollTo(0, 0);
+  });
+
+  /* ================================================================
+     PDF: real text PDF via jsPDF, print dialog as fallback
+     ================================================================ */
+  var C = { spot: [14, 90, 87], deep: [9, 63, 61], soft: [232, 242, 240], line: [156, 194, 189], pen: [22, 32, 42], muted: [74, 98, 95], faint: [138, 156, 153], white: [255, 255, 255] };
+  function pdfSafe(s) {
+    return String(s == null ? "" : s)
+      .replace(/[≥]/g, ">=").replace(/[≤]/g, "<=").replace(/[→]/g, "->").replace(/[×]/g, "x")
+      .replace(/[−]/g, "-").replace(/ | | /g, " ").replace(/[‑]/g, "-")
+      .replace(/[^\x09\x0a\x0d\x20-\x7e -ÿ–—‘’“”•…€]/g, "?");
+  }
+  function fmtDate(iso) {
+    if (!iso) return "";
+    var d = new Date(iso + "T12:00:00");
+    if (isNaN(d)) return iso;
+    return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  }
+
+  function buildPdf() {
+    var jsPDF = window.jspdf.jsPDF;
+    var doc = new jsPDF({ unit: "mm", format: "a4" });
+    var W = 210, H = 297, L = 18, R = 18, CW = W - L - R, BOTTOM = H - 20;
+    var y = 0;
+    function font(style, size, color) { doc.setFont("helvetica", style); doc.setFontSize(size); doc.setTextColor.apply(doc, color || C.pen); }
+    function lh(size) { return size * 0.3528 * 1.38; }
+    function wrap(txt, width) { return doc.splitTextToSize(pdfSafe(txt), width); }
+    function newPage() {
+      doc.addPage(); y = 16;
+      font("bold", 8, C.spot);
+      var run = (state.project || "").trim();
+      if (run.length > 70) run = run.slice(0, 68) + "…";
+      doc.text(pdfSafe("DESCRIPTIVE QUESTION WORKSHEET" + (run ? "  ·  " + run : "")), L, y);
+      doc.setDrawColor.apply(doc, C.spot); doc.setLineWidth(0.4); doc.line(L, y + 2, W - R, y + 2);
+      y += 9;
+    }
+    function ensure(h) { if (y + h > BOTTOM) newPage(); }
+    function para(txt, x, width, size, style, color) {
+      font(style, size, color);
+      var lines = wrap(txt, width), step = lh(size);
+      lines.forEach(function (ln) { ensure(step); doc.text(ln, x, y + step * 0.75); y += step; });
+    }
+
+    /* header band */
+    doc.setFillColor.apply(doc, C.deep); doc.rect(0, 0, W, 34, "F");
+    font("bold", 21, C.white); doc.text("Descriptive question worksheet", L, 17);
+    font("normal", 9, [201, 228, 223]);
+    doc.text(pdfSafe("Framework: Lesko, Fox & Edwards (2022). A framework for descriptive epidemiology. Am J Epidemiol 191(12):2063–2070."), L, 25);
+    y = 42;
+
+    /* title block */
+    function idCell(x, w, label, val, size) {
+      font(size > 11 ? "bold" : "normal", size);
+      var lines = wrap(val || "—", w - 5);
+      var h = 7.5 + lines.length * lh(size) + 1.5;
+      doc.setDrawColor.apply(doc, C.spot); doc.setLineWidth(0.35); doc.rect(x, y, w, h);
+      font("bold", 6.8, C.spot); doc.text(label.toUpperCase(), x + 2.5, y + 4);
+      font(size > 11 ? "bold" : "normal", size, val ? C.pen : C.faint);
+      doc.text(lines, x + 2.5, y + 7.5 + lh(size) * 0.72);
+      return h;
+    }
+    y += idCell(L, CW, "Working title", (state.project || "").trim(), 12);
+    y += idCell(L, CW, "Authors (group members)", (state.authors || "").trim(), 10.5) + 7;
+
+    /* the question box */
+    var qtxt = (state.question || "").trim() || assembledText();
+    font("normal", 12.5); var ql = wrap(qtxt, CW - 12);
+    var qH = 12 + ql.length * lh(12.5) + ((state.question || "").trim() ? 0 : 5);
+    doc.setFillColor(243, 248, 247); doc.rect(L, y, CW, qH, "F");
+    doc.setDrawColor.apply(doc, C.spot); doc.setLineWidth(0.35); doc.rect(L, y, CW, qH); doc.rect(L + 1, y + 1, CW - 2, qH - 2);
+    font("bold", 7.5, C.spot); doc.text("B   DESCRIPTIVE QUESTION", L + 6, y + 6.5);
+    font("normal", 12.5, C.pen); doc.text(ql, L + 6, y + 12.5);
+    if (!(state.question || "").trim()) { font("italic", 8, C.muted); doc.text("Assembled automatically from sections 1–4; final wording (B.1) not yet written.", L + 6, y + qH - 3); }
+    y += qH + 4;
+
+    function sectionHead(s) {
+      ensure(34);
+      y += 5;
+      doc.setFillColor.apply(doc, C.spot); doc.rect(L, y, CW, 8.5, "F");
+      doc.setFillColor.apply(doc, C.white); doc.rect(L + 1.8, y + 1.5, 5.5, 5.5, "F");
+      font("bold", 10, C.spot); doc.text(s.id, L + 4.55, y + 5.7, { align: "center" });
+      font("bold", 10.5, C.white); doc.text(pdfSafe(s.title.toUpperCase()), L + 10.5, y + 5.9);
+      if (s.aside) { font("normal", 8, [201, 228, 223]); doc.text(pdfSafe(s.aside), W - R - 3, y + 5.8, { align: "right" }); }
+      y += 11.5;
+    }
+    var X2 = L + 11, W2 = CW - 11;
+    function fieldLabel(f) {
+      ensure(14);
+      font("bold", 9, C.spot); doc.text(f.code, L, y + 3.4);
+      para(plain(f.label), X2, W2, 9.5, "bold", C.pen);
+      y += 0.8;
+    }
+    function answer(txt) {
+      if (txt && String(txt).trim()) para(String(txt).trim(), X2, W2, 10, "normal", C.pen);
+      else para("Not completed", X2, W2, 9, "italic", C.faint);
+    }
+    function sep() { y += 2.2; doc.setDrawColor(214, 228, 225); doc.setLineWidth(0.2); doc.line(L, y, W - R, y); y += 3; }
+    function tick(x, yy, on, round) {
+      doc.setDrawColor.apply(doc, on ? C.pen : C.line); doc.setLineWidth(0.35);
+      if (round) doc.circle(x + 1.6, yy + 1.6, 1.6); else doc.rect(x, yy, 3.2, 3.2);
+      if (on) { doc.setDrawColor.apply(doc, C.pen); doc.setLineWidth(0.6); doc.line(x + 0.6, yy + 1.7, x + 1.35, yy + 2.5); doc.line(x + 1.35, yy + 2.5, x + 2.7, yy + 0.7); }
+    }
+    function options(opts, selected, multi) {
+      opts.forEach(function (o) {
+        var on = multi ? (selected || []).indexOf(o.v) > -1 : selected === o.v;
+        font(on ? "bold" : "normal", 9.5, on ? C.pen : C.muted);
+        var lines = wrap(plain(o.label) + (o.small && on ? " — " + plain(o.small) : ""), W2 - 6);
+        ensure(lines.length * lh(9.5) + 1);
+        tick(X2, y + 0.6, on, !multi);
+        lines.forEach(function (ln) { doc.text(ln, X2 + 5.5, y + lh(9.5) * 0.75); y += lh(9.5); });
+        y += 0.6;
+      });
+    }
+    function varsTable() {
+      var rows = (state.vars || []).filter(function (r) { return r.name.trim() || r.def.trim() || r.why.trim(); });
+      if (!rows.length) { answer(""); return; }
+      var cols = [ { k: "name", h: "Variable", w: 0.22 }, { k: "role", h: "Role", w: 0.2 }, { k: "def", h: "Categories / definition", w: 0.29 }, { k: "why", h: "Why", w: 0.29 } ];
+      var pad = 1.8, size = 9, step = lh(size);
+      function header() {
+        ensure(8);
+        doc.setFillColor.apply(doc, C.soft); doc.rect(X2, y, W2, 6.5, "F");
+        var x = X2; font("bold", 7.5, C.spot);
+        cols.forEach(function (c) { doc.text(c.h.toUpperCase(), x + pad, y + 4.3); x += c.w * W2; });
+        y += 6.5;
+      }
+      header();
+      rows.forEach(function (r) {
+        var cells = cols.map(function (c) {
+          var v = c.k === "role" ? (r.role === "strat" ? "Stratify (describe)" : r.role === "nuis" ? "Standardise over" : "—") : (r[c.k] || "—");
+          font(c.k === "name" ? "bold" : "normal", size);
+          return wrap(v, c.w * W2 - pad * 2);
+        });
+        var h = Math.max.apply(null, cells.map(function (c) { return c.length; })) * step + pad * 2;
+        if (y + h > BOTTOM) { newPage(); header(); }
+        var x = X2;
+        cells.forEach(function (lines, i) {
+          font(cols[i].k === "name" ? "bold" : "normal", size, C.pen);
+          doc.text(lines, x + pad, y + pad + step * 0.75);
+          x += cols[i].w * W2;
+        });
+        y += h;
+        doc.setDrawColor.apply(doc, C.line); doc.setLineWidth(0.2); doc.line(X2, y, X2 + W2, y);
+      });
+      y += 1;
+    }
+
+    SECTIONS.forEach(function (s) {
+      if (s.id === "B") return;
+      sectionHead(s);
+      s.fields.forEach(function (f) {
+        var v = state[f.id];
+        if (f.opt && !filled(f.id) && !(f.id === "outcut" && state.outscale === "cont")) return;
+        fieldLabel(f);
+        if (f.type === "choice") {
+          options(f.options, v, false);
+          if (f.other && v === "other") answer(state[f.id + "_other"]);
+        } else if (f.type === "checks") options(f.options, v, true);
+        else if (f.type === "vars") varsTable();
+        else if (f.type === "threat") {
+          var t = v || {};
+          ensure(6);
+          var x = X2;
+          THREAT_LEVELS.forEach(function (lv) {
+            var on = t.apply === lv.v;
+            tick(x, y + 0.4, on, true);
+            font(on ? "bold" : "normal", 9.5, on ? C.pen : C.muted);
+            doc.text(lv.label, x + 5, y + 3.1);
+            x += 8 + doc.getTextWidth(lv.label) + 4;
+          });
+          y += 6;
+          answer(t.notes);
+        }
+        else answer(v);
+        sep();
+      });
+    });
+
+    /* footer on every page */
+    var n = doc.getNumberOfPages();
+    for (var i = 1; i <= n; i++) {
+      doc.setPage(i);
+      doc.setDrawColor.apply(doc, C.spot); doc.setLineWidth(0.3); doc.line(L, H - 13, W - R, H - 13);
+      font("normal", 7, C.muted);
+      doc.text("Framework: Lesko CR, Fox MP, Edwards JK. Am J Epidemiol 2022;191(12):2063–2070. doi:10.1093/aje/kwac115", L, H - 9);
+      doc.text(pdfSafe("Definitions: Baker C. Epidemiology. Virginia Tech Publishing; 2023.  ·  Generated " + fmtDate(new Date().toISOString().slice(0, 10))), L, H - 5.5);
+      font("bold", 7.5, C.spot); doc.text("Page " + i + " of " + n, W - R, H - 9, { align: "right" });
+    }
+    doc.setProperties({ title: pdfSafe(state.project || "Descriptive question worksheet"), subject: "Descriptive epidemiology framework (Lesko et al. 2022)", author: pdfSafe(state.authors || "") });
+    doc.save(slug() + ".pdf");
+  }
+
+  /* print fallback: an HTML version of the same report */
+  function buildPrintView() {
+    var h = '<div class="pv-head"><h1>Descriptive question worksheet</h1><p>Framework: Lesko, Fox &amp; Edwards (2022), Am J Epidemiol 191(12):2063–2070</p></div>';
+    h += '<div class="pv-id" style="grid-template-columns:1fr"><div><small>Working title</small><b>' + esc(state.project || "—") + '</b></div></div>';
+    h += '<div class="pv-id" style="grid-template-columns:1fr;margin-top:-9pt"><div><small>Authors (group members)</small>' + esc(state.authors || "—") + '</div></div>';
+    h += '<div class="pv-q"><small style="display:block;font-size:7.5pt;font-weight:700;letter-spacing:.06em;color:#0e5a57">B · DESCRIPTIVE QUESTION</small>' + esc((state.question || "").trim() || assembledText()) + '</div>';
+    function ans(v) { return v && String(v).trim() ? '<div class="a">' + esc(String(v).trim()) + '</div>' : '<div class="a empty">Not completed</div>'; }
+    function opts(list, sel, multi) {
+      return '<div class="a">' + list.map(function (o) { var on = multi ? (sel || []).indexOf(o.v) > -1 : sel === o.v; return '<span class="pv-opt' + (on ? " on" : "") + '">' + '<i class="pvb' + (on ? ' on' : '') + '"></i>' + esc(plain(o.label)) + '</span>'; }).join("") + '</div>';
+    }
+    SECTIONS.forEach(function (s) {
+      if (s.id === "B") return;
+      h += '<div class="pv-sec">' + s.id + " · " + esc(s.title) + '</div>';
+      s.fields.forEach(function (f) {
+        var v = state[f.id];
+        if (f.opt && !filled(f.id)) return;
+        var body;
+        if (f.type === "choice") body = opts(f.options, v, false) + (f.other && v === "other" ? ans(state[f.id + "_other"]) : "");
+        else if (f.type === "checks") body = opts(f.options, v, true);
+        else if (f.type === "threat") { var t = v || {}; body = opts(THREAT_LEVELS, t.apply, false) + ans(t.notes); }
+        else if (f.type === "vars") {
+          var rows = state.vars.filter(function (r) { return r.name.trim() || r.def.trim(); });
+          body = rows.length ? '<table class="pv-t"><tr><th>Variable</th><th>Role</th><th>Categories / definition</th><th>Why</th></tr>' + rows.map(function (r) {
+            return '<tr><td><b>' + esc(r.name) + '</b></td><td>' + (r.role === "strat" ? "Stratify (describe)" : r.role === "nuis" ? "Standardise over" : "—") + '</td><td>' + esc(r.def) + '</td><td>' + esc(r.why) + '</td></tr>';
+          }).join("") + '</table>' : ans("");
+        }
+        else body = ans(v);
+        h += '<div class="pv-f"><div class="c">' + f.code + '</div><div><div class="l">' + esc(plain(f.label)) + '</div>' + body + '</div></div>';
+      });
+    });
+    h += '<div class="pv-foot">Framework: Lesko CR, Fox MP, Edwards JK. Am J Epidemiol. 2022;191(12):2063–2070. doi:10.1093/aje/kwac115. Definitions in the online worksheet: Baker C. Epidemiology. Virginia Tech Publishing; 2023 (CC BY-NC-SA 4.0).</div>';
+    document.getElementById("printView").innerHTML = h;
+  }
+  window.addEventListener("beforeprint", buildPrintView);
+
+  document.getElementById("btnPdf").addEventListener("click", function () {
+    var b = this;
+    if (window.jspdf && window.jspdf.jsPDF) {
+      b.setAttribute("aria-busy", "true");
+      setTimeout(function () {
+        try { buildPdf(); toast("PDF downloaded. Check your Downloads folder."); }
+        catch (e) { console.error(e); toast("The PDF could not be built. Opening the print dialog instead: choose “Save as PDF”.", 5200); buildPrintView(); window.print(); }
+        b.removeAttribute("aria-busy");
+      }, 30);
+    } else {
+      toast("The PDF tool needs an internet connection. Opening the print dialog instead: choose “Save as PDF” as the printer.", 6000);
+      buildPrintView();
+      setTimeout(function () { window.print(); }, 600);
+    }
+  });
+
+  /* ================================================================
+     Worked example: Lesko et al. (2022), HIV viral suppression.
+     Paraphrased from the paper; categories marked "e.g." are illustrative.
+     ================================================================ */
+  var EXAMPLE = {
+    project: "Prevalence of HIV viral suppression among adults linked to HIV care in the United States (worked example from Lesko et al., 2022)",
+    authors: "Lesko CR, Fox MP, Edwards JK (example)",
+    question: "What was the prevalence of viral suppression on 31 December 2019 among adults living with HIV who had been linked to HIV care (that is, had seen a clinician who knew their HIV status and could prescribe antiretroviral therapy) in the United States?",
+    person: "adults (18 years or older) living with HIV who had been linked to HIV care",
+    place: "the United States",
+    time: "on 31 December 2019",
+    criteria: "Included: aged 18 or older; diagnosed with HIV before 31 December 2019; at least one visit with a clinician who knew their HIV status and could prescribe antiretroviral therapy (ART); alive through 31 December 2019.\nExcluded: people diagnosed with HIV who were never linked to care.",
+    source: "Option 1: national HIV surveillance, with mandated reporting of new diagnoses and viral load results. Not all diagnoses are reported, and people who move between states may be counted twice.\nOption 2: the NA-ACCORD clinical cohort collaboration. Its clinics are often in academic medical centres, where care and wraparound services may differ from elsewhere.",
+    selection: "census",
+    analytic: "People in the study sample with a viral load measured within an accepted window around 31 December 2019. People with no viral load measured in 2019 are treated as lost to follow-up (see 3.5).",
+    outcome: "viral suppression",
+    outdef: "Plasma HIV RNA below a prespecified threshold on 31 December 2019, e.g. < 200 copies/mL. Thresholds of < 20, < 50, < 200 and < 400 copies/mL are all in use.",
+    outkind: "state",
+    outscale: "cont",
+    outmeas: "Routine clinical viral load tests. A result measured within a time window around 31 December 2019 is accepted as the value on that date; how wide a window is acceptable has to be decided and justified.",
+    outcut: "The threshold should follow the purpose of the question, and it matters: in one HIV clinical cohort in Baltimore, 75% were suppressed using < 20 copies/mL but 89% using < 400 copies/mL.",
+    outerr: "A viral load measured weeks away from 31 December may not reflect suppression on that date, and the choice of threshold changes who counts as suppressed. Where possible, report the sensitivity and specificity of the definition against a gold standard.",
+    design: "cross",
+    measure: "pointprev",
+    anchor: "A fixed date: 31 December 2019.",
+    why: "The question is meant to inform public-health planning for secondary and tertiary prevention among people already living with HIV, for which prevalence on a date is the most relevant measure.",
+    incomplete: "People in the study sample with no viral load in 2019 are lost to follow-up. Either assume they have the same probability of suppression as those measured (censoring), or treat loss to follow-up as a competing event and assign 'not suppressed'. People who died before 31 December 2019 are outside the target population.",
+    vars: [
+      { name: "gender", role: "strat", def: "as recorded, e.g. cisgender women, cisgender men, transgender people", why: "Suppression is lower among cisgender women than among cisgender men" },
+      { name: "race", role: "strat", def: "as recorded, e.g. Black, White, other", why: "Suppression is lower among Black than among White patients" },
+      { name: "factors that differ between the cohort and the national population", role: "nuis", def: "only if the NA-ACCORD clinical cohort is used", why: "To standardise the cohort estimate to the target population" }
+    ],
+    crudefirst: ["yes"],
+    adjust: "If the clinical cohort is used, standardise its estimate to the make-up of the national target population. The standardised prevalence describes what the cohort would show with the target population's composition; it is not an 'independent' association.",
+    t_sel: { apply: "yes", notes: "Surveillance misses unreported diagnoses and may count people who move between states twice; clinical cohorts are often in academic centres where care may differ. Standardise or reweight the analytical sample to the target population." },
+    t_meas: { apply: "yes", notes: "The choice of threshold and of the time window around 31 December 2019. Report the prevalence under alternative thresholds." },
+    t_obs: { apply: "yes", notes: "People without a 2019 viral load may have moved clinic and still be suppressed, or may have left care. Report the estimate under both assumptions (censoring, and 'not suppressed')." },
+    t_adj: { apply: "maybe", notes: "Adjusting for other variables could understate the gender and racial disparities the question is meant to show. Report and interpret unadjusted results first." },
+    report: ["label", "flow", "t1", "crude", "strata", "limits", "nocausal"],
+    open: "How wide a time window around 31 December 2019 is acceptable? Which threshold best fits the planning purpose?"
+  };
+  function hasAnswers() {
+    return Object.keys(state).some(function (k) {
+      var v = state[k];
+      if (k === "vars") return v.some(function (r) { return r.name.trim() || r.def.trim() || r.why.trim(); });
+      if (Array.isArray(v)) return v.length > 0;
+      if (v && typeof v === "object") return !!(v.apply || (v.notes || "").trim());
+      return !!String(v || "").trim();
+    });
+  }
+  document.getElementById("btnExample").addEventListener("click", function () {
+    if (hasAnswers() && !confirm("Replace your current answers with the worked example from Lesko et al. (2022)? Save a progress file first if you want to keep them.")) return;
+    state = sanitizeState(JSON.parse(JSON.stringify(EXAMPLE))); lastSlots = {};
+    render(); scheduleSave(); window.scrollTo(0, 0);
+    toast("Loaded the HIV example from Lesko et al. (2022). Press “Clear” before you start on your own project.", 5200);
+  });
+
+  /* ================================================================
+     Theme: light form or black form
+     ================================================================ */
+  var btnTheme = document.getElementById("btnTheme");
+  function setTheme(dark, remember) {
+    if (dark) document.documentElement.setAttribute("data-theme", "dark");
+    else document.documentElement.removeAttribute("data-theme");
+    btnTheme.setAttribute("aria-pressed", dark ? "true" : "false");
+    btnTheme.title = dark ? "Switch to the light theme" : "Switch to the black theme";
+    if (remember) { try { localStorage.setItem("hrm-theme", dark ? "dark" : "light"); } catch (e) {} }
+  }
+  setTheme(document.documentElement.getAttribute("data-theme") === "dark", false);
+  btnTheme.addEventListener("click", function () { setTheme(document.documentElement.getAttribute("data-theme") !== "dark", true); });
+
+  /* ================================================================
+     Boot
+     ================================================================ */
+  var had = load();
+  render();
+  if (!storageOK) { saveState.textContent = "This browser can’t keep your answers. Use “Save progress file”."; saveState.classList.add("warn"); }
+  else if (had) saveState.textContent = "Answers restored from this browser";
+})();
+</script>
+</body>
+</html>
