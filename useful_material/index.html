@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Helpful Material</title>
+<meta name="description" content="Books, articles, videos and interactive tools to learn more about epidemiology and statistics, for the quantitative sessions in Health Research Methodology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --desk: #cbbda4;          /* kraft board under the notebook */
+    --desk-deep: #b9a98d;
+    --paper: #fffdf6;
+    --rule: #cbd9ec;          /* printed blue lines */
+    --margin: #e7a1a1;        /* red margin line */
+    --graphite: #36383d;      /* pencil */
+    --graphite-soft: #5f6168;
+    --graphite-faint: #8d8f95;
+    --marker: rgba(255, 226, 92, .6);
+    --tape-a: rgba(244, 206, 128, .78);
+    --tape-b: rgba(160, 205, 222, .74);
+    --tape-c: rgba(236, 166, 182, .7);
+    --tab-1: #f3d27a; --tab-2: #a9d4c4; --tab-3: #f2b0a4; --tab-4: #b9c7ec; --tab-5: #d7c0e8;
+    --line: 32px;             /* the notebook's line height: every vertical step is a multiple */
+    --hand: "Caveat", "Segoe Print", "Bradley Hand", cursive;
+    --print: "Patrick Hand", "Segoe Print", "Comic Neue", cursive;
+    --ease: cubic-bezier(.16, 1, .3, 1);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+  body {
+    margin: 0; min-height: 100vh;
+    background: var(--desk);
+    background-image: radial-gradient(rgba(255, 255, 255, .08) 1px, transparent 1px);
+    background-size: 5px 5px;
+    color: var(--graphite);
+    font-family: var(--print);
+    font-size: 20px;
+    line-height: var(--line);
+  }
+  ::selection { background: var(--marker); color: var(--graphite); }
+  a { color: var(--graphite); text-decoration-thickness: 1.5px; text-underline-offset: 4px; text-decoration-color: var(--graphite-faint); }
+  a:hover { text-decoration-color: var(--graphite); text-decoration-style: wavy; }
+  :focus-visible { outline: 2px dashed var(--graphite); outline-offset: 3px; border-radius: 3px; }
+  html { scrollbar-color: var(--desk-deep) var(--desk); }
+
+  /* graphite: soft-edged, slightly uneven pencil marks */
+  .pencil, h1, h2, h3, .item-title, .vcap b {
+    text-shadow: 0 0 .6px rgba(54, 56, 61, .55), .3px .2px .4px rgba(54, 56, 61, .25);
+  }
+
+  /* ---------- the page ---------- */
+  .wrap { padding: 48px 20px 96px; }
+  .paper {
+    position: relative; max-width: 880px; margin: 0 auto;
+    background-color: var(--paper);
+    background-image: repeating-linear-gradient(to bottom, transparent 0 calc(var(--line) - 1px), var(--rule) calc(var(--line) - 1px) var(--line));
+    background-position: 0 calc(var(--line) * 3);
+    background-repeat: no-repeat;
+    background-size: 100% calc(100% - var(--line) * 3);
+    border-radius: 3px 6px 6px 3px;
+    box-shadow: 0 1px 1px rgba(60, 45, 20, .12), 0 18px 40px -16px rgba(60, 45, 20, .45);
+    padding: 0 64px calc(var(--line) * 2) 120px;
+  }
+  /* red margin line */
+  .paper::before {
+    content: ""; position: absolute; top: 0; bottom: 0; left: 96px; width: 2px;
+    background: var(--margin); opacity: .85;
+  }
+  /* punched holes, showing the desk through the page */
+  .paper::after {
+    content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: 56px;
+    background: radial-gradient(circle at 30px 64px, var(--desk) 0 9px, rgba(60, 45, 20, .25) 9.5px, transparent 11px) 0 0 / 56px 192px repeat-y;
+    pointer-events: none;
+  }
+
+  header.top { padding-top: calc(var(--line) * 2); min-height: calc(var(--line) * 3); }
+  h1 {
+    font-family: var(--hand); font-weight: 700; font-size: 58px; line-height: 64px;
+    margin: 0 0 var(--line); letter-spacing: -.005em; text-wrap: balance; max-width: 18ch;
+  }
+  .intro { margin: 0 0 var(--line); max-width: 62ch; }
+
+  /* section dividers */
+  section { scroll-margin-top: 24px; }
+  h2 {
+    font-family: var(--hand); font-weight: 700; font-size: 44px; line-height: 64px;
+    margin: var(--line) 0 0;
+    display: block; width: fit-content;
+    text-decoration: underline wavy var(--graphite-faint); text-decoration-thickness: 1.5px; text-underline-offset: 10px;
+  }
+  .sec-note { margin: 0 0 var(--line); color: var(--graphite-soft); }
+
+  /* list items */
+  ul.items { list-style: none; margin: 0 0 var(--line); padding: 0; }
+  ul.items > li { position: relative; margin: 0 0 var(--line); max-width: 66ch; }
+  ul.items > li::before {
+    content: ""; position: absolute; left: -26px; top: 12px; width: 9px; height: 9px;
+    border: 2px solid var(--graphite); border-radius: 50% 45% 55% 48%;
+    transform: rotate(-12deg);
+  }
+  .item-title { display: block; font-family: var(--hand); font-weight: 700; font-size: 29px; line-height: var(--line); }
+  .mark { background: linear-gradient(100deg, transparent 0 .2em, var(--marker) .3em calc(100% - .3em), transparent calc(100% - .15em)); padding: 0 .25em; margin: 0 -.15em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  .tag { font-family: var(--print); font-size: 17px; line-height: 1; font-weight: 400; color: var(--graphite-soft); white-space: nowrap; text-shadow: none; }
+  .item-text { display: block; }
+  .src { display: block; color: var(--graphite-soft); font-size: 18px; }
+  .src a { color: var(--graphite-soft); word-break: break-word; }
+  .src a:hover { color: var(--graphite); }
+  .arrow { display: inline-block; margin-right: 4px; color: var(--graphite-faint); }
+  code { font-family: var(--print); background: rgba(203, 217, 236, .45); padding: 0 .3em; border-radius: 3px; }
+
+  /* ---------- videos: photos taped into the notebook ---------- */
+  .videos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--line) 40px; margin: var(--line) 0 0; padding: 0; list-style: none; }
+  .vcard {
+    position: relative; background: #fff; padding: 10px 10px 14px;
+    box-shadow: 0 1px 2px rgba(60, 45, 20, .18), 0 10px 22px -12px rgba(60, 45, 20, .45);
+    transform: rotate(var(--tilt, -.8deg));
+    transition: transform .45s var(--ease), box-shadow .45s var(--ease);
+  }
+  .vcard:nth-child(even) { --tilt: .9deg; }
+  .vcard:nth-child(3n) { --tilt: -.4deg; }
+  .vcard:hover, .vcard.playing { transform: rotate(0deg) translateY(-2px); box-shadow: 0 2px 4px rgba(60, 45, 20, .2), 0 16px 30px -12px rgba(60, 45, 20, .5); }
+  /* washi tape */
+  .vcard::before {
+    content: ""; position: absolute; top: -13px; left: 50%; width: 112px; height: 26px; margin-left: -56px;
+    background: var(--tape, var(--tape-a)); transform: rotate(-3deg);
+    clip-path: polygon(2% 8%, 98% 0, 100% 92%, 1% 100%);
+    box-shadow: 0 1px 1px rgba(60, 45, 20, .08);
+    z-index: 2;
+  }
+  .vcard:nth-child(3n+2) { --tape: var(--tape-b); }
+  .vcard:nth-child(3n) { --tape: var(--tape-c); }
+  .vcard:nth-child(3n)::before { transform: rotate(4deg); left: 38%; }
+
+  .vthumb {
+    position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; background: #e9e4d8;
+    border-radius: 1px; text-decoration: none;
+  }
+  .vthumb img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(.85) contrast(.97); transition: filter .4s var(--ease), transform .6s var(--ease); }
+  .vthumb:hover img { filter: saturate(1) contrast(1); transform: scale(1.02); }
+  .vthumb .play {
+    position: absolute; left: 50%; top: 50%; width: 76px; height: 76px; margin: -38px 0 0 -38px;
+    transition: transform .35s var(--ease);
+  }
+  .vthumb:hover .play, .vthumb:focus-visible .play { transform: scale(1.08); }
+  .play circle { fill: rgba(255, 253, 246, .92); stroke: var(--graphite); stroke-width: 2.4; }
+  .play path { fill: var(--graphite); stroke: var(--graphite); stroke-width: 1.5; stroke-linejoin: round; }
+  .vthumb .dur {
+    position: absolute; right: 8px; bottom: 8px; background: rgba(255, 253, 246, .94);
+    font-family: var(--hand); font-weight: 700; font-size: 21px; line-height: 26px; padding: 0 8px; border-radius: 3px;
+    transform: rotate(-2deg);
+  }
+  .vframe { aspect-ratio: 16 / 9; width: 100%; border: 0; display: block; background: #000; }
+  .vcap { padding: 10px 4px 0; line-height: 26px; font-size: 18.5px; }
+  .vcap b { font-family: var(--hand); font-weight: 700; font-size: 26px; display: block; line-height: 30px; }
+  .vcap .by { color: var(--graphite-soft); display: block; }
+  .vcap p { margin: 4px 0 6px; }
+  .vcap .yt { font-size: 17px; color: var(--graphite-soft); }
+
+  /* ---------- divider tabs on the page edge ---------- */
+  nav.tabs { position: absolute; top: 0; right: -78px; bottom: 0; width: 86px; }
+  nav.tabs ol { position: sticky; top: 72px; list-style: none; margin: 96px 0 0; padding: 0; display: grid; gap: 10px; }
+  nav.tabs a {
+    display: block; padding: 8px 10px 8px 22px; text-decoration: none; color: var(--graphite);
+    font-family: var(--hand); font-weight: 700; font-size: 22px; line-height: 24px;
+    border-radius: 0 9px 9px 0; background: var(--c);
+    box-shadow: 1px 2px 4px -1px rgba(60, 45, 20, .35);
+    transform: translateX(-10px); transition: transform .35s var(--ease);
+  }
+  nav.tabs a:hover, nav.tabs a.here { transform: translateX(0); }
+  nav.tabs li:nth-child(1) a { --c: var(--tab-1); }
+  nav.tabs li:nth-child(2) a { --c: var(--tab-2); }
+  nav.tabs li:nth-child(3) a { --c: var(--tab-3); }
+  nav.tabs li:nth-child(4) a { --c: var(--tab-4); }
+  nav.tabs li:nth-child(5) a { --c: var(--tab-5); }
+
+  footer.foot { margin-top: calc(var(--line) * 2); color: var(--graphite-soft); font-size: 18px; max-width: 70ch; }
+  footer.foot p { margin: 0 0 var(--line); }
+
+  /* ---------- smaller screens ---------- */
+  @media (max-width: 1120px) {
+    nav.tabs { position: static; width: auto; margin: 0 0 var(--line); }
+    nav.tabs ol { position: static; margin: 0; display: flex; flex-wrap: wrap; gap: 8px 10px; }
+    nav.tabs a { transform: none; border-radius: 9px 9px 2px 2px; padding: 4px 14px; }
+    nav.tabs a:hover, nav.tabs a.here { transform: translateY(-2px); }
+  }
+  @media (max-width: 760px) {
+    body { font-size: 19px; }
+    .wrap { padding: 16px 0 48px; }
+    .paper { border-radius: 0; padding: 0 16px calc(var(--line) * 2) 52px; }
+    .paper::before { left: 38px; }
+    .paper::after { display: none; }
+    h1 { font-size: 44px; line-height: 48px; }
+    h2 { font-size: 38px; }
+    ul.items > li::before { left: -20px; }
+    .videos { grid-template-columns: 1fr; gap: calc(var(--line) * 1.5) 0; }
+    .vcard { --tilt: 0deg !important; }
+  }
+
+  @media print {
+    body { background: #fff; }
+    .wrap { padding: 0; }
+    .paper { box-shadow: none; max-width: none; }
+    .paper::after, nav.tabs, .vthumb .play { display: none; }
+    .vcard { transform: none; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+<main class="paper" id="paper">
+
+  <nav class="tabs" aria-label="Sections">
+    <ol>
+      <li><a href="#books">Books</a></li>
+      <li><a href="#articles">Articles</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#interactive">Tools</a></li>
+      <li><a href="#course">Course</a></li>
+    </ol>
+  </nav>
+
+  <header class="top">
+    <h1>Helpful material to learn more about epidemiology &amp; statistics</h1>
+    <p class="intro">A starting list for the quantitative sessions in Health Research Methodology. Everything here is free to read or watch unless marked otherwise, and the items are grouped so that you can find one thing at the level you need rather than reading all of it.</p>
+  </header>
+
+  <section id="books" aria-labelledby="h-books">
+    <h2 id="h-books">Books</h2>
+    <ul class="items">
+      <li>
+        <span class="item-title"><span class="mark">Baker, C. (2023), <i>Epidemiology</i></span> <span class="tag">(open textbook)</span></span>
+        <span class="item-text">Definitions and worked tables for incidence, prevalence, risk, rate and odds, and the source of the tables used in the lectures.</span>
+        <span class="src"><span class="arrow">→</span><a href="https://doi.org/10.21061/epidemiology" target="_blank" rel="noopener">doi.org/10.21061/epidemiology</a></span>
+      </li>
+      <li>
+        <span class="item-title"><span class="mark">Advanced Statistics and Machine Learning for Health Research</span> <span class="tag">(Department course book)</span></span>
+        <span class="item-text">21 chapters with datasets and code covering inference, regression, splines, survival analysis, missing data, prediction models and reporting standards, written for health researchers at this level.</span>
+        <span class="src"><span class="arrow">→</span><a href="https://mlhealthcourse.github.io/" target="_blank" rel="noopener">mlhealthcourse.github.io</a></span>
+      </li>
+      <li>
+        <span class="item-title"><span class="mark">Coggon, Rose and Barker, <i>Epidemiology for the Uninitiated</i></span> <span class="tag">(BMJ)</span></span>
+        <span class="item-text">The classic short introduction to how often diseases occur in different groups of people and why, written for readers with no statistical background.</span>
+        <span class="src"><span class="arrow">→</span><a href="https://www.bmj.com/about-bmj/resources-readers/publications/epidemiology-uninitiated" target="_blank" rel="noopener">bmj.com · Epidemiology for the uninitiated</a></span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="articles" aria-labelledby="h-articles">
+    <h2 id="h-articles">Articles</h2>
+    <ul class="items">
+      <li>
+        <span class="item-title"><span class="mark">Lesko, Fox and Edwards (2022), A Framework for Descriptive Epidemiology</span></span>
+        <span class="item-text">The checklist the session is built on, asking you to state the target population, the outcome, how it was measured and which subgroups matter.</span>
+        <span class="src"><span class="arrow">→</span><a href="https://doi.org/10.1093/aje/kwac115" target="_blank" rel="noopener">doi.org/10.1093/aje/kwac115</a></span>
+      </li>
+      <li>
+        <span class="item-title"><span class="mark">Fox et al. (2022), On the Need to Revitalize Descriptive Epidemiology</span></span>
+        <span class="item-text">The argument that description has been treated as the lesser half of epidemiology. Read it straight after Lesko to see why the framework matters.</span>
+        <span class="src"><i>American Journal of Epidemiology</i> 191(7) <span class="arrow">→</span><a href="https://doi.org/10.1093/aje/kwac056" target="_blank" rel="noopener">doi.org/10.1093/aje/kwac056</a></span>
+      </li>
+      <li>
+        <span class="item-title"><span class="mark">Greenland et al. (2016), Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations</span></span>
+        <span class="item-text">Twenty-five specific misreadings of p-values and confidence intervals, each with the correct reading next to it.</span>
+        <span class="src"><span class="arrow">→</span><a href="https://doi.org/10.1007/s10654-016-0149-3" target="_blank" rel="noopener">doi.org/10.1007/s10654-016-0149-3</a></span>
+      </li>
+      <li>
+        <span class="item-title"><span class="mark">George, Stead and Ganti (2020), What's the Risk: Differentiating Risk Ratios, Odds Ratios, and Hazard Ratios?</span></span>
+        <span class="item-text">A short clinical paper that keeps the three measures apart and shows when each one is the right summary.</span>
+        <span class="src"><span class="arrow">→</span><a href="https://doi.org/10.7759/cureus.10047" target="_blank" rel="noopener">doi.org/10.7759/cureus.10047</a></span>
+      </li>
+      <li>
+        <span class="item-title"><span class="mark">Poon and Feng (2023), Univariate and Multiple Regression Analyses in Medical Research</span></span>
+        <span class="item-text">What adjustment buys you in a regression and what it does not, written for readers of results tables.</span>
+        <span class="src"><i>Biometrical Letters</i> 60(1):65–76 <span class="arrow">→</span><a href="https://doi.org/10.2478/bile-2023-0005" target="_blank" rel="noopener">doi.org/10.2478/bile-2023-0005</a></span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="videos" aria-labelledby="h-videos">
+    <h2 id="h-videos">Videos</h2>
+    <p class="sec-note">Each one is under ten minutes. Press play to watch it here.</p>
+    <ul class="videos snap" id="videoList"></ul>
+  </section>
+
+  <section id="interactive" aria-labelledby="h-interactive">
+    <h2 id="h-interactive">Interactive and reference</h2>
+    <ul class="items">
+      <li>
+        <span class="item-title"><span class="mark">Seeing Theory, Brown University</span></span>
+        <span class="item-text">Two chapters are directly relevant: chapter 3 on probability distributions and chapter 4 on frequentist inference, both with interactive figures.</span>
+        <span class="src"><span class="arrow">→</span><a href="https://seeing-theory.brown.edu/probability-distributions" target="_blank" rel="noopener">seeing-theory.brown.edu</a></span>
+      </li>
+      <li>
+        <span class="item-title"><span class="mark">From Data to Viz</span></span>
+        <span class="item-text">A decision tree for choosing a plot, from the type of data you have to the chart that suits it.</span>
+        <span class="src"><span class="arrow">→</span><a href="https://www.data-to-viz.com/" target="_blank" rel="noopener">data-to-viz.com</a></span>
+      </li>
+      <li>
+        <span class="item-title"><span class="mark">Common statistical tests are linear models</span></span>
+        <span class="item-text">Shows that most of the tests you meet are special cases of one model, which is a shortcut to remembering their assumptions.</span>
+        <span class="src"><span class="arrow">→</span><a href="https://lindeloev.github.io/tests-as-linear/" target="_blank" rel="noopener">lindeloev.github.io/tests-as-linear</a></span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="course" aria-labelledby="h-course">
+    <h2 id="h-course">Course material</h2>
+    <ul class="items">
+      <li>
+        <span class="item-title"><span class="mark">The exercise repository</span> <span class="tag">(<code>Data_analysis_exercises</code>)</span></span>
+        <span class="item-text">The R scripts that show the operations being performed on a simulated register and survey dataset. Optional self-study, since the course assesses methodology rather than code.</span>
+        <span class="src"><span class="arrow">→</span><a href="https://github.com/adrigabzu/Data_analysis_exercises" target="_blank" rel="noopener">github.com/adrigabzu/Data_analysis_exercises</a></span>
+      </li>
+    </ul>
+  </section>
+
+  <footer class="foot">
+    <p>Video lengths are as listed on YouTube. If a video won't play inside the page, use the “watch on YouTube” link under it.</p>
+  </footer>
+</main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var VIDEOS = [
+    { id: "S5XRh47T420", title: "Epidemiology: the backbone of public health", by: "Global Health with Greg Martin", dur: "5:52", what: "What epidemiology is and where it sits in public health work." },
+    { id: "HnBYw8_-azw", title: "Incidence and Prevalence", by: "Global Health with Greg Martin", dur: "2:51", what: "The two measures of how much disease there is, with examples and the relation between them." },
+    { id: "dWtzaKYFg00", title: "Risk, Rate and Odds", by: "Global Health with Greg Martin", dur: "4:59", what: "The three ways of expressing how often an event happens, and how they differ." },
+    { id: "-cQwiEJnPyA", title: "Relative risk and risk ratios", by: "Global Health with Greg Martin", dur: "7:59", what: "How to compute and read a risk ratio, including what it cannot tell you." },
+    { id: "BHsdpg1OOf0", title: "A Guide to Hazard Ratios", by: "The Winton Centre", dur: "6:00", what: "What a hazard ratio is and how to communicate it without overstating the effect." },
+    { id: "ENnlSlvQHO0", title: "Confidence Interval [Simply explained]", by: "numiqo", dur: "5:34", what: "How a confidence interval is built and what the 95 per cent refers to." },
+    { id: "CL9MsExcKfU", title: "p-Value (Statistics made simple)", by: "numiqo", dur: "6:35", what: "What a p-value is, with a worked example, and the most common misreading of it." }
+  ];
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+  var list = document.getElementById("videoList");
+  list.innerHTML = VIDEOS.map(function (v) {
+    var watch = "https://www.youtube.com/watch?v=" + encodeURIComponent(v.id);
+    return '<li class="vcard">' +
+      '<a class="vthumb" href="' + watch + '" data-id="' + esc(v.id) + '" data-title="' + esc(v.title) + '" target="_blank" rel="noopener" aria-label="Play video: ' + esc(v.title) + ', ' + esc(v.dur) + '">' +
+        '<img src="https://i.ytimg.com/vi/' + esc(v.id) + '/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">' +
+        '<svg class="play" viewBox="0 0 76 76" aria-hidden="true"><circle cx="38" cy="38" r="33"/><path d="M31 25.5 L53 38 L31 50.5 Z"/></svg>' +
+        '<span class="dur">' + esc(v.dur) + '</span>' +
+      '</a>' +
+      '<div class="vcap"><b>' + esc(v.title) + '</b><span class="by">' + esc(v.by) + ' · ' + esc(v.dur) + '</span>' +
+      '<p>' + esc(v.what) + '</p>' +
+      '<a class="yt" href="' + watch + '" target="_blank" rel="noopener">watch on YouTube ↗</a></div></li>';
+  }).join("");
+
+  /* Load the player only when asked: the page stays light, and nothing is sent to YouTube until you press play */
+  list.addEventListener("click", function (e) {
+    var a = e.target.closest(".vthumb");
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    e.preventDefault();
+    var f = document.createElement("iframe");
+    f.className = "vframe";
+    f.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(a.dataset.id) + "?autoplay=1&rel=0";
+    f.title = a.dataset.title;
+    f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    f.referrerPolicy = "strict-origin-when-cross-origin";
+    f.allowFullscreen = true;
+    a.closest(".vcard").classList.add("playing");
+    a.replaceWith(f);
+    f.focus();
+    snap();
+  });
+
+  /* Keep the writing on the printed lines: pad blocks that are not a whole number of lines tall */
+  var LINE = 32;
+  function snap() {
+    document.querySelectorAll(".snap").forEach(function (el) {
+      el.style.marginBottom = "0px";
+      var h = el.getBoundingClientRect().height;
+      var rest = Math.ceil(h / LINE) * LINE - h;
+      el.style.marginBottom = (rest + LINE) + "px";
+    });
+  }
+  window.addEventListener("load", snap);
+  window.addEventListener("resize", function () { clearTimeout(snap.t); snap.t = setTimeout(snap, 120); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(snap);
+
+  /* Highlight the tab of the section being read */
+  if ("IntersectionObserver" in window) {
+    var tabs = document.querySelectorAll("nav.tabs a");
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        tabs.forEach(function (t) { t.classList.toggle("here", t.getAttribute("href") === "#" + en.target.id); });
+      });
+    }, { rootMargin: "-35% 0px -60% 0px" });
+    document.querySelectorAll("main section").forEach(function (s) { io.observe(s); });
+  }
+})();
+</script>
+</body>
+</html>
