@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guide for Participatory Systems Mapping with a Quantitative twist</title>
+  <meta name="description" content="Guide for participants in Participatory Systems Mapping exercises, University of Copenhagen." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:," />
+  <script>
+    // Set the appearance before first paint so the wrong theme never flashes.
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem("appearance"); } catch (e) {}
+      var dark = stored === "dark" || stored === "light" ? stored === "dark"
+        : window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+    })();
+  </script>
+  <style>
+    /* Tokens: light is the default set from DESIGN.md; dark uses the same names. */
+    :root {
+      --ku-red: #901a1e;
+      --ku-red-wash: #fbf3f3;
+      --ink: #1f1f1f;
+      --slate: #555555;
+      --pale-slate: #8a8a8a;
+      --paper: #ffffff;
+      --zone-grey: #f7f7f7;
+      --data-grey: #f3f3f3;
+      --secondary-fill: #fbfbfb;
+      --hairline: rgba(0, 0, 0, 0.14);
+      --font: 'Arial Nova', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+      --r-tag: 2px;
+      --r-node: 6px;
+      --r-zone: 8px;
+      color-scheme: light;
+    }
+    [data-theme="dark"] {
+      --ku-red: #e0575f;
+      --ku-red-wash: #2a1a1b;
+      --ink: #f2f2f2;
+      --slate: #b4b4b4;
+      --pale-slate: #8a8a8a;
+      --paper: #141414;
+      --zone-grey: #1c1c1c;
+      --data-grey: #242424;
+      --secondary-fill: #1c1c1c;
+      --hairline: rgba(255, 255, 255, 0.16);
+      color-scheme: dark;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+    @media (max-width: 480px) { body { font-size: 16px; } }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 64px 40px 72px;
+    }
+    @media (max-width: 600px) {
+      .wrap { padding: 48px 20px 56px; }
+    }
+
+    /* Toolbar */
+    .toolbar {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      z-index: 10;
+      display: flex;
+      gap: 8px;
+    }
+    .tool {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      height: 40px;
+      min-width: 40px;
+      padding: 0 12px;
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-node);
+      background: var(--paper);
+      color: var(--ink);
+      font: 700 14px/1.4 var(--font);
+      cursor: pointer;
+    }
+    .tool:hover { background: var(--zone-grey); }
+    .tool.primary { border-color: var(--ku-red); color: var(--ku-red); }
+    .tool.primary:hover { background: var(--ku-red-wash); }
+    .tool:focus-visible, a:focus-visible {
+      outline: 2px solid var(--ku-red);
+      outline-offset: 2px;
+    }
+    .tool svg { width: 20px; height: 20px; flex: none; }
+    .theme-toggle { padding: 0; justify-content: center; }
+    .theme-toggle .icon-sun { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+    [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+    .icon {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Header */
+    .page-header { padding-bottom: 24px; border-bottom: 1px solid var(--hairline); }
+    .kicker {
+      margin: 0 0 12px;
+      color: var(--slate);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.75rem, 2.5vw + 1rem, 2.5rem);
+      font-weight: 300;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .subtitle { margin: 0; color: var(--slate); font-size: 15px; }
+
+    .lede { margin: 32px 0 8px; font-weight: 700; }
+
+    section { margin-top: 48px; }
+    h2 {
+      margin: 0 0 16px;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+      break-after: avoid;
+    }
+    h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.35;
+      break-after: avoid;
+    }
+    p { margin: 0 0 12px; }
+    ul { margin: 0 0 12px; padding-left: 1.25em; }
+    li { margin-bottom: 6px; }
+    li::marker { color: var(--slate); }
+    a { color: inherit; text-decoration-color: var(--slate); text-underline-offset: 3px; overflow-wrap: anywhere; }
+
+    .time {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-left: 8px;
+      padding: 3px 10px;
+      border-radius: var(--r-tag);
+      background: var(--data-grey);
+      color: var(--slate);
+      font-size: 13px;
+      font-weight: 700;
+      vertical-align: 2px;
+      white-space: nowrap;
+    }
+    .time svg { width: 14px; height: 14px; }
+    .vh {
+      position: absolute;
+      width: 1px; height: 1px;
+      margin: -1px; padding: 0; border: 0;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    /* Steps: the step numbers are the one focal red mark. */
+    ol.steps { list-style: none; margin: 24px 0 0; padding: 0; counter-reset: step; }
+    ol.steps > li {
+      counter-increment: step;
+      position: relative;
+      margin: 0 0 16px;
+      padding: 20px 20px 8px 68px;
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-node);
+      background: var(--paper);
+      break-inside: avoid;
+    }
+    ol.steps > li::before {
+      content: counter(step);
+      position: absolute;
+      left: 20px;
+      top: 18px;
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border: 1.5px solid var(--ku-red);
+      border-radius: var(--r-node);
+      background: var(--ku-red-wash);
+      color: var(--ku-red);
+      font-weight: 700;
+      font-size: 16px;
+    }
+    @media (max-width: 480px) {
+      ol.steps > li { padding: 64px 16px 4px; }
+      ol.steps > li::before { left: 16px; top: 16px; }
+    }
+
+    .callout {
+      margin: 16px 0 12px;
+      padding: 14px 16px;
+      border-radius: var(--r-node);
+      background: var(--zone-grey);
+    }
+    .callout-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 4px;
+      font-weight: 700;
+    }
+    .callout-title svg { width: 20px; height: 20px; flex: none; }
+    .callout p:last-child { margin-bottom: 0; }
+
+    ul.signs { list-style: none; padding: 0; }
+    ul.signs li { display: flex; gap: 12px; align-items: baseline; }
+    .sign {
+      flex: none;
+      min-width: 44px;
+      padding: 2px 10px;
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-tag);
+      background: var(--data-grey);
+      text-align: center;
+      font-weight: 700;
+    }
+    /* Quantitative cues: the wash marks where a factor becomes measurable. */
+    .q {
+      background: var(--ku-red-wash);
+      border-bottom: 1px solid var(--ku-red);
+      padding: 1px 3px;
+      border-radius: var(--r-tag);
+    }
+    .q-legend { margin: 14px 0 0; color: var(--slate); font-size: 15px; }
+
+    /* Facilitator call to action: the one filled button on the page. */
+    .facilitator-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 14px 0 0; }
+    .btn-facilitator {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: var(--r-node);
+      background: var(--ku-red);
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    [data-theme="dark"] .btn-facilitator { color: #141414; }
+    .btn-facilitator svg { width: 20px; height: 20px; flex: none; }
+    .btn-facilitator:hover { background: #6f1417; }
+    [data-theme="dark"] .btn-facilitator:hover { background: #c8474f; }
+    .facilitator-note { color: var(--slate); font-size: 14px; }
+    @media (prefers-reduced-motion: no-preference) {
+      .btn-facilitator { transition: background-color 120ms ease; }
+    }
+
+    .note {
+      padding: 10px 14px;
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-node);
+      background: var(--secondary-fill);
+    }
+
+    /* Timing table */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-zone);
+      break-inside: avoid;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px 16px; text-align: left; vertical-align: top; }
+    th {
+      background: var(--zone-grey);
+      color: var(--slate);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    td { border-top: 1px solid var(--hairline); }
+    th:first-child, td:first-child { width: 6.5em; text-align: right; font-weight: 700; white-space: nowrap; }
+    .after-table { margin-top: 12px; color: var(--slate); }
+
+    .panel {
+      padding: 20px 20px 8px;
+      border-radius: var(--r-zone);
+      background: var(--zone-grey);
+    }
+
+    /* Footer */
+    .page-footer {
+      margin-top: 56px;
+      padding-top: 16px;
+      border-top: 1px solid var(--hairline);
+      color: var(--slate);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .page-footer p { margin: 0 0 6px; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .tool { transition: background-color 120ms ease, border-color 120ms ease; }
+    }
+
+    /* Print: a two-page A4 handout in the light palette. */
+    @page { size: A4; margin: 14mm; }
+    @media print {
+      :root, [data-theme="dark"] {
+        --ku-red: #901a1e;
+        --ku-red-wash: #fbf3f3;
+        --ink: #1f1f1f;
+        --slate: #555555;
+        --pale-slate: #8a8a8a;
+        --paper: #ffffff;
+        --zone-grey: #f7f7f7;
+        --data-grey: #f3f3f3;
+        --secondary-fill: #fbfbfb;
+        --hairline: rgba(0, 0, 0, 0.14);
+        color-scheme: light;
+      }
+      html, body { background: #ffffff; color: #1f1f1f; }
+      body { font-size: 9.2pt; line-height: 1.38; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .toolbar, button, .facilitator-cta { display: none !important; }
+      .wrap { max-width: none; padding: 0 0 5mm; }
+
+      .page-header { padding-bottom: 8px; }
+      .kicker { font-size: 8pt; margin-bottom: 4px; }
+      h1 { font-size: 20pt; margin-bottom: 4px; }
+      .subtitle { font-size: 9pt; }
+      .lede { margin-top: 7px; margin-bottom: 4px; }
+      section { margin-top: 9px; }
+      h2 { font-size: 11.5pt; margin-bottom: 5px; break-after: avoid; page-break-after: avoid; }
+      h3 { font-size: 10.5pt; margin-bottom: 4px; break-after: avoid; page-break-after: avoid; }
+      p, ul { margin-bottom: 4px; }
+      li { margin-bottom: 2px; }
+      p, li { orphans: 3; widows: 3; }
+      .time { font-size: 8pt; padding: 0 6px; }
+      .time svg { width: 10px; height: 10px; }
+
+      ol.steps { margin-top: 8px; }
+      ol.steps > li {
+        margin-bottom: 5px;
+        padding: 8px 11px 3px 42px;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      ol.steps > li::before { left: 12px; top: 9px; width: 22px; height: 22px; font-size: 10pt; }
+      .callout { margin: 6px 0 5px; padding: 6px 10px; }
+      .callout-title svg { width: 14px; height: 14px; }
+      .note { padding: 4px 10px; }
+      .sign { min-width: 30px; }
+
+      /* Page two starts with the timing table. */
+      .page-two { margin-top: 0; }
+      .table-wrap { overflow: visible; break-inside: avoid; page-break-inside: avoid; }
+      th, td { padding: 4px 10px; }
+      th { font-size: 8pt; }
+      .after-table { margin-top: 5px; }
+      .panel { padding: 7px 11px 2px; break-inside: avoid; page-break-inside: avoid; }
+      section { break-inside: avoid; page-break-inside: avoid; }
+      section.steps-section { break-inside: auto; page-break-inside: auto; }
+
+      a { text-decoration: none; }
+      .page-footer { margin-top: 9px; padding-top: 6px; font-size: 7.5pt; }
+
+    }
+    /* Printed footer line on every page, in the bottom margin so it never covers content. */
+    @page {
+      @bottom-left {
+        content: 'Guide for participants in a Participatory Systems Mapping exercise, University of Copenhagen.';
+        font-family: 'Arial Nova', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+        font-size: 7.5pt;
+        color: #555555;
+        vertical-align: top;
+        padding-top: 3mm;
+      }
+      @bottom-right {
+        content: counter(page) " / " counter(pages);
+        font-family: 'Arial Nova', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+        font-size: 7.5pt;
+        color: #555555;
+        vertical-align: top;
+        padding-top: 3mm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar" role="toolbar" aria-label="Page tools">
+    <button class="tool primary" type="button" id="print-button">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+      <span>Save as PDF</span>
+    </button>
+    <button class="tool theme-toggle" type="button" id="theme-toggle" aria-label="Dark mode" aria-pressed="false">
+      <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+    </button>
+  </div>
+
+  <main class="wrap">
+    <header class="page-header">
+      <p class="kicker">University of Copenhagen</p>
+      <h1>Guide for participants</h1>
+      <p class="subtitle">Participatory Systems Mapping with quantitative variables</p>
+    </header>
+
+    <p class="lede">A few promises before we start:</p>
+    <ul>
+      <li>There is no right answer and nothing to hand in.</li>
+      <li>Everyone's perspective is useful. Complexity arises from your different views.</li>
+      <li>Bring your curiosity, and a willingness to say "wait, why?" out loud.</li>
+    </ul>
+
+    <p class="q-legend"><span class="q">Marked text</span> is the quantitative cue: the place where a factor becomes something you could measure, count or test.</p>
+
+    <section aria-labelledby="why">
+      <h2 id="why">Why we are doing this</h2>
+      <p>In a lot of cases in quantitative analysis we test an exposure against an outcome and adjust everything else. In fact, we often assume that the effect of each exposure is independent of the others. Interactions between all those variables that are not the outcome are rarely tested.</p>
+      <p>A systems map is the opposite move. It puts all the factors on one page and makes the connections between them the object of study. What you build in this exercise is a qualitative map with <span class="q">quantifiable factors</span> around a health challenge of interest.</p>
+    </section>
+
+    <section class="steps-section" aria-labelledby="steps">
+      <h2 id="steps">The exercise step by step</h2>
+      <p>For the next 35 minutes you will build a map of a health problem with people who might not think exactly like you. That is the whole point.</p>
+
+      <ol class="steps">
+        <li>
+          <h3><span class="vh">1. </span>What interests you, and which problem? <span class="time"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span class="vh">· </span>5 min</span></h3>
+          <p>You hopefully know each other by now so just remind your name to the group. Then each person shares in maximum ONE minute which aspects of the health problem they are interested in.</p>
+          <p>Then the group chooses one problem to map (hopefully the one they are working on) and writes it in the centre of the page. If you want to try a new one and you want some ideas, here are a few:</p>
+          <ul>
+            <li>Colorectal cancer is rising among individuals younger than 50</li>
+            <li>Access to cardiovascular disease prevention is socially unequal</li>
+            <li>Vaping and consumption of nicotine products among adolescents is on the rise</li>
+          </ul>
+          <div class="callout">
+            <p class="callout-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Who facilitates?</p>
+            <p>Whoever in the group has the first name earliest in the alphabet becomes the facilitator and timekeeper. We are in the land of good clocks and watches, so we trust you.</p>
+            <p class="facilitator-cta">
+              <a class="btn-facilitator" href="facilitators.html">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>Open the facilitator's guide</span>
+              </a>
+              <span class="facilitator-note">Only the facilitator needs this page.</span>
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <h3><span class="vh">2. </span>Brainstorm factors <span class="time"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span class="vh">· </span>5 min</span></h3>
+          <p>Working individually, write at least three factors that could be involved in that problem, one factor per post-it.</p>
+          <p>Try to write <span class="q">variables that can in some sense go up or down</span>, such as "physical exercise", "funding" or "trust in services", rather than fixed labels such as "the health system".</p>
+        </li>
+
+        <li>
+          <h3><span class="vh">3. </span>Merge and connect <span class="time"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span class="vh">· </span>20 min</span></h3>
+          <p>Put your post-its around the central problem. If two factors are the same or nearly the same, the people who wrote them decide together whether to keep just one.</p>
+          <p>Discuss which factors influence each other and draw arrows in one direction between them. Mark each arrow:</p>
+          <ul class="signs">
+            <li><strong class="sign">(+)</strong><span>when the factors reinforce each other, meaning <span class="q">both move in the same direction</span>.</span></li>
+            <li><strong class="sign">(-)</strong><span>when one suppresses the other, meaning <span class="q">one goes up and the other goes down</span>.</span></li>
+            <li><strong class="sign">?</strong><span>when an arrow feels genuinely unclear, or when the honest answer is "it depends".</span></li>
+            <li><strong class="sign"><svg class="icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false" style="vertical-align:-2px"><path d="m16 3 4 4-4 4"/><path d="M20 7H4"/><path d="m8 21-4-4 4-4"/><path d="M4 17h16"/></svg><span class="vh">A second arrow back</span></strong><span><span aria-hidden="true">A second arrow back </span>when the relation is reciprocal.</span></li>
+          </ul>
+          <p class="note"><strong>(+) means same direction, not good.</strong> More smoking leading to more lung cancer is a (+) arrow.</p>
+        </li>
+
+        <li>
+          <h3><span class="vh">4. </span>Wrap up the map!<span class="time"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span class="vh">· </span>5 min</span></h3>
+          <p>Keep drawing arrows and refining until the facilitator calls time.</p>
+          <p>Circle the two or three connections your group would most want to <span class="q">test if you had the data</span>.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="page-two" aria-labelledby="timing">
+      <h2 id="timing">Timing at a glance</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th scope="col">Minutes</th><th scope="col">What you are doing</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>5</td><td>What interests you, and choose the problem</td></tr>
+            <tr><td>5</td><td>Write factors, at least three each</td></tr>
+            <tr><td>20</td><td>Place factors and draw arrows, reinforcing or suppressing</td></tr>
+            <tr><td>5</td><td>Finish the arrows and circle what you would test</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="after-table">Then we reconvene as one group for 10 minutes of discussion.</p>
+    </section>
+
+    <section aria-labelledby="what-map">
+      <h2 id="what-map">What the map is, and what it is not</h2>
+      <p>It is a shared picture of how your group thinks the factors relate, built from your own knowledge and from the disagreements you had while drawing it.</p>
+      <p>It is not <span class="q">an estimate of an effect</span>, not a validated model, and not the output of an analysis. The boundary of the map, meaning what you put inside it and what you left out, is a choice your group made.</p>
+      <p>An unfinished map is the normal state of a systems map. Nobody finishes one, and the question of what is missing is part of the result.</p>
+    </section>
+
+    <section aria-labelledby="voices">
+      <h2 id="voices">Emergent voices <span class="time"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span class="vh">· </span>10 min</span></h2>
+      <p>By the end we reconvene as one group and discuss what came out of the maps. Keep these prompts in mind:</p>
+      <ul>
+        <li>What did you like about this exercise, and what was the most challenging part?</li>
+        <li>Did you learn something new about the problem, or about how another discipline frames it?</li>
+        <li>Where did you disagree in your group, and did you resolve it? Share the unresolved ones, those are the good ones to discuss.</li>
+        <li>Whose perspective is missing from this map, and whose factor would we have written differently?</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="theory">
+      <h2 id="theory">References</h2>
+      <ul>
+        <li>Barbrook-Johnson and Penn (2022), <em>Systems Mapping</em>, chapters 4 and 5, open access: <a href="https://doi.org/10.1007/978-3-031-01919-7">https://doi.org/10.1007/978-3-031-01919-7</a></li>
+        <li>CECAN, the participatory systems mapping workshop method, about six pages: <a href="https://www.cecan.ac.uk/wp-content/uploads/2020/09/PSM-Workshop-method.pdf">https://www.cecan.ac.uk/wp-content/uploads/2020/09/PSM-Workshop-method.pdf</a></li>
+      </ul>
+    </section>
+
+    <footer class="page-footer">
+      <p>Adrian G. Zucco · October 2026</p>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var toggle = document.getElementById("theme-toggle");
+      var printButton = document.getElementById("print-button");
+
+      function sync() {
+        var dark = root.getAttribute("data-theme") === "dark";
+        toggle.setAttribute("aria-pressed", dark ? "true" : "false");
+        toggle.setAttribute("title", dark ? "Dark mode is on" : "Dark mode is off");
+      }
+
+      toggle.addEventListener("click", function () {
+        var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("appearance", next); } catch (e) {}
+        sync();
+      });
+
+      printButton.addEventListener("click", function () { window.print(); });
+
+      // Follow the system setting until the reader makes a choice.
+      if (window.matchMedia) {
+        var mq = window.matchMedia("(prefers-color-scheme: dark)");
+        var follow = function (e) {
+          var stored = null;
+          try { stored = localStorage.getItem("appearance"); } catch (err) {}
+          if (stored !== "dark" && stored !== "light") {
+            root.setAttribute("data-theme", e.matches ? "dark" : "light");
+            sync();
+          }
+        };
+        if (mq.addEventListener) mq.addEventListener("change", follow);
+        else if (mq.addListener) mq.addListener(follow);
+      }
+
+      sync();
+    })();
+  </script>
+</body>
+</html>

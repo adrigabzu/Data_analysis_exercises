@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guide for facilitators · Participatory Systems Mapping with quantitative variables</title>
+  <meta name="description" content="Guide for the facilitator in Participatory Systems Mapping exercises, University of Copenhagen." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:," />
+  <script>
+    // Set the appearance before first paint so the wrong theme never flashes.
+    (function () {
+      var stored = null;
+      try { stored = localStorage.getItem("appearance"); } catch (e) {}
+      var dark = stored === "dark" || stored === "light" ? stored === "dark"
+        : window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+    })();
+  </script>
+  <style>
+    /* Tokens: light is the default set from DESIGN.md; dark uses the same names. */
+    :root {
+      --ku-red: #901a1e;
+      --ku-red-wash: #fbf3f3;
+      --ink: #1f1f1f;
+      --slate: #555555;
+      --pale-slate: #8a8a8a;
+      --paper: #ffffff;
+      --zone-grey: #f7f7f7;
+      --data-grey: #f3f3f3;
+      --secondary-fill: #fbfbfb;
+      --hairline: rgba(0, 0, 0, 0.14);
+      --font: 'Arial Nova', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+      --r-tag: 2px;
+      --r-node: 6px;
+      --r-zone: 8px;
+      color-scheme: light;
+    }
+    [data-theme="dark"] {
+      --ku-red: #e0575f;
+      --ku-red-wash: #2a1a1b;
+      --ink: #f2f2f2;
+      --slate: #b4b4b4;
+      --pale-slate: #8a8a8a;
+      --paper: #141414;
+      --zone-grey: #1c1c1c;
+      --data-grey: #242424;
+      --secondary-fill: #1c1c1c;
+      --hairline: rgba(255, 255, 255, 0.16);
+      color-scheme: dark;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 17px;
+      line-height: 1.6;
+    }
+    @media (max-width: 480px) { body { font-size: 16px; } }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 64px 40px 72px;
+    }
+    @media (max-width: 600px) {
+      .wrap { padding: 72px 20px 56px; }
+    }
+
+    /* Toolbar */
+    .toolbar {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      z-index: 10;
+      display: flex;
+      gap: 8px;
+    }
+    .tool {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      height: 40px;
+      min-width: 40px;
+      padding: 0 12px;
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-node);
+      background: var(--paper);
+      color: var(--ink);
+      font: 700 14px/1.4 var(--font);
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .tool:hover { background: var(--zone-grey); }
+    .tool.primary { border-color: var(--ku-red); color: var(--ku-red); }
+    .tool.primary:hover { background: var(--ku-red-wash); }
+    .tool:focus-visible, a:focus-visible {
+      outline: 2px solid var(--ku-red);
+      outline-offset: 2px;
+    }
+    .tool svg { width: 20px; height: 20px; flex: none; }
+    .theme-toggle { padding: 0; justify-content: center; }
+    .theme-toggle .icon-sun { display: none; }
+    [data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+    [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+    /* On a phone the back link keeps its icon and its accessible name, and drops the visible label. */
+    @media (max-width: 480px) {
+      .tool-back { padding: 0; justify-content: center; }
+      .tool-back .tool-label {
+        position: absolute;
+        width: 1px; height: 1px;
+        margin: -1px; padding: 0; border: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
+    }
+
+    .icon {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Header */
+    .page-header { padding-bottom: 24px; border-bottom: 1px solid var(--hairline); }
+    .kicker {
+      margin: 0 0 12px;
+      color: var(--slate);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.75rem, 2.5vw + 1rem, 2.5rem);
+      font-weight: 300;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .subtitle { margin: 0; color: var(--slate); font-size: 15px; }
+    .audience { margin: 8px 0 0; color: var(--slate); font-size: 14px; }
+
+    section { margin-top: 48px; }
+    h2 {
+      margin: 0 0 16px;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+      break-after: avoid;
+    }
+    p { margin: 0 0 12px; }
+    ul { margin: 0 0 12px; padding-left: 1.25em; }
+    li { margin-bottom: 6px; }
+    li::marker { color: var(--slate); }
+    a { color: inherit; text-decoration-color: var(--slate); text-underline-offset: 3px; overflow-wrap: anywhere; }
+
+    .callout {
+      margin: 16px 0 12px;
+      padding: 14px 16px;
+      border-radius: var(--r-node);
+      background: var(--zone-grey);
+    }
+    .callout p:last-child { margin-bottom: 0; }
+    /* A callout led by a decorative icon instead of a title. */
+    .callout.has-icon { display: flex; gap: 12px; align-items: flex-start; }
+    .callout.has-icon > svg { width: 20px; height: 20px; flex: none; margin-top: 3px; color: var(--slate); }
+    .closing { margin-top: 48px; }
+
+    /* Quantitative cues: the wash marks where a factor becomes measurable. */
+    .q {
+      background: var(--ku-red-wash);
+      border-bottom: 1px solid var(--ku-red);
+      padding: 1px 3px;
+      border-radius: var(--r-tag);
+    }
+
+    .note {
+      padding: 10px 14px;
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-node);
+      background: var(--secondary-fill);
+    }
+
+    /* Checkpoints table */
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--hairline);
+      border-radius: var(--r-zone);
+      break-inside: avoid;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px 16px; text-align: left; vertical-align: top; }
+    th {
+      background: var(--zone-grey);
+      color: var(--slate);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    td { border-top: 1px solid var(--hairline); }
+    th:first-child, td:first-child { width: 6.5em; text-align: right; font-weight: 700; white-space: nowrap; }
+    th:last-child, td:last-child { width: 40%; }
+    .later { color: var(--slate); }
+    .after-table { margin-top: 12px; }
+    @media (max-width: 480px) {
+      th, td { padding: 8px 10px; }
+      th:first-child, td:first-child { width: auto; }
+    }
+
+    /* The quantitative section carries the point of the course, so it sits in a zone. */
+    .panel {
+      padding: 20px 20px 8px;
+      border-radius: var(--r-zone);
+      background: var(--zone-grey);
+    }
+
+    /* Footer */
+    .page-footer {
+      margin-top: 56px;
+      padding-top: 16px;
+      border-top: 1px solid var(--hairline);
+      color: var(--slate);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .page-footer p { margin: 0 0 6px; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .tool { transition: background-color 120ms ease, border-color 120ms ease; }
+    }
+
+    /* Print: a one-page A4 sheet in the light palette. */
+    @page { size: A4; margin: 14mm; }
+    @media print {
+      :root, [data-theme="dark"] {
+        --ku-red: #901a1e;
+        --ku-red-wash: #fbf3f3;
+        --ink: #1f1f1f;
+        --slate: #555555;
+        --pale-slate: #8a8a8a;
+        --paper: #ffffff;
+        --zone-grey: #f7f7f7;
+        --data-grey: #f3f3f3;
+        --secondary-fill: #fbfbfb;
+        --hairline: rgba(0, 0, 0, 0.14);
+        color-scheme: light;
+      }
+      html, body { background: #ffffff; color: #1f1f1f; }
+      body { font-size: 9pt; line-height: 1.34; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .toolbar, .tool, button { display: none !important; }
+      .wrap { max-width: none; padding: 0; }
+
+      .page-header { padding-bottom: 8px; }
+      .kicker { font-size: 8pt; margin-bottom: 4px; }
+      h1 { font-size: 17pt; margin-bottom: 3px; }
+      .subtitle { font-size: 9pt; }
+      .audience { font-size: 8.5pt; margin-top: 2px; }
+      section { margin-top: 8px; break-inside: avoid; page-break-inside: avoid; }
+      h2 { font-size: 11.5pt; margin-bottom: 5px; break-after: avoid; page-break-after: avoid; }
+      p, ul { margin-bottom: 4px; }
+      li { margin-bottom: 2px; }
+      p, li { orphans: 3; widows: 3; }
+
+      .callout { margin: 5px 0 4px; padding: 5px 9px; }
+      .callout.has-icon { gap: 8px; }
+      .callout.has-icon > svg { width: 14px; height: 14px; margin-top: 2px; }
+      .closing { margin-top: 8px; break-inside: avoid; page-break-inside: avoid; }
+      .note { padding: 4px 10px; }
+
+      .table-wrap { overflow: visible; break-inside: avoid; page-break-inside: avoid; }
+      th, td { padding: 3px 9px; }
+      th { font-size: 8pt; }
+      .after-table { margin-top: 6px; }
+      .panel { padding: 6px 10px 2px; }
+
+      a { text-decoration: none; }
+      .page-footer { margin-top: 8px; padding-top: 5px; font-size: 7.5pt; }
+    }
+    /* Printed footer line, in the bottom margin so it never covers content. */
+    @page {
+      @bottom-left {
+        content: 'Guide for facilitators in a Participatory Systems Mapping exercise, University of Copenhagen.';
+        font-family: 'Arial Nova', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+        font-size: 7.5pt;
+        color: #555555;
+        vertical-align: top;
+        padding-top: 3mm;
+      }
+      @bottom-right {
+        content: counter(page) " / " counter(pages);
+        font-family: 'Arial Nova', Arial, 'Helvetica Neue', Helvetica, sans-serif;
+        font-size: 7.5pt;
+        color: #555555;
+        vertical-align: top;
+        padding-top: 3mm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar" role="toolbar" aria-label="Page tools">
+    <a class="tool tool-back" href="index.html">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+      <span class="tool-label">Participant guide</span>
+    </a>
+    <button class="tool primary" type="button" id="print-button">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6"/><rect x="6" y="14" width="12" height="8" rx="1"/></svg>
+      <span>Save as PDF</span>
+    </button>
+    <button class="tool theme-toggle" type="button" id="theme-toggle" aria-label="Dark mode" aria-pressed="false">
+      <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+      <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+    </button>
+  </div>
+
+  <main class="wrap">
+    <header class="page-header">
+      <p class="kicker">University of Copenhagen</p>
+      <h1>Guide for facilitators</h1>
+      <p class="subtitle">Participatory Systems Mapping with quantitative variables</p>
+      <p class="audience">Only the facilitator needs this page.</p>
+    </header>
+
+    <section aria-labelledby="role">
+      <h2 id="role">Your role</h2>
+      <p>As a facilitator, your role is subtle but important:</p>
+      <ul>
+        <li>Keep an eye on the clock and call out the checkpoints in the table below.</li>
+        <li>Make sure everyone gets to speak, especially the quietest person at the table.</li>
+        <li>When something is unclear, ask: "Could you explain that a bit more?"</li>
+        <li>You are not the expert, and nobody at the table has to be. Your job is to help the group's expertise come out.</li>
+      </ul>
+      <div class="callout has-icon">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <p>You are also the only person who needs to watch the time. Say the time out loud at each step boundary, and treat the checkpoints below as a script you can read from.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="checkpoints">
+      <h2 id="checkpoints">Checkpoints</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th scope="col">Minutes</th><th scope="col">What the group is doing</th><th scope="col">What you can say</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>5</td><td>What interests you, and choose the problem</td><td>"Decide now, any of them works"</td></tr>
+            <tr><td>5</td><td>Write factors, at least three each</td><td>"Halfway"</td></tr>
+            <tr><td>20</td><td>Place around the centre, merge duplicates, then draw arrows</td><td>"Merge only if the authors agree"<br /><span class="later">Later:</span> "Let's draw some arrows before time runs out"</td></tr>
+            <tr><td>5</td><td>Finish the arrows, circle the connections you would test</td><td>"Two minutes left, let's hear what you have"</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note after-table"><strong>Falling behind is normal.</strong> If you are running late, shorten the writing and the merging, and protect the arrow drawing. The arrows are the part the group cannot do later.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="quantitative">
+      <h2 id="quantitative">Keep the group quantitative</h2>
+      <p>The exercise is qualitative, but every factor on the map should be <span class="q">something you could in principle measure</span>.</p>
+      <p>Your second job is to keep nudging the group in that direction.</p>
+      <ul>
+        <li>If someone writes a fixed label such as "the health system", ask what part of it could go up or down: funding, waiting time, trust in services.</li>
+        <li>When an arrow is drawn, ask what the two variables would be measured on, and in which direction, so the group says the sign out loud.</li>
+        <li>Ask <span class="q">which two or three connections they would most want to test with data</span>, and what data they would need. That question is the bridge to the rest of the session.</li>
+        <li>A question mark arrow is a result, not a gap. Do not let the group tidy it away.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="stalls">
+      <h2 id="stalls">If the conversation stalls</h2>
+      <ul>
+        <li>Whose perspective is missing from this map? Whose factor would we have written differently?</li>
+        <li>Where are the boundaries: who, when, where does this problem stop?</li>
+        <li>Which factor here would be the hardest to measure, and what would it take to measure it?</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="early">
+      <h2 id="early">If the group finishes early</h2>
+      <p>Ask each member to name, out loud, which two or three connections they would treat as an interaction to test, on which scale, and what data they would need. That is the paragraph their methods draft needs next.</p>
+    </section>
+
+    <section aria-labelledby="handing-over">
+      <h2 id="handing-over">Handing over</h2>
+      <p>Before the group disperses, ask them to photograph the map and keep it. The plenary works from the maps, and an unfinished map is the normal state of a systems map rather than a sign that something went wrong.</p>
+    </section>
+
+    <div class="callout has-icon closing">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+      <p>Thank you for taking on this role. We hope you enjoyed the exercise.</p>
+    </div>
+
+    <footer class="page-footer">
+      <p>Adrian G. Zucco · October 2026</p>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var toggle = document.getElementById("theme-toggle");
+      var printButton = document.getElementById("print-button");
+
+      function sync() {
+        var dark = root.getAttribute("data-theme") === "dark";
+        toggle.setAttribute("aria-pressed", dark ? "true" : "false");
+        toggle.setAttribute("title", dark ? "Dark mode is on" : "Dark mode is off");
+      }
+
+      toggle.addEventListener("click", function () {
+        var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("appearance", next); } catch (e) {}
+        sync();
+      });
+
+      printButton.addEventListener("click", function () { window.print(); });
+
+      // Follow the system setting until the reader makes a choice.
+      if (window.matchMedia) {
+        var mq = window.matchMedia("(prefers-color-scheme: dark)");
+        var follow = function (e) {
+          var stored = null;
+          try { stored = localStorage.getItem("appearance"); } catch (err) {}
+          if (stored !== "dark" && stored !== "light") {
+            root.setAttribute("data-theme", e.matches ? "dark" : "light");
+            sync();
+          }
+        };
+        if (mq.addEventListener) mq.addEventListener("change", follow);
+        else if (mq.addListener) mq.addListener(follow);
+      }
+
+      sync();
+    })();
+  </script>
+</body>
+</html>
